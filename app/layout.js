@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${cabin.variable} ${firaSans.variable} ${poiret.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-base-100 text-base-content antialiased">
+      <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased">
         <Sidebar>
           <div className="flex-1 p-4">
             <main>{children}</main>
