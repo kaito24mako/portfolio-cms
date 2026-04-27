@@ -1,0 +1,132 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <title>Portfolio CMS Background</title>
+
+  <!-- Base background -->
+  <rect width="1920" height="1080" fill="#f5f4f0"/>
+
+  <!-- Grid pattern drawn explicitly -->
+  <g stroke="#e0ddd6" stroke-width="0.8" fill="none">
+    <!-- Vertical lines every 60px -->
+    <line x1="60" y1="0" x2="60" y2="1080"/>
+    <line x1="120" y1="0" x2="120" y2="1080"/>
+    <line x1="180" y1="0" x2="180" y2="1080"/>
+    <line x1="240" y1="0" x2="240" y2="1080"/>
+    <line x1="300" y1="0" x2="300" y2="1080"/>
+    <line x1="360" y1="0" x2="360" y2="1080"/>
+    <line x1="420" y1="0" x2="420" y2="1080"/>
+    <line x1="480" y1="0" x2="480" y2="1080"/>
+    <line x1="540" y1="0" x2="540" y2="1080"/>
+    <line x1="600" y1="0" x2="600" y2="1080"/>
+    <line x1="660" y1="0" x2="660" y2="1080"/>
+    <line x1="720" y1="0" x2="720" y2="1080"/>
+    <line x1="780" y1="0" x2="780" y2="1080"/>
+    <line x1="840" y1="0" x2="840" y2="1080"/>
+    <line x1="900" y1="0" x2="900" y2="1080"/>
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="1020" y1="0" x2="1020" y2="1080"/>
+    <line x1="1080" y1="0" x2="1080" y2="1080"/>
+    <line x1="1140" y1="0" x2="1140" y2="1080"/>
+    <line x1="1200" y1="0" x2="1200" y2="1080"/>
+    <line x1="1260" y1="0" x2="1260" y2="1080"/>
+    <line x1="1320" y1="0" x2="1320" y2="1080"/>
+    <line x1="1380" y1="0" x2="1380" y2="1080"/>
+    <line x1="1440" y1="0" x2="1440" y2="1080"/>
+    <line x1="1500" y1="0" x2="1500" y2="1080"/>
+    <line x1="1560" y1="0" x2="1560" y2="1080"/>
+    <line x1="1620" y1="0" x2="1620" y2="1080"/>
+    <line x1="1680" y1="0" x2="1680" y2="1080"/>
+    <line x1="1740" y1="0" x2="1740" y2="1080"/>
+    <line x1="1800" y1="0" x2="1800" y2="1080"/>
+    <line x1="1860" y1="0" x2="1860" y2="1080"/>
+    <!-- Horizontal lines every 60px -->
+    <line x1="0" y1="60" x2="1920" y2="60"/>
+    <line x1="0" y1="120" x2="1920" y2="120"/>
+    <line x1="0" y1="180" x2="1920" y2="180"/>
+    <line x1="0" y1="240" x2="1920" y2="240"/>
+    <line x1="0" y1="300" x2="1920" y2="300"/>
+    <line x1="0" y1="360" x2="1920" y2="360"/>
+    <line x1="0" y1="420" x2="1920" y2="420"/>
+    <line x1="0" y1="480" x2="1920" y2="480"/>
+    <line x1="0" y1="540" x2="1920" y2="540"/>
+    <line x1="0" y1="600" x2="1920" y2="600"/>
+    <line x1="0" y1="660" x2="1920" y2="660"/>
+    <line x1="0" y1="720" x2="1920" y2="720"/>
+    <line x1="0" y1="780" x2="1920" y2="780"/>
+    <line x1="0" y1="840" x2="1920" y2="840"/>
+    <line x1="0" y1="900" x2="1920" y2="900"/>
+    <line x1="0" y1="960" x2="1920" y2="960"/>
+    <line x1="0" y1="1020" x2="1920" y2="1020"/>
+  </g>
+
+  <!-- Accent shapes — top left cluster (blue) -->
+  <rect x="120" y="100" width="300" height="300" rx="3" fill="#c8d8ee" opacity="0.35"/>
+  <rect x="180" y="160" width="180" height="180" rx="3" fill="#c8d8ee" opacity="0.25"/>
+  <line x1="120" y1="100" x2="420" y2="400" stroke="#8aaace" stroke-width="1" fill="none" opacity="0.4"/>
+  <line x1="420" y1="100" x2="120" y2="400" stroke="#a0bcd8" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- Circle cluster — upper right -->
+  <circle cx="1440" cy="200" r="160" fill="none" stroke="#88c0c0" stroke-width="1" opacity="0.3"/>
+  <circle cx="1440" cy="200" r="100" fill="none" stroke="#88c0c0" stroke-width="0.8" opacity="0.25"/>
+  <circle cx="1440" cy="200" r="40" fill="#b8d8d8" opacity="0.3"/>
+  <line x1="1280" y1="200" x2="1600" y2="200" stroke="#7ab8b8" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <line x1="1440" y1="40" x2="1440" y2="360" stroke="#7ab8b8" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- Triangle — upper right area -->
+  <polygon points="1680,80 1820,280 1540,280" fill="none" stroke="#88c0c0" stroke-width="1" opacity="0.25"/>
+  <polygon points="1680,110 1796,268 1564,268" fill="none" stroke="#88c0c0" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Central square -->
+  <rect x="840" y="420" width="240" height="240" rx="3" fill="#e8e0d0" opacity="0.6"/>
+  <line x1="840" y1="420" x2="1080" y2="660" stroke="#d0ccc4" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <line x1="1080" y1="420" x2="840" y2="660" stroke="#d0ccc4" stroke-width="0.8" fill="none" opacity="0.7"/>
+
+  <!-- Bottom right teal block -->
+  <rect x="1440" y="720" width="360" height="240" rx="3" fill="#b8d8d8" opacity="0.3"/>
+  <rect x="1500" y="780" width="240" height="120" rx="3" fill="#b8d8d8" opacity="0.2"/>
+  <line x1="1440" y1="720" x2="1800" y2="960" stroke="#7ab8b8" stroke-width="1" fill="none" opacity="0.35"/>
+  <line x1="1800" y1="720" x2="1440" y2="960" stroke="#88c0c0" stroke-width="0.8" fill="none" opacity="0.25"/>
+
+  <!-- Bottom left circle -->
+  <circle cx="360" cy="840" r="180" fill="none" stroke="#a0bcd8" stroke-width="1" opacity="0.2"/>
+  <circle cx="360" cy="840" r="110" fill="none" stroke="#a0bcd8" stroke-width="0.7" opacity="0.18"/>
+  <circle cx="360" cy="840" r="50" fill="#c8d8ee" opacity="0.25"/>
+
+  <!-- Horizontal rule lines -->
+  <line x1="0" y1="540" x2="1920" y2="540" stroke="#dedad2" stroke-width="0.6" fill="none"/>
+  <line x1="960" y1="0" x2="960" y2="1080" stroke="#dedad2" stroke-width="0.6" fill="none"/>
+  <line x1="0" y1="270" x2="1920" y2="270" stroke="#e8e5e0" stroke-width="0.5" fill="none"/>
+  <line x1="0" y1="810" x2="1920" y2="810" stroke="#e8e5e0" stroke-width="0.5" fill="none"/>
+  <line x1="480" y1="0" x2="480" y2="1080" stroke="#e8e5e0" stroke-width="0.5" fill="none"/>
+  <line x1="1440" y1="0" x2="1440" y2="1080" stroke="#e8e5e0" stroke-width="0.5" fill="none"/>
+
+  <!-- Accent lines -->
+  <line x1="0" y1="960" x2="360" y2="960" stroke="#8aaace" stroke-width="1" fill="none" opacity="0.4"/>
+  <line x1="1560" y1="120" x2="1920" y2="120" stroke="#8aaace" stroke-width="0.8" fill="none" opacity="0.35"/>
+  <line x1="600" y1="880" x2="1080" y2="880" stroke="#7ab8b8" stroke-width="0.8" fill="none" opacity="0.35"/>
+  <line x1="720" y1="820" x2="720" y2="960" stroke="#7ab8b8" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <line x1="960" y1="820" x2="960" y2="960" stroke="#7ab8b8" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- Dot accents at intersections -->
+  <circle cx="120" cy="100" r="4" fill="#8aaace" opacity="0.5"/>
+  <circle cx="420" cy="100" r="4" fill="#8aaace" opacity="0.5"/>
+  <circle cx="120" cy="400" r="4" fill="#8aaace" opacity="0.5"/>
+  <circle cx="420" cy="400" r="4" fill="#8aaace" opacity="0.5"/>
+  <circle cx="1440" cy="720" r="4" fill="#7ab8b8" opacity="0.5"/>
+  <circle cx="1800" cy="720" r="4" fill="#7ab8b8" opacity="0.5"/>
+  <circle cx="1440" cy="960" r="4" fill="#7ab8b8" opacity="0.5"/>
+  <circle cx="1800" cy="960" r="4" fill="#7ab8b8" opacity="0.5"/>
+  <circle cx="840" cy="420" r="4" fill="#b0a898" opacity="0.5"/>
+  <circle cx="1080" cy="420" r="4" fill="#b0a898" opacity="0.5"/>
+  <circle cx="840" cy="660" r="4" fill="#b0a898" opacity="0.5"/>
+  <circle cx="1080" cy="660" r="4" fill="#b0a898" opacity="0.5"/>
+  <circle cx="960" cy="540" r="5" fill="#8aaace" opacity="0.4"/>
+  <circle cx="480" cy="540" r="4" fill="#8aaace" opacity="0.35"/>
+  <circle cx="1440" cy="540" r="4" fill="#7ab8b8" opacity="0.35"/>
+  <circle cx="960" cy="270" r="3" fill="#8aaace" opacity="0.4"/>
+  <circle cx="960" cy="810" r="3" fill="#7ab8b8" opacity="0.4"/>
+
+  <!-- Curved paths -->
+  <path d="M 500 960 Q 660 900 720 820" fill="none" stroke="#d0ccc4" stroke-width="0.8" opacity="0.6"/>
+  <path d="M 1200 200 Q 1300 260 1280" fill="none" stroke="#88c0c0" stroke-width="0.7" opacity="0.4"/>
+  <path d="M 240 540 Q 360 600 480 560" fill="none" stroke="#a0bcd8" stroke-width="0.7" opacity="0.35"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="500" height="500" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <title>Portfolio logo icon</title>
+
+  <rect x="210" y="180" width="180" height="180" rx="18" fill="#e8846a" transform="rotate(-12 300 270)"/>
+
+  <circle cx="420" cy="260" r="90" fill="#5bbfb5"/>
+
+  <polygon points="340,310 460,480 220,480" fill="#e8c87a"/>
+
+  <rect x="310" y="300" width="140" height="140" rx="12" fill="#7aaad8" transform="rotate(18 380 370)"/>
+</svg>
