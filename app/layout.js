@@ -44,6 +44,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      data-theme="dark"
       className={`${geistSans.variable} ${cabin.variable} ${firaSans.variable} ${poiret.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased">

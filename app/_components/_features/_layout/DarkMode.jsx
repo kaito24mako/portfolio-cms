@@ -7,7 +7,7 @@ function DarkMode() {
   const [theme, setTheme] = useState("dark");
 
   function toggleTheme() {
-    const newTheme = theme === "nord" ? "dark" : "nord";
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
   }
@@ -15,10 +15,10 @@ function DarkMode() {
   return (
     <button
       className={`transition-transform duration-600 ease-in-out cursor-pointer px-4 py-3 
-        ${theme === "nord" ? "rotate-0" : "rotate-180"}`}
+        ${theme === "light" ? "rotate-0" : "rotate-180"}`}
       onClick={toggleTheme}
     >
-      {theme === "nord" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
+      {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
     </button>
   );
 }
