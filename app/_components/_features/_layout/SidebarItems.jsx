@@ -4,7 +4,7 @@ function SidebarItems({ items }) {
       {items.map(({ label, icon: Icon, href }) => (
         <li key={label}>
           <button
-            className="py-3 is-drawer-close:tooltip is-drawer-close:tooltip-right"
+            className="py-3 is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-open:tooltip-left"
             data-tip={label}
           >
             <Icon />

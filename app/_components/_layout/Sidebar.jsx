@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Navbar from "./Navbar";
-import SidebarItems from "./SidebarItems";
+import Header from "./Header";
+import SidebarItems from "../_features/_layout/SidebarItems";
 import Button from "../_ui/Button";
 
 import DashboardIcon from "../_images/_sidebar/DashboardIcon";
@@ -12,12 +12,14 @@ import ActivityIcon from "../_images/_sidebar/ActivityIcon";
 import AboutIcon from "../_images/_sidebar/AboutIcon";
 import ContactIcon from "../_images/_sidebar/ContactIcon";
 
+import SidebarProfileBtn from "../_features/_layout/SidebarProfileBtn";
+
 function Sidebar({ children }) {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <Navbar />
+        <Header />
         {/* page content */}
         {children}
       </div>
@@ -99,23 +101,9 @@ function Sidebar({ children }) {
           </div>
 
           {/* profile */}
-          <div className="">
+          <div>
             <span className="divider w-[80%] mx-auto my-0"></span>
-
-            <button className="flex items-center gap-5 mx-5 py-8">
-              <span>😆</span>
-              <div className="flex flex-col items-start is-drawer-close:hidden">
-                <p className="text-base">Kaito Watanabe</p>
-                <p className="text-xs opacity-80">kaito24mako</p>
-              </div>
-              <Image
-                src="./icons/chevron-down.svg"
-                width={10}
-                height={10}
-                alt="Down arrow"
-                className="is-drawer-close:hidden"
-              />
-            </button>
+            <SidebarProfileBtn />
           </div>
         </div>
       </div>

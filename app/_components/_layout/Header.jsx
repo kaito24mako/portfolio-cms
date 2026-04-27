@@ -1,12 +1,13 @@
 import React from "react";
+import DarkMode from "../_features/_layout/DarkMode";
 
-function Navbar() {
+function Header() {
   return (
-    <nav className="navbar w-full">
+    <nav className="Header w-full flex justify-between">
       <label
         htmlFor="my-drawer-4"
         aria-label="open sidebar"
-        className="btn btn-square btn-ghost"
+        className="cursor-pointer px-4 py-3"
       >
         {/* Sidebar toggle icon */}
         <svg
@@ -17,16 +18,16 @@ function Navbar() {
           strokeWidth="2"
           fill="none"
           stroke="currentColor"
-          className="my-1.5 inline-block size-4"
+          className="my-1.5 inline-block size-6"
         >
           <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
           <path d="M9 4v16"></path>
           <path d="M14 10l2 2l-2 2"></path>
         </svg>
       </label>
-      <div className="px-4">Navbar Title</div>
+      <DarkMode />
     </nav>
   );
 }
 
-export default Navbar;
+export default Header;
