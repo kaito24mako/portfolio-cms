@@ -3,16 +3,14 @@ import Image from "next/image";
 import Header from "./Header";
 import SidebarItems from "../_features/_layout/SidebarItems";
 import Button from "../_ui/Button";
+import SidebarProfileBtn from "../_features/_layout/SidebarProfileBtn";
 
 import DashboardIcon from "../_images/_sidebar/DashboardIcon";
 import ProjectsIcon from "../_images/_sidebar/ProjectsIcon";
 import TagsIcon from "../_images/_sidebar/TagsIcon";
 import ActivityIcon from "../_images/_sidebar/ActivityIcon";
-
 import AboutIcon from "../_images/_sidebar/AboutIcon";
 import ContactIcon from "../_images/_sidebar/ContactIcon";
-
-import SidebarProfileBtn from "../_features/_layout/SidebarProfileBtn";
 
 function Sidebar({ children }) {
   return (
@@ -32,7 +30,7 @@ function Sidebar({ children }) {
         ></label>
 
         {/* sidebar content */}
-        <div className="flex min-h-full flex-col gap-4 bg-base-200 is-drawer-close:w-16 is-drawer-open:w-60">
+        <div className="flex min-h-full flex-col gap-2 bg-base-200 is-drawer-close:w-16 is-drawer-open:w-60">
           {/* title */}
           <div className="flex items-center">
             <Image
@@ -50,8 +48,8 @@ function Sidebar({ children }) {
           {/* new project button */}
           <Button
             className="btn-accent mx-5 is-drawer-close:hidden"
-            icon="./icons/plus.svg"
-            alt="Plus icon"
+            icon="/icons/plus.svg"
+            alt=""
           >
             New Project
           </Button>
@@ -63,7 +61,7 @@ function Sidebar({ children }) {
                 {
                   label: "Dashboard",
                   icon: DashboardIcon,
-                  href: "/dashboard",
+                  href: "/",
                 },
                 {
                   label: "Projects",

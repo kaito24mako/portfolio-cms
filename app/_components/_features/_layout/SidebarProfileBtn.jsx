@@ -9,10 +9,10 @@ function SidebarProfileBtn() {
         <p className="text-xs opacity-80">kaito24mako</p>
       </div>
       <Image
-        src="./icons/chevron-down.svg"
+        src="/icons/chevron-down.svg"
         width={10}
         height={10}
-        alt="Down arrow"
+        alt=""
         className="is-drawer-close:hidden"
       />
     </button>

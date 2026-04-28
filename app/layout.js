@@ -1,9 +1,6 @@
 // import styles
 import "@/app/_styles/globals.css";
 
-// import components
-import Sidebar from "./_components/_layout/Sidebar";
-
 // fonts
 import { Geist, Cabin, Fira_Sans, Poiret_One } from "next/font/google";
 
@@ -35,7 +32,7 @@ const poiret = Poiret_One({
 export const metadata = {
   title: {
     template: "%s | Mako",
-    default: "Dashboard | Mako",
+    default: "Mako",
   },
   description: "A portfolio CMS for easy customisation of portfolios.",
 };
@@ -44,15 +41,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      data-theme="dark"
+      data-theme="nord"
       className={`${geistSans.variable} ${cabin.variable} ${firaSans.variable} ${poiret.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased">
-        <Sidebar>
-          <div className="flex-1 p-4">
-            <main>{children}</main>
-          </div>
-        </Sidebar>
+        {children}
       </body>
     </html>
   );

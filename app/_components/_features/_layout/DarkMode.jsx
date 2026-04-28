@@ -4,7 +4,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useState } from "react";
 
 function DarkMode() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   function toggleTheme() {
     const newTheme = theme === "light" ? "dark" : "light";
