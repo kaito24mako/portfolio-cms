@@ -1,5 +1,6 @@
 import CardGrid from "../_components/_ui/CardGrid";
 import CardSmall from "../_components/_ui/CardSmall";
+import Statistic from "../_components/_ui/Statistic";
 import Title from "../_components/_ui/Title";
 import Card from "daisyui/components/card";
 
@@ -63,6 +64,10 @@ export default function Dashboard() {
       </div>
 
       {/* statistics */}
+      <div className="flex flex-col gap-3">
+        <h2 className="text-lg">Statistics</h2>
+        <Statistic />
+      </div>
     </div>
   );
 }
