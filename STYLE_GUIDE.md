@@ -13,6 +13,17 @@ color-neutral-content
 OPACITY
 .../50
 
+💬 Sizes
+Text
+
+- logo: text-2xl (24px)
+- primary: text-base (16px)
+- daisyui components: 14px
+
+Images
+
+- sidebar and navbar icons: 24px
+
 🧱 UI Usage Cheatsheet
 
 Page background | bg-base-100
