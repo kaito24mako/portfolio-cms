@@ -15,7 +15,12 @@ import ContactIcon from "../_images/_sidebar/ContactIcon";
 function Sidebar({ children }) {
   return (
     <div className="drawer lg:drawer-open">
-      <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+      <input
+        id="my-drawer-4"
+        type="checkbox"
+        className="drawer-toggle"
+        defaultChecked
+      />
       <div className="drawer-content">
         <Header />
         {/* page content */}

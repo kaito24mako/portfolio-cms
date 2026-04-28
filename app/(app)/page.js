@@ -67,9 +67,11 @@ export default function Dashboard() {
         {/* statistics */}
         <div className="flex flex-col gap-2 col-span-2">
           <h2 className="text-lg">Statistics</h2>
-          <Statistic />
-          <Statistic />
-          <Statistic />
+          <div className="flex flex-col gap-3">
+            <Statistic title="Total Projects" count={6} />
+            <Statistic title="Published Projects" count={3} />
+            <Statistic title="Unique Tags" count={5} />
+          </div>
         </div>
 
         {/* recent activity */}

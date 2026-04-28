@@ -1,5 +1,6 @@
 import Image from "next/image";
 import bg from "@/public/placeholders/library.png";
+import Button from "./Button";
 
 function CardSmall({ imgAlt = "", title, description, btnText = "" }) {
   return (
@@ -17,7 +18,7 @@ function CardSmall({ imgAlt = "", title, description, btnText = "" }) {
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-soft btn-sm">{btnText}</button>
+          <Button className="btn-soft btn-sm">{btnText}</Button>
         </div>
       </div>
     </div>
