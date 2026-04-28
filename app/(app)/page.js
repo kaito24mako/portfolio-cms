@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Dashboard() {
   return (
-    <div className="px-1 flex flex-col gap-8">
+    <div className="px-4 lg:px-10 xl:px-16 2xl:px-36 flex flex-col gap-8">
       {/* title */}
       <Title
         heading="Hello Kaito,"
