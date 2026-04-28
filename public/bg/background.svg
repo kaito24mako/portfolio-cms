@@ -1,0 +1,16 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Portfolio background — flowing wind</title>
+  <desc>Soft horizontal flowing curves in coral, teal, amber and blue on a transparent background.</desc>
+
+  <path d="M-60,120 C120,80 280,200 480,140 C680,80 820,20 1060,100 C1240,160 1360,120 1500,80" fill="none" stroke="#e8846a" stroke-width="55" stroke-linecap="round" opacity="0.07"/>
+  <path d="M-60,140 C140,100 300,220 500,160 C700,100 840,40 1080,120 C1260,180 1380,140 1500,100" fill="none" stroke="#e8846a" stroke-width="22" stroke-linecap="round" opacity="0.09"/>
+
+  <path d="M-60,520 C160,460 360,560 580,500 C780,440 940,380 1160,460 C1320,520 1420,490 1500,470" fill="none" stroke="#5bbfb5" stroke-width="65" stroke-linecap="round" opacity="0.07"/>
+  <path d="M-60,540 C180,480 380,580 600,520 C800,460 960,400 1180,480 C1340,540 1440,510 1500,490" fill="none" stroke="#5bbfb5" stroke-width="24" stroke-linecap="round" opacity="0.09"/>
+
+  <path d="M-60,760 C200,700 420,800 660,740 C860,690 1040,640 1260,720 C1380,760 1460,740 1500,730" fill="none" stroke="#e8c87a" stroke-width="58" stroke-linecap="round" opacity="0.07"/>
+  <path d="M-60,780 C220,720 440,820 680,760 C880,710 1060,660 1280,740 C1400,780 1460,760 1500,750" fill="none" stroke="#e8c87a" stroke-width="20" stroke-linecap="round" opacity="0.08"/>
+
+  <path d="M-60,340 C240,300 460,400 700,340 C900,290 1080,240 1300,320 C1420,360 1480,340 1500,330" fill="none" stroke="#7aaad8" stroke-width="45" stroke-linecap="round" opacity="0.07"/>
+  <path d="M-60,355 C260,315 480,415 720,355 C920,305 1100,255 1320,335 C1440,375 1490,355 1500,345" fill="none" stroke="#7aaad8" stroke-width="18" stroke-linecap="round" opacity="0.09"/>
+</svg>

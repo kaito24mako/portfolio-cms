@@ -1,11 +1,11 @@
 import Sidebar from "../_components/_layout/Sidebar";
-import bgWaves from "@/public/bg/waves.svg";
+import bgWaves from "@/public/bg/waves-three.svg";
 import Image from "next/image";
 
 export default function AppLayout({ children }) {
   return (
     <Sidebar>
-      <div className="relative flex-1 p-4">
+      <div className="relative flex-1 p-4 min-h-screen">
         <Image
           src={bgWaves}
           fill
