@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Statistic() {
   return (
-    <div className="flex gap-2 border rounded w-fit py-2 px-4 pr-8">
+    <div className="flex gap-2 bg-base-300 rounded w-[90%] py-3 px-4 pr-8">
       <Image src="/icons/stat.svg" width={50} height={50} alt="" />
       <div>
         <h3>Total Projects</h3>

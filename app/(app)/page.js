@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Dashboard() {
   return (
-    <div className="px-1 flex flex-col gap-6">
+    <div className="px-1 flex flex-col gap-8">
       {/* title */}
       <Title
         heading="Hello Kaito,"
@@ -18,7 +18,7 @@ export default function Dashboard() {
       />
 
       {/* projects cards */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <h2 className="text-lg">Your Portfolio</h2>
           <span className="text-sm">Last updated: 2 hours ago</span>
@@ -63,10 +63,23 @@ export default function Dashboard() {
         </CardGrid>
       </div>
 
-      {/* statistics */}
-      <div className="flex flex-col gap-3">
-        <h2 className="text-lg">Statistics</h2>
-        <Statistic />
+      <div className="grid grid-cols-5">
+        {/* statistics */}
+        <div className="flex flex-col gap-2 col-span-2">
+          <h2 className="text-lg">Statistics</h2>
+          <Statistic />
+          <Statistic />
+          <Statistic />
+        </div>
+
+        {/* recent activity */}
+        <div className="flex flex-col gap-2 col-span-3">
+          <div className="flex justify-between items-center">
+            <h2 className="text-lg">Recent Activity</h2>
+            <button className="cursor-pointer text-sm">View All</button>
+          </div>
+          <div className="border border-base-300 rounded">activity</div>
+        </div>
       </div>
     </div>
   );
