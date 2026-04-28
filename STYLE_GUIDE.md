@@ -17,8 +17,9 @@ OPACITY
 Text
 
 - logo: text-2xl (24px)
+- subheading: text-xl (18px)
 - primary: text-base (16px)
-- daisyui components: 14px
+- daisyui components: text-sm (14px)
 
 Images
 
@@ -41,6 +42,8 @@ These are your layout / UI base colors:
 - base-200 → #E5E9F0 (slightly darker sections)
 - base-300 → #D8DEE9 (cards, borders)
 - base-content → #2E3440 (main text)
+
+- shadow - shadow-sm (cards)
 
 ⸻
 
