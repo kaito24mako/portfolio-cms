@@ -2,24 +2,11 @@
 import "@/app/_styles/globals.css";
 
 // fonts
-import { Geist, Cabin, Fira_Sans, Poiret_One } from "next/font/google";
+import { Geist, Poiret_One } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-
-const cabin = Cabin({
-  variable: "--font-cabin",
-  subsets: ["latin"],
-});
-
-const firaSans = Fira_Sans({
-  variable: "--font-fira-sans",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  display: "swap",
 });
 
 const poiret = Poiret_One({
@@ -42,7 +29,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="nord"
-      className={`${geistSans.variable} ${cabin.variable} ${firaSans.variable} ${poiret.variable}`}
+      className={`${geistSans.variable} ${poiret.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary!">
         {children}

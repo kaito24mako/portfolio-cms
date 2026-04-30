@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Header from "./Header";
 import SidebarItems from "../_features/_layout/SidebarItems";
-import Button from "../_ui/Button";
+import Button from "../_common/Button";
 import SidebarProfileBtn from "../_features/_layout/SidebarProfileBtn";
 
 import DashboardIcon from "../_images/_sidebar/DashboardIcon";

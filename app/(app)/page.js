@@ -1,7 +1,8 @@
-import CardGrid from "../_components/_ui/CardGrid";
-import CardSmall from "../_components/_ui/CardSmall";
-import Statistic from "../_components/_ui/Statistic";
-import Title from "../_components/_ui/Title";
+import CardGrid from "../_components/_common/CardGrid";
+import CardSmall from "../_components/_common/CardSmall";
+import Statistic from "../_components/_common/Statistic";
+import Title from "../_components/_common/Title";
+import ActivityTimeline from "../_components/_features/_activity/ActivityTimeline";
 
 export const metadata = {
   title: "Dashboard",
@@ -62,9 +63,9 @@ export default function Dashboard() {
         </CardGrid>
       </div>
 
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-7">
         {/* statistics */}
-        <div className="flex flex-col gap-2 col-span-2">
+        <div className="flex flex-col gap-2 col-span-3">
           <h2 className="text-lg font-medium">Statistics</h2>
           <div className="flex flex-col gap-3">
             <Statistic title="Total Projects" count={6} />
@@ -74,12 +75,13 @@ export default function Dashboard() {
         </div>
 
         {/* recent activity */}
-        <div className="flex flex-col gap-2 col-span-3">
+        <div className="flex flex-col gap-2 col-span-4">
           <div className="flex justify-between items-center">
             <h2 className="text-lg font-medium">Recent Activity</h2>
             <button className="cursor-pointer text-sm">View All</button>
           </div>
-          <div className="border border-base-300 rounded">activity</div>
+
+          <ActivityTimeline />
         </div>
       </div>
     </div>

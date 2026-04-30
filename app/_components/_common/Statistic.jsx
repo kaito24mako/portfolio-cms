@@ -18,7 +18,7 @@ function Statistic({ title, count = "N/A" }) {
         <line x1="6" y1="20" x2="6" y2="14" />
       </svg>
       <div>
-        <h3>{title}</h3>
+        <h3 className="text-sm">{title}</h3>
         <span className="font-semibold">{count}</span>
       </div>
     </div>

@@ -1,0 +1,28 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Portfolio background — spotlights</title>
+  <desc>Soft radial spotlight glows in coral, teal, blue and amber on a transparent background.</desc>
+
+  <defs>
+    <radialGradient id="spot-coral" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8846a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#e8846a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spot-teal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5bbfb5" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#5bbfb5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spot-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7aaad8" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#7aaad8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spot-amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8c87a" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#e8c87a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="180" cy="120" rx="340" ry="260" fill="url(#spot-coral)"/>
+  <ellipse cx="1080" cy="200" rx="300" ry="240" fill="url(#spot-blue)"/>
+  <ellipse cx="200" cy="820" rx="360" ry="240" fill="url(#spot-teal)"/>
+  <ellipse cx="1380" cy="780" rx="260" ry="200" fill="url(#spot-amber)"/>
+</svg>
