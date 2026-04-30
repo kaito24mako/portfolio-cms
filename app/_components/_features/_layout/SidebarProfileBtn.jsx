@@ -3,11 +3,18 @@ import Image from "next/image";
 function SidebarProfileBtn() {
   return (
     <button className="flex items-center gap-5 mx-5 py-8">
-      <span>😆</span>
+      <Image
+        src="/sidebar/user.svg"
+        alt="Tailwind-CSS-Avatar-component"
+        width={26}
+        height={26}
+      />
+
       <div className="flex flex-col items-start is-drawer-close:hidden">
-        <p className="text-base">Kaito Watanabe</p>
+        <p className="text-sm">Kaito Watanabe</p>
         <p className="text-xs opacity-80">kaito24mako</p>
       </div>
+
       <Image
         src="/icons/chevron-down.svg"
         width={10}
