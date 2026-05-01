@@ -47,7 +47,7 @@ function ActivityTimeline() {
               />
             </svg>
           </div>
-          <div className="timeline-end timeline-box text-sm relative mb-5 pt-5 w-full">
+          <div className="timeline-end timeline-box text-xs sm:text-base relative mb-5 pt-5 w-full">
             <span className="absolute -top-2 -left-2">
               <Badge icon={true} text={"2 hours ago"} />
             </span>

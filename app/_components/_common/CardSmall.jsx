@@ -15,8 +15,8 @@ function CardSmall({ imgAlt = "", title, description, btnText = "" }) {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>{description}</p>
+        <h2 className="card-title text-base">{title}</h2>
+        <p className="text-sm">{description}</p>
         <div className="card-actions justify-end">
           <Button className="btn-soft btn-sm">{btnText}</Button>
         </div>

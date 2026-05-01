@@ -8,11 +8,12 @@ export const metadata = {
   title: "Dashboard",
 };
 
-export default function Dashboard() {
+function DashboardPage() {
   return (
     <div className="flex flex-col gap-8">
       {/* title */}
       <Title
+        font="font-heading"
         heading="Hello Kaito,"
         subHeading="Let's create a beautiful portfolio."
       />
@@ -87,3 +88,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export default DashboardPage;

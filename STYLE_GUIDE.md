@@ -21,6 +21,9 @@ Text
 - primary: text-base (16px)
 - daisyui components: text-sm (14px)
 
+- normal text: text-xs sm:text-base
+- small text: text-xs
+
 Images
 
 - sidebar and navbar icons: 24px

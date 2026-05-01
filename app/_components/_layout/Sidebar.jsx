@@ -53,8 +53,7 @@ function Sidebar({ children }) {
           {/* new project button */}
           <Button
             className="btn-accent mx-5 is-drawer-close:hidden"
-            icon="/icons/plus.svg"
-            alt=""
+            icon={"/icons/plus.svg"}
           >
             New Project
           </Button>
