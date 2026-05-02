@@ -1,8 +1,8 @@
 import AlertIcon from "../_images/_icons/AlertIcon";
 
-function Badge({ icon = false, text }) {
+function Badge({ icon = false, text, className = "" }) {
   return (
-    <div className="badge badge-ghost text-xs opacity-80">
+    <div className={`badge text-xs opacity-80 ${className}`}>
       {icon ? <AlertIcon /> : ""}
       {text}
     </div>

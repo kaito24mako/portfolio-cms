@@ -1,4 +1,5 @@
 import Button from "@/app/_components/_common/Button";
+import CardLarge from "@/app/_components/_common/CardLarge";
 import Title from "@/app/_components/_common/Title";
 
 import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
@@ -19,6 +20,8 @@ function ProjectsPage() {
           </Button>
         </div>
       </div>
+
+      <CardLarge />
     </div>
   );
 }
