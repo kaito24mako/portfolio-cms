@@ -11,6 +11,9 @@ const projects = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adlaboriosam voluptatum consectetur reiciendis beatae.",
     tags: ["React", "SASS", "JavaScript"],
+    image: "/placeholders/pokemon.png",
+    alt: "Catch Em' All! project",
+    status: "Active",
   },
   {
     title: "Book Library",
@@ -18,6 +21,9 @@ const projects = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adlaboriosam voluptatum consectetur reiciendis beatae.",
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
+    image: "/placeholders/library.png",
+    alt: "Book Library project",
+    status: "Draft",
   },
 ];
 
@@ -38,14 +44,20 @@ function ProjectsPage() {
         </div>
       </div>
 
-      <CardGrid className="grid-cols-1 2xl:grid-cols-2">
+      <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
         {projects.map((p) => {
-          <CardLarge
-            title={p.title}
-            updatedAt={p.updatedAt}
-            description={p.description}
-            tags={p.tags}
-          />;
+          return (
+            <CardLarge
+              key={p.title}
+              title={p.title}
+              updatedAt={p.updatedAt}
+              description={p.description}
+              tags={p.tags}
+              image={p.image}
+              alt={p.alt}
+              status={p.status}
+            />
+          );
         })}
       </CardGrid>
     </div>
