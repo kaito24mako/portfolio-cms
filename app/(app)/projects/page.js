@@ -1,10 +1,25 @@
 import Button from "@/app/_components/_common/Button";
+import CardGrid from "@/app/_components/_common/CardGrid";
 import CardLarge from "@/app/_components/_common/CardLarge";
 import Title from "@/app/_components/_common/Title";
-
 import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
 
-import CardLarge2 from "@/app/_components/_common/CardLarge2";
+const projects = [
+  {
+    title: "Catch Em' All!",
+    updatedAt: "Feb 24, 2026",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adlaboriosam voluptatum consectetur reiciendis beatae.",
+    tags: ["React", "SASS", "JavaScript"],
+  },
+  {
+    title: "Book Library",
+    updatedAt: "Dec 05, 2025",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adlaboriosam voluptatum consectetur reiciendis beatae.",
+    tags: ["Next.js", "Tailwind CSS", "SQLite"],
+  },
+];
 
 function ProjectsPage() {
   return (
@@ -23,8 +38,16 @@ function ProjectsPage() {
         </div>
       </div>
 
-      <CardLarge />
-      <CardLarge2 />
+      <CardGrid className="grid-cols-1 2xl:grid-cols-2">
+        {projects.map((p) => {
+          <CardLarge
+            title={p.title}
+            updatedAt={p.updatedAt}
+            description={p.description}
+            tags={p.tags}
+          />;
+        })}
+      </CardGrid>
     </div>
   );
 }

@@ -24,7 +24,7 @@ function DashboardPage() {
           <h2 className="text-lg font-medium">Your Portfolio</h2>
           <span className="text-sm">Last updated: 2 hours ago</span>
         </div>
-        <CardGrid>
+        <CardGrid className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
           <CardSmall
             imgAlt="Book Library project"
             title="Book Library"

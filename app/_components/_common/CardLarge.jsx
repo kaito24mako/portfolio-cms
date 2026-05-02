@@ -5,7 +5,7 @@ import GithubIcon from "../_images/_icons/GithubIcon";
 import WebIcon from "../_images/_icons/WebIcon";
 import EditIcon from "../_images/_icons/EditIcon";
 
-function CardLarge() {
+function CardLarge({ title, updatedAt, description, tags }) {
   return (
     <div className="flex flex-col md:flex-row w-fit rounded-sm overflow-hidden shadow-md bg-base-300 h-max">
       <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm">
