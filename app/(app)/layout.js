@@ -1,5 +1,5 @@
 import Sidebar from "../_components/_layout/Sidebar";
-import bgWaves from "@/public/bg/spotlight.svg";
+import bgWaves from "@/public/bg/waves.svg";
 import Image from "next/image";
 
 export default function AppLayout({ children }) {

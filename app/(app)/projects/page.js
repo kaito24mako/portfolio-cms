@@ -9,7 +9,7 @@ function ProjectsPage() {
     <div className="flex flex-col gap-8">
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end sm:gap-0">
         <Title
-          font="font-primary"
+          font="font-heading"
           heading="Projects"
           subHeading="Create and manage your stunning projects"
         />

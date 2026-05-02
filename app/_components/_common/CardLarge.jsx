@@ -8,30 +8,8 @@ import EditIcon from "../_images/_icons/EditIcon";
 function CardLarge() {
   return (
     <>
-      {/* <div className="flex gap-4">
-        <div className="relative w-fit">
-          <Image
-            src="/placeholders/library.png"
-            width={300}
-            height={300}
-            alt="Library Project"
-          />
-          <div className="absolute inset-x-0 bottom-4 flex justify-center gap-3">
-            <Button className="btn-sm ">View Site</Button>
-            <Button className="btn-sm ">View Code</Button>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1 sm:gap-4 flex-col sm:flex-row">
-            <h2 className="text-xl md:text-2xl font-semibold">Tic Tac Toe</h2>
-            <Badge text="Active" className="badge-success" />
-          </div>
-          <p className="text-xs sm:text-sm">Last modified: Feb 24, 2026</p>
-        </div>
-      </div> */}
-
-      <div className="flex gap-8">
-        <span className="text-7xl font-heading">01</span>
+      <div className="flex gap-15 border- p-5 w-fit rounded-xl shadow-md bg-base-300">
+        <span className="text-7xl font-heading">1</span>
 
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-2">
