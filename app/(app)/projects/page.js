@@ -4,6 +4,8 @@ import Title from "@/app/_components/_common/Title";
 
 import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
 
+import CardLarge2 from "@/app/_components/_common/CardLarge2";
+
 function ProjectsPage() {
   return (
     <div className="flex flex-col gap-8">
@@ -22,6 +24,7 @@ function ProjectsPage() {
       </div>
 
       <CardLarge />
+      <CardLarge2 />
     </div>
   );
 }
