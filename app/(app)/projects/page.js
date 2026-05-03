@@ -2,6 +2,7 @@ import Button from "@/app/_components/_common/Button";
 import CardGrid from "@/app/_components/_common/CardGrid";
 import CardLarge from "@/app/_components/_common/CardLarge";
 import Title from "@/app/_components/_common/Title";
+import Pagination from "@/app/_components/_features/_projects/Pagination";
 import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
 
 const projects = [
@@ -48,22 +49,26 @@ function ProjectsPage() {
         </div>
       </div>
 
-      <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
-        {projects.map((p) => {
-          return (
-            <CardLarge
-              key={p.title}
-              title={p.title}
-              updatedAt={p.updatedAt}
-              description={p.description}
-              tags={p.tags}
-              image={p.image}
-              alt={p.alt}
-              status={p.status}
-            />
-          );
-        })}
-      </CardGrid>
+      <div className="flex flex-col gap-4">
+        <Pagination tabs={["All", "Published", "Draft", "Archived"]} />
+
+        <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
+          {projects.map((p) => {
+            return (
+              <CardLarge
+                key={p.title}
+                title={p.title}
+                updatedAt={p.updatedAt}
+                description={p.description}
+                tags={p.tags}
+                image={p.image}
+                alt={p.alt}
+                status={p.status}
+              />
+            );
+          })}
+        </CardGrid>
+      </div>
     </div>
   );
 }
