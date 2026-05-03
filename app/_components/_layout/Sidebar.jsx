@@ -54,6 +54,7 @@ function Sidebar({ children }) {
           <Button
             className="btn-accent mx-5 is-drawer-close:hidden"
             icon={"/icons/plus.svg"}
+            href="/projects/new"
           >
             New Project
           </Button>

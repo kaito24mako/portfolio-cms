@@ -4,6 +4,7 @@ import Button from "./Button";
 import GithubIcon from "../_images/_icons/GithubIcon";
 import WebIcon from "../_images/_icons/WebIcon";
 import EditIcon from "../_images/_icons/EditIcon";
+import Link from "next/link";
 
 function CardLarge({
   title,
@@ -55,7 +56,7 @@ function CardLarge({
         </div>
 
         {/* edit button */}
-        <Button className="btn-sm" icon={EditIcon}>
+        <Button className="btn-sm" icon={EditIcon} href="/projects/edit">
           Edit
         </Button>
       </div>

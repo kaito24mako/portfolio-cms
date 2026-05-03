@@ -4,7 +4,7 @@ import Button from "./Button";
 
 function CardSmall({ imgAlt = "", title, description, btnText = "" }) {
   return (
-    <div className="card image-full shadow-md card-sm">
+    <div className="card image-full shadow-md card-sm h-50 md:h-60">
       <figure className="relative min-h-45">
         <Image
           src={bg}

@@ -21,28 +21,10 @@ function DashboardPage() {
       {/* projects cards */}
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg font-medium">Your Portfolio</h2>
+          <h2 className="text-lg font-medium">Recent Projects</h2>
           <span className="text-sm">Last updated: 2 hours ago</span>
         </div>
-        <CardGrid className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
-          <CardSmall
-            imgAlt="Book Library project"
-            title="Book Library"
-            description="Description of the project"
-            btnText="Edit Project"
-          />
-          <CardSmall
-            imgAlt="Book Library project"
-            title="Book Library"
-            description="Description of the project"
-            btnText="Edit Project"
-          />
-          <CardSmall
-            imgAlt="Book Library project"
-            title="Book Library"
-            description="Description of the project"
-            btnText="Edit Project"
-          />
+        <CardGrid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           <CardSmall
             imgAlt="Book Library project"
             title="Book Library"

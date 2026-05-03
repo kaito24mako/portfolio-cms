@@ -38,7 +38,11 @@ function ProjectsPage() {
         />
         <div className="flex gap-5">
           <Button icon={FilterIcon}>Filter</Button>
-          <Button icon="/icons/plus.svg" className="btn-accent px-8">
+          <Button
+            icon="/icons/plus.svg"
+            className="btn-accent px-8"
+            href="/projects/new"
+          >
             New Project
           </Button>
         </div>
