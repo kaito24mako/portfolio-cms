@@ -4,7 +4,6 @@ import Button from "../Button";
 import GithubIcon from "../../_images/_icons/GithubIcon";
 import WebIcon from "../../_images/_icons/WebIcon";
 import EditIcon from "../../_images/_icons/EditIcon";
-import Link from "next/link";
 
 function LargeCard({
   title,
@@ -25,9 +24,9 @@ function LargeCard({
             <Badge
               text={status}
               className={
-                (status === "Active" && "badge-success") ||
+                (status === "Published" && "badge-success") ||
                 (status === "Draft" && "badge-warning") ||
-                (status === "Archived" && "badge-error")
+                (status === "Archived" && "badge-info")
               }
             />
           </div>

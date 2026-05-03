@@ -7,6 +7,10 @@ import GithubIcon from "@/app/_components/_images/_icons/GithubIcon";
 import Grid from "@/app/_components/_common/Grid";
 import Button from "@/app/_components/_common/Button";
 
+export const metadata = {
+  title: "New Project",
+};
+
 function NewProjectsPage() {
   return (
     <div className="flex flex-col gap-8">
@@ -74,7 +78,7 @@ function NewProjectsPage() {
         </div>
       </Grid>
 
-      <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm md:flex-row">
+      <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm sm:flex-row">
         <Button
           type="submit"
           className="btn-ghost shadow-none! btn-sm lg:btn-md"

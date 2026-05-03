@@ -4,6 +4,11 @@ import LargeCard from "@/app/_components/_common/_card/LargeCard";
 import Title from "@/app/_components/_common/Title";
 import Pagination from "@/app/_components/_features/_projects/Pagination";
 import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
+import SearchForm from "@/app/_components/_common/_form/SearchForm";
+
+export const metadata = {
+  title: "Projects",
+};
 
 const projects = [
   {
@@ -14,7 +19,7 @@ const projects = [
     tags: ["React", "SASS", "JavaScript"],
     image: "/placeholders/pokemon.png",
     alt: "Catch Em' All! project",
-    status: "Active",
+    status: "Published",
   },
   {
     title: "Book Library",
@@ -38,7 +43,7 @@ function ProjectsPage() {
           subHeading="Create and manage your stunning projects"
         />
         <div className="flex gap-5">
-          <Button icon={FilterIcon}>Filter</Button>
+          <SearchForm />
           <Button
             icon="/icons/plus.svg"
             className="btn-accent px-8"
