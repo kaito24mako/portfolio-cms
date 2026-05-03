@@ -16,7 +16,7 @@ function NewProjectsPage() {
         subHeading="Fill in the details of your latest work"
       />
 
-      <Grid className="grid-cols-5">
+      <Grid className="grid-cols-1 sm:grid-cols-5">
         {/* left grid items */}
         <div className="col-span-3 flex flex-col gap-3">
           <EditForm title="Title">
@@ -74,17 +74,29 @@ function NewProjectsPage() {
         </div>
       </Grid>
 
-      <div className="flex gap-5 shadow-sm p-4 justify-end bg-base-200">
-        <Button type="submit" className="btn-ghost shadow-none!">
+      <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm md:flex-row">
+        <Button
+          type="submit"
+          className="btn-ghost shadow-none! btn-sm lg:btn-md"
+        >
           Delete
         </Button>
-        <Button type="submit" className="btn-info">
+        <Button
+          type="submit"
+          className="btn-info shadow-none! btn-sm lg:btn-md"
+        >
           Save as Unpublished
         </Button>
-        <Button type="submit" className="btn-warning shadow-none!">
+        <Button
+          type="submit"
+          className="btn-warning shadow-none! btn-sm lg:btn-md"
+        >
           Save as Draft
         </Button>
-        <Button type="submit" className="btn-success shadow-none!">
+        <Button
+          type="submit"
+          className="btn-success shadow-none! btn-sm lg:btn-md"
+        >
           Publish to Portfolio
         </Button>
       </div>
