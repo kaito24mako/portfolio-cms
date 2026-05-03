@@ -4,51 +4,90 @@ import Badge from "@/app/_components/_common/Badge";
 
 import WebIcon from "@/app/_components/_images/_icons/WebIcon";
 import GithubIcon from "@/app/_components/_images/_icons/GithubIcon";
+import Grid from "@/app/_components/_common/Grid";
+import Button from "@/app/_components/_common/Button";
 
 function NewProjectsPage() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-8">
       <Title
         font="font-heading"
         heading="Create New Project"
         subHeading="Fill in the details of your latest work"
       />
 
-      <EditForm title="Title">
-        <input type="text" placeholder="Enter a title..." className="w-full" />
-      </EditForm>
-      <EditForm title="Description">
-        <textarea
-          placeholder="Enter a brief description..."
-          className="w-full"
-        />
-      </EditForm>
-      <EditForm title="Image">
-        <input
-          type="text"
-          placeholder="Upload a thumbnail..."
-          className="w-full"
-        />
-      </EditForm>
-      <EditForm title="Tags">
-        <div className="flex gap-2">
-          <Badge text="Next.js" className="badge-soft badge-primary" />
-          <Badge text="SQLite" className="badge-soft badge-primary" />
-          <Badge text="Tailwind CSS" className="badge-soft badge-primary" />
+      <Grid className="grid-cols-5">
+        {/* left grid items */}
+        <div className="col-span-3 flex flex-col gap-3">
+          <EditForm title="Title">
+            <input
+              type="text"
+              placeholder="Enter a title..."
+              className="w-full focus:outline-0"
+            />
+          </EditForm>
+          <EditForm title="Description">
+            <textarea
+              placeholder="Enter a brief description..."
+              className="w-full focus:outline-0"
+              rows={8}
+            />
+          </EditForm>
+          <EditForm title="Image">
+            <input
+              type="text"
+              placeholder="Upload a thumbnail..."
+              className="w-full focus:outline-0"
+            />
+          </EditForm>
         </div>
-      </EditForm>
-      <EditForm title="Site URL">
-        <div className="flex items-center gap-2">
-          <WebIcon />
-          <input type="url" placeholder="https://example.com" />
+
+        {/* right grid items */}
+        <div className="col-span-2 flex flex-col gap-3">
+          <EditForm title="Tags">
+            <div className="flex gap-2">
+              <Badge text="Next.js" className="badge-soft badge-primary" />
+              <Badge text="SQLite" className="badge-soft badge-primary" />
+              <Badge text="Tailwind CSS" className="badge-soft badge-primary" />
+            </div>
+          </EditForm>
+          <EditForm title="Site URL">
+            <div className="flex items-center gap-2">
+              <WebIcon />
+              <input
+                type="url"
+                placeholder="https://example.com"
+                className="w-full focus:outline-0"
+              />
+            </div>
+          </EditForm>
+          <EditForm title="GitHub URL">
+            <div className="flex items-center gap-2">
+              <GithubIcon />
+              <input
+                type="url"
+                placeholder="https://github.com/example"
+                className="w-full focus:outline-0"
+              />
+            </div>
+          </EditForm>
         </div>
-      </EditForm>
-      <EditForm title="GitHub URL">
-        <div className="flex items-center gap-2">
-          <GithubIcon />
-          <input type="url" placeholder="https://github.com/example" />
-        </div>
-      </EditForm>
+      </Grid>
+
+      <div className="flex gap-5 shadow-sm p-4 justify-end bg-base-200">
+        <Button type="submit" className="btn-ghost shadow-none!">
+          Delete
+        </Button>
+        <Button type="submit" className="btn-info">
+          Save as Unpublished
+        </Button>
+        <Button type="submit" className="btn-warning shadow-none!">
+          Save as Draft
+        </Button>
+        <Button type="submit" className="btn-success shadow-none!">
+          Publish to Portfolio
+        </Button>
+      </div>
     </div>
   );
 }

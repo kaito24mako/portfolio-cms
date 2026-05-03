@@ -1,5 +1,5 @@
 function Grid({ children, className = "" }) {
-  return <div className={`grid ${className} gap-4`}>{children}</div>;
+  return <div className={`grid gap-4 ${className}`}>{children}</div>;
 }
 
 export default Grid;
