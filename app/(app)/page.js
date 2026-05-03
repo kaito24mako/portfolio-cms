@@ -1,5 +1,5 @@
-import CardGrid from "../_components/_common/CardGrid";
-import CardSmall from "../_components/_common/CardSmall";
+import CardGrid from "../_components/_common/Grid";
+import SmallCard from "../_components/_common/_card/SmallCard";
 import Statistic from "../_components/_common/Statistic";
 import Title from "../_components/_common/Title";
 import ActivityTimeline from "../_components/_features/_activity/ActivityTimeline";
@@ -25,19 +25,19 @@ function DashboardPage() {
           <span className="text-sm">Last updated: 2 hours ago</span>
         </div>
         <CardGrid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          <CardSmall
+          <SmallCard
             imgAlt="Book Library project"
             title="Book Library"
             description="Description of the project"
             btnText="Edit Project"
           />
-          <CardSmall
+          <SmallCard
             imgAlt="Book Library project"
             title="Book Library"
             description="Description of the project"
             btnText="Edit Project"
           />
-          <CardSmall
+          <SmallCard
             imgAlt="Book Library project"
             title="Book Library"
             description="Description of the project"

@@ -1,6 +1,6 @@
 import Button from "@/app/_components/_common/Button";
-import CardGrid from "@/app/_components/_common/CardGrid";
-import CardLarge from "@/app/_components/_common/CardLarge";
+import CardGrid from "@/app/_components/_common/Grid";
+import LargeCard from "@/app/_components/_common/_card/LargeCard";
 import Title from "@/app/_components/_common/Title";
 import Pagination from "@/app/_components/_features/_projects/Pagination";
 import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
@@ -55,7 +55,7 @@ function ProjectsPage() {
         <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
           {projects.map((p) => {
             return (
-              <CardLarge
+              <LargeCard
                 key={p.title}
                 title={p.title}
                 updatedAt={p.updatedAt}

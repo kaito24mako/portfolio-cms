@@ -1,8 +1,8 @@
 import Image from "next/image";
 import bg from "@/public/placeholders/library.png";
-import Button from "./Button";
+import Button from "../Button";
 
-function CardSmall({ imgAlt = "", title, description, btnText = "" }) {
+function SmallCard({ imgAlt = "", title, description, btnText = "" }) {
   return (
     <div className="card image-full shadow-md card-sm h-50 md:h-60">
       <figure className="relative min-h-45">
@@ -25,4 +25,4 @@ function CardSmall({ imgAlt = "", title, description, btnText = "" }) {
   );
 }
 
-export default CardSmall;
+export default SmallCard;

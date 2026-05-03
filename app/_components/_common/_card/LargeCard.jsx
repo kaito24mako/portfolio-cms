@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Badge from "./Badge";
-import Button from "./Button";
-import GithubIcon from "../_images/_icons/GithubIcon";
-import WebIcon from "../_images/_icons/WebIcon";
-import EditIcon from "../_images/_icons/EditIcon";
+import Badge from "../Badge";
+import Button from "../Button";
+import GithubIcon from "../../_images/_icons/GithubIcon";
+import WebIcon from "../../_images/_icons/WebIcon";
+import EditIcon from "../../_images/_icons/EditIcon";
 import Link from "next/link";
 
-function CardLarge({
+function LargeCard({
   title,
   updatedAt,
   description,
@@ -77,4 +77,4 @@ function CardLarge({
   );
 }
 
-export default CardLarge;
+export default LargeCard;

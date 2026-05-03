@@ -46,15 +46,15 @@ The Pages Router does **not** use `app/layout.js` or route groups. Instead, it u
 
 Use this mapping when rebuilding:
 
-| Current App Router file | Pages Router equivalent |
-| --- | --- |
-| `app/layout.js` | `pages/_app.js` plus optional defaults in `pages/_document.js` |
-| `app/(app)/layout.js` | shared app-shell layout component, wrapped around selected pages |
-| `app/(app)/page.js` | `pages/index.js` |
-| `app/(app)/projects/page.js` | `pages/projects/index.js` or `pages/projects.js` |
-| `app/(auth)/login/page.js` | `pages/login.js` |
-| `export const metadata = ...` | `<Head>` in each page |
-| `app/_styles/globals.css` | `styles/globals.css` or keep same path and import in `_app.js` |
+| Current App Router file       | Pages Router equivalent                                          |
+| ----------------------------- | ---------------------------------------------------------------- |
+| `app/layout.js`               | `pages/_app.js` plus optional defaults in `pages/_document.js`   |
+| `app/(app)/layout.js`         | shared app-shell layout component, wrapped around selected pages |
+| `app/(app)/page.js`           | `pages/index.js`                                                 |
+| `app/(app)/projects/page.js`  | `pages/projects/index.js` or `pages/projects.js`                 |
+| `app/(auth)/login/page.js`    | `pages/login.js`                                                 |
+| `export const metadata = ...` | `<Head>` in each page                                            |
+| `app/_styles/globals.css`     | `styles/globals.css` or keep same path and import in `_app.js`   |
 
 ## 3. Recommended New Project Setup
 
@@ -145,7 +145,9 @@ Example:
 @import "tailwindcss";
 
 @plugin 'daisyui' {
-  themes: nord --default, dark --prefersdark;
+  themes:
+    nord --default,
+    dark --prefersdark;
 }
 
 @theme {
@@ -153,11 +155,11 @@ Example:
   --font-primary: var(--font-geist-sans);
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --color-base-300: var(--color-base-200);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --color-base-300: oklch(15% 0 0);
 }
 ```
@@ -280,7 +282,7 @@ The cleanest Pages Router pattern is `getLayout`.
 import Head from "next/head";
 import AppShell from "@/layouts/AppShell";
 import CardGrid from "@/components/common/CardGrid";
-import CardSmall from "@/components/common/CardSmall";
+import SmallCard from "@/components/common/SmallCard";
 import Statistic from "@/components/common/Statistic";
 import Title from "@/components/common/Title";
 import ActivityTimeline from "@/components/features/activity/ActivityTimeline";
@@ -296,9 +298,7 @@ export default function DashboardPage() {
         />
       </Head>
 
-      <div className="flex flex-col gap-8">
-        {/* page content */}
-      </div>
+      <div className="flex flex-col gap-8">{/* page content */}</div>
     </>
   );
 }
@@ -315,7 +315,7 @@ import Head from "next/head";
 import AppShell from "@/layouts/AppShell";
 import Button from "@/components/common/Button";
 import CardGrid from "@/components/common/CardGrid";
-import CardLarge from "@/components/common/CardLarge";
+import LargeCard from "@/components/common/LargeCard";
 import Title from "@/components/common/Title";
 import FilterIcon from "@/components/images/icons/FilterIcon";
 
@@ -330,9 +330,7 @@ export default function ProjectsPage() {
         />
       </Head>
 
-      <div className="flex flex-col gap-8">
-        {/* page content */}
-      </div>
+      <div className="flex flex-col gap-8">{/* page content */}</div>
     </>
   );
 }
@@ -387,7 +385,7 @@ import Head from "next/head";
     name="description"
     content="A portfolio CMS for easy customisation of portfolios."
   />
-</Head>
+</Head>;
 ```
 
 Practical rule:
@@ -449,14 +447,14 @@ Your current component folders are valid, but they are very App-Router-specific 
 
 In the new project, I recommend flattening the naming slightly:
 
-| Current | Recommended new location |
-| --- | --- |
-| `app/_components/_common` | `components/common` |
+| Current                               | Recommended new location       |
+| ------------------------------------- | ------------------------------ |
+| `app/_components/_common`             | `components/common`            |
 | `app/_components/_features/_activity` | `components/features/activity` |
-| `app/_components/_features/_layout` | `components/features/layout` |
-| `app/_components/_images/_icons` | `components/images/icons` |
-| `app/_components/_images/_sidebar` | `components/images/sidebar` |
-| `app/_components/_layout` | `components/layout` |
+| `app/_components/_features/_layout`   | `components/features/layout`   |
+| `app/_components/_images/_icons`      | `components/images/icons`      |
+| `app/_components/_images/_sidebar`    | `components/images/sidebar`    |
+| `app/_components/_layout`             | `components/layout`            |
 
 This is optional, but it will make the Pages Router project easier to read.
 
@@ -491,7 +489,7 @@ What to check:
 - import paths
 - any references to old folder names
 
-### `CardLarge.jsx`
+### `LargeCard.jsx`
 
 This should also migrate cleanly. `next/image` works in the Pages Router the same way for your current usage.
 
@@ -674,4 +672,3 @@ That approach is enough for this repo because the current app does not use the m
 - Pages Router overview: https://nextjs.org/docs/pages
 - Custom App (`pages/_app.js`): https://nextjs.org/docs/pages/building-your-application/routing/custom-app
 - Pages and layouts: https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
-
