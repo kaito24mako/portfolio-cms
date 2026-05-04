@@ -6,34 +6,46 @@ import Pagination from "@/components/_features/_projects/Pagination";
 import FilterIcon from "@/components/_images/_icons/FilterIcon";
 import SearchForm from "@/components/_common/_form/SearchForm";
 
+import { getAllProjects } from "@/controllers/projects";
+
 export const metadata = {
   title: "Projects",
 };
 
-const projects = [
+const projectsPlaceholders = [
   {
-    title: "Catch Em' All!",
-    updatedAt: "Feb 24, 2026",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adlaboriosam voluptatum consectetur reiciendis beatae.",
+    updated: "Feb 24, 2026",
     tags: ["React", "SASS", "JavaScript"],
     image: "/placeholders/pokemon.png",
-    alt: "Catch Em' All! project",
+    // alt: "Catch Em' All! project",
     status: "Published",
+    alt: "Catch Em All!",
   },
   {
-    title: "Book Library",
-    updatedAt: "Dec 05, 2025",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, adlaboriosam voluptatum consectetur reiciendis beatae.",
+    updated: "Dec 05, 2025",
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
-    alt: "Book Library project",
     status: "Draft",
+    alt: "Book Library",
+  },
+  {
+    updated: "Nov 18, 2025",
+    tags: ["Next.js", "Tailwind CSS", "SQLite"],
+    image: "/placeholders/library.png",
+    status: "Archived",
+    alt: "Book Library",
   },
 ];
 
-function ProjectsPage() {
+async function ProjectsPage() {
+  const projects = await getAllProjects();
+
+  // merging projects api with placeholders for testing
+  const mergedProjects = projects?.map((project, index) => ({
+    ...project.dataValues,
+    ...projectsPlaceholders[index],
+  }));
+
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end sm:gap-0">
@@ -58,17 +70,17 @@ function ProjectsPage() {
         <Pagination tabs={["All", "Published", "Draft", "Archived"]} />
 
         <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
-          {projects.map((p) => {
+          {mergedProjects?.map((p) => {
             return (
               <LargeCard
-                key={p.title}
+                key={p.id}
                 title={p.title}
-                updatedAt={p.updatedAt}
                 description={p.description}
+                updated={p.updated}
                 tags={p.tags}
                 image={p.image}
-                alt={p.alt}
                 status={p.status}
+                alt={p.alt}
               />
             );
           })}

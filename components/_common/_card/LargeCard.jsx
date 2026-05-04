@@ -5,15 +5,7 @@ import GithubIcon from "../../_images/_icons/GithubIcon";
 import WebIcon from "../../_images/_icons/WebIcon";
 import EditIcon from "../../_images/_icons/EditIcon";
 
-function LargeCard({
-  title,
-  updatedAt,
-  description,
-  tags,
-  image,
-  alt,
-  status,
-}) {
+function LargeCard({ title, updated, description, tags, image, status, alt }) {
   return (
     <div className="flex flex-col md:flex-row w-fit rounded-sm overflow-hidden shadow-md bg-base-300 h-max">
       <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm">
@@ -33,7 +25,7 @@ function LargeCard({
 
           {/* updatedAt */}
           <p className="text-xs sm:text-sm opacity-87">
-            Last edited: {updatedAt}
+            Last edited: {updated}
           </p>
 
           {/* project description */}
@@ -42,7 +34,7 @@ function LargeCard({
           </p>
 
           <div className="flex gap-2">
-            {tags.map((t, index) => {
+            {tags?.map((t, index) => {
               return (
                 <Badge
                   text={t}
