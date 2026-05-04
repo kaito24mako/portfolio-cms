@@ -24,7 +24,7 @@ This current repo uses the **App Router** structure:
 - `app/(app)/projects/page.js`
 - `app/(auth)/login/page.js`
 - `app/_styles/globals.css`
-- `app/_components/...`
+- `app/components/...`
 
 The important App Router features currently in use are:
 
@@ -109,7 +109,7 @@ portfolio-cms-pages/
 Recommended reasoning:
 
 - Put route files in `pages/`
-- Move reusable UI out of `app/_components/` into `components/`
+- Move reusable UI out of `app/components/` into `components/`
 - Move the nested app layout into a normal component, for example `layouts/AppShell.jsx`
 - Keep images and icons in `public/`
 - Keep global styles in `styles/globals.css`
@@ -118,10 +118,10 @@ Recommended reasoning:
 
 These can mostly be copied into the new project with path cleanup:
 
-- `app/_components/_common/*`
-- `app/_components/_features/*`
-- `app/_components/_images/*`
-- `app/_components/_layout/*`
+- `app/components/_common/*`
+- `app/components/_features/*`
+- `app/components/_images/*`
+- `app/components/_layout/*`
 - `public/*`
 - the CSS content from `app/_styles/globals.css`
 
@@ -412,7 +412,7 @@ Do **not** create folders named `(app)` or `(auth)` in the Pages Router project.
 Your current project mixes relative imports and alias imports such as:
 
 ```jsx
-import Button from "@/app/_components/_common/Button";
+import Button from "@/app/components/_common/Button";
 ```
 
 In the new project, those `@/app/...` paths should be changed to match the new structure, for example:
@@ -440,21 +440,21 @@ You already use the alias pattern, so this will keep migration simple.
 
 Your current component folders are valid, but they are very App-Router-specific in naming:
 
-- `app/_components/_common`
-- `app/_components/_features`
-- `app/_components/_images`
-- `app/_components/_layout`
+- `app/components/_common`
+- `app/components/_features`
+- `app/components/_images`
+- `app/components/_layout`
 
 In the new project, I recommend flattening the naming slightly:
 
-| Current                               | Recommended new location       |
-| ------------------------------------- | ------------------------------ |
-| `app/_components/_common`             | `components/common`            |
-| `app/_components/_features/_activity` | `components/features/activity` |
-| `app/_components/_features/_layout`   | `components/features/layout`   |
-| `app/_components/_images/_icons`      | `components/images/icons`      |
-| `app/_components/_images/_sidebar`    | `components/images/sidebar`    |
-| `app/_components/_layout`             | `components/layout`            |
+| Current                              | Recommended new location       |
+| ------------------------------------ | ------------------------------ |
+| `app/components/_common`             | `components/common`            |
+| `app/components/_features/_activity` | `components/features/activity` |
+| `app/components/_features/_layout`   | `components/features/layout`   |
+| `app/components/_images/_icons`      | `components/images/icons`      |
+| `app/components/_images/_sidebar`    | `components/images/sidebar`    |
+| `app/components/_layout`             | `components/layout`            |
 
 This is optional, but it will make the Pages Router project easier to read.
 

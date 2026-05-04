@@ -1,5 +1,5 @@
 // import styles
-import "@/app/_styles/globals.css";
+import "@/styles/globals.css";
 
 // fonts
 import { Geist, Poiret_One } from "next/font/google";

@@ -1,8 +1,8 @@
-import CardGrid from "../_components/_common/Grid";
-import SmallCard from "../_components/_common/_card/SmallCard";
-import Statistic from "../_components/_common/Statistic";
-import Title from "../_components/_common/Title";
-import ActivityTimeline from "../_components/_features/_activity/ActivityTimeline";
+import CardGrid from "../../components/_common/Grid";
+import SmallCard from "../../components/_common/_card/SmallCard";
+import Statistic from "../../components/_common/Statistic";
+import Title from "../../components/_common/Title";
+import ActivityTimeline from "../../components/_features/_activity/ActivityTimeline";
 
 export const metadata = {
   title: "Dashboard",

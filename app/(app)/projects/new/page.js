@@ -1,11 +1,11 @@
-import EditForm from "@/app/_components/_common/_form/EditForm";
-import Title from "@/app/_components/_common/Title";
-import Badge from "@/app/_components/_common/Badge";
+import EditForm from "@/components/_common/_form/EditForm";
+import Title from "@/components/_common/Title";
+import Badge from "@/components/_common/Badge";
 
-import WebIcon from "@/app/_components/_images/_icons/WebIcon";
-import GithubIcon from "@/app/_components/_images/_icons/GithubIcon";
-import Grid from "@/app/_components/_common/Grid";
-import Button from "@/app/_components/_common/Button";
+import WebIcon from "@/components/_images/_icons/WebIcon";
+import GithubIcon from "@/components/_images/_icons/GithubIcon";
+import Grid from "@/components/_common/Grid";
+import Button from "@/components/_common/Button";
 
 export const metadata = {
   title: "New Project",

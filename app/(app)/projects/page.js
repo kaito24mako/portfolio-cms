@@ -1,10 +1,10 @@
-import Button from "@/app/_components/_common/Button";
-import CardGrid from "@/app/_components/_common/Grid";
-import LargeCard from "@/app/_components/_common/_card/LargeCard";
-import Title from "@/app/_components/_common/Title";
-import Pagination from "@/app/_components/_features/_projects/Pagination";
-import FilterIcon from "@/app/_components/_images/_icons/FilterIcon";
-import SearchForm from "@/app/_components/_common/_form/SearchForm";
+import Button from "@/components/_common/Button";
+import CardGrid from "@/components/_common/Grid";
+import LargeCard from "@/components/_common/_card/LargeCard";
+import Title from "@/components/_common/Title";
+import Pagination from "@/components/_features/_projects/Pagination";
+import FilterIcon from "@/components/_images/_icons/FilterIcon";
+import SearchForm from "@/components/_common/_form/SearchForm";
 
 export const metadata = {
   title: "Projects",
