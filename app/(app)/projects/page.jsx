@@ -3,10 +3,9 @@ import CardGrid from "@/components/_common/Grid";
 import LargeCard from "@/components/_common/_card/LargeCard";
 import Title from "@/components/_common/Title";
 import Pagination from "@/components/_features/_projects/Pagination";
-import FilterIcon from "@/components/_images/_icons/FilterIcon";
 import SearchForm from "@/components/_common/_form/SearchForm";
 
-import { getAllProjects } from "@/controllers/projects";
+// import { getAllProjects } from "@/controllers/projects";
 
 export const metadata = {
   title: "Projects",
@@ -14,7 +13,6 @@ export const metadata = {
 
 const projectsPlaceholders = [
   {
-    updated: "Feb 24, 2026",
     tags: ["React", "SASS", "JavaScript"],
     image: "/placeholders/pokemon.png",
     // alt: "Catch Em' All! project",
@@ -22,14 +20,12 @@ const projectsPlaceholders = [
     alt: "Catch Em All!",
   },
   {
-    updated: "Dec 05, 2025",
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
     status: "Draft",
     alt: "Book Library",
   },
   {
-    updated: "Nov 18, 2025",
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
     status: "Archived",
@@ -38,11 +34,17 @@ const projectsPlaceholders = [
 ];
 
 async function ProjectsPage() {
-  const projects = await getAllProjects();
+  // const projects = await getAllProjects();
+  // * GET all projects
+  const res = await fetch("http://localhost:3000/api/projects", {
+    cache: "no-store",
+  });
+
+  const projects = await res.json();
 
   // merging projects api with placeholders for testing
   const mergedProjects = projects?.map((project, index) => ({
-    ...project.dataValues,
+    ...project,
     ...projectsPlaceholders[index],
   }));
 
@@ -76,7 +78,7 @@ async function ProjectsPage() {
                 key={p.id}
                 title={p.title}
                 description={p.description}
-                updated={p.updated}
+                updatedAt={p.updatedAt}
                 tags={p.tags}
                 image={p.image}
                 status={p.status}
