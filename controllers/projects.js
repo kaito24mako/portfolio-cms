@@ -31,7 +31,7 @@ export async function postProject(data) {
 // * PUT
 export async function putProject(id, data) {
   // const id = parseInt(req.params.id);
-  const project = await Project.findByPk(id);
+  const project = await Project.findByPk(parseInt(id));
 
   if (!project) {
     throw new Error("Project not found");
@@ -55,7 +55,7 @@ export async function putProject(id, data) {
 
 // * DELETE
 export async function deleteProject(id) {
-  const project = await Project.findByPk(id);
+  const project = await Project.findByPk(parseInt(id));
 
   if (!project) {
     throw new Error("Project not found");
