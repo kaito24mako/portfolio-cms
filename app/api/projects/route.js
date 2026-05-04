@@ -1,9 +1,13 @@
 import { getAllProjects, postProject } from "@/controllers/projects";
+import { initDb } from "@/lib/initDb";
 
 // * GET /api/projects
 export async function GET() {
   try {
+    await initDb();
+
     const projects = await getAllProjects();
+
     return Response.json(projects);
   } catch (err) {
     return new Response(err.message, { status: 500 });
@@ -13,6 +17,8 @@ export async function GET() {
 // * POST /api/projects
 export async function POST(req) {
   try {
+    await initDb();
+
     const body = await req.json();
     const result = await postProject(body);
 

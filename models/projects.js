@@ -1,10 +1,10 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("@/utils/connection");
+import { DataTypes } from "sequelize";
+import sequelize from "@/utils/connection";
 
-const Project = sequelize.define("Projects", {
+const Project = sequelize.define("Project", {
   // ? how to create foreign key of userId
   title: {
-    type: DataTypes.CHAR,
+    type: DataTypes.STRING,
   },
   description: {
     type: DataTypes.STRING,
@@ -27,4 +27,4 @@ const Project = sequelize.define("Projects", {
   },
 });
 
-module.exports = { Project };
+export default Project;

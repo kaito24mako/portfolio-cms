@@ -1,15 +1,15 @@
-const { Project } = require("@/models/projects");
+import Project from "@/models/projects";
 
 // in next.js, controllers shouldnt know about requests/responses (like req.params, req.body, res.send),
 // it should only return data or throw errors
 
 // * GET
-async function getAllProjects() {
+export async function getAllProjects() {
   return await Project.findAll();
 }
 
-async function getProject(id) {
-  const project = await Project.findByPk(id);
+export async function getProject(id) {
+  const project = await Project.findByPk(parseInt(id));
 
   if (!project) {
     throw new Error("Project not found");
@@ -18,14 +18,10 @@ async function getProject(id) {
 }
 
 // * POST
-async function postProject(data) {
+export async function postProject(data) {
   // const project = await Project.create(req.body);
   const project = await Project.create(data);
 
-  // res.send({
-  //   message: `Project ${project.title} created successfully`,
-  //   project: project,
-  // });
   return {
     message: `Project ${project.title} created successfully`,
     project,
@@ -33,7 +29,7 @@ async function postProject(data) {
 }
 
 // * PUT
-async function putProject(id, data) {
+export async function putProject(id, data) {
   // const id = parseInt(req.params.id);
   const project = await Project.findByPk(id);
 
@@ -58,7 +54,7 @@ async function putProject(id, data) {
 }
 
 // * DELETE
-async function deleteProject(id) {
+export async function deleteProject(id) {
   const project = await Project.findByPk(id);
 
   if (!project) {
@@ -70,11 +66,3 @@ async function deleteProject(id) {
     message: `Project ${project.title} deleted successfully`,
   };
 }
-
-module.exports = {
-  getAllProjects,
-  getProject,
-  postProject,
-  putProject,
-  deleteProject,
-};
