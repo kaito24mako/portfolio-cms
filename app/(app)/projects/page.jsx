@@ -15,21 +15,14 @@ const projectsPlaceholders = [
   {
     tags: ["React", "SASS", "JavaScript"],
     image: "/placeholders/pokemon.png",
-    // alt: "Catch Em' All! project",
-    status: "Published",
-    alt: "Catch Em All!",
   },
   {
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
-    status: "Draft",
-    alt: "Book Library",
   },
   {
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
-    status: "Archived",
-    alt: "Book Library",
   },
 ];
 
@@ -47,6 +40,8 @@ async function ProjectsPage() {
     ...project,
     ...projectsPlaceholders[index],
   }));
+
+  console.log(mergedProjects);
 
   return (
     <div className="flex flex-col gap-8">
@@ -78,11 +73,15 @@ async function ProjectsPage() {
                 key={p.id}
                 title={p.title}
                 description={p.description}
+                siteUrl={p.siteUrl}
+                githubUrl={p.githubUrl}
+                published={p.published}
+                draft={p.draft}
+                archived={p.archived}
                 updatedAt={p.updatedAt}
                 tags={p.tags}
                 image={p.image}
-                status={p.status}
-                alt={p.alt}
+                alt={p.title}
               />
             );
           })}

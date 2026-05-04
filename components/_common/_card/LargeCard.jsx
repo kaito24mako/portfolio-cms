@@ -7,11 +7,15 @@ import EditIcon from "../../_images/_icons/EditIcon";
 
 function LargeCard({
   title,
-  updatedAt,
   description,
-  tags,
+  siteUrl = "",
+  githubUrl = "",
+  updatedAt = "",
+  published = false,
+  draft = false,
+  archived = false,
+  tags = [],
   image,
-  status,
   alt = "",
 }) {
   return (
@@ -22,11 +26,15 @@ function LargeCard({
           <div className="flex items-center gap-2 sm:gap-4">
             <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
             <Badge
-              text={status}
+              text={
+                (published && "Published") ||
+                (draft && "Draft") ||
+                (archived && "Archived")
+              }
               className={
-                (status === "Published" && "badge-success") ||
-                (status === "Draft" && "badge-warning") ||
-                (status === "Archived" && "badge-info")
+                (published && "badge-success") ||
+                (draft && "badge-warning") ||
+                (archived && "badge-info")
               }
             />
           </div>
@@ -42,15 +50,16 @@ function LargeCard({
           </p>
 
           <div className="flex gap-2">
-            {tags?.map((t, index) => {
-              return (
-                <Badge
-                  text={t}
-                  className="badge-soft badge-primary"
-                  key={index}
-                />
-              );
-            })}
+            {tags.length > 0 &&
+              tags.map((t, index) => {
+                return (
+                  <Badge
+                    text={t}
+                    className="badge-soft badge-primary"
+                    key={index}
+                  />
+                );
+              })}
           </div>
         </div>
 
@@ -61,13 +70,13 @@ function LargeCard({
       </div>
 
       <div className="relative h-full shrink-0 self-stretch overflow-hidden">
-        <Image src={image} width={510} height={510} alt={alt} />
+        {image && <Image src={image} width={510} height={510} alt={alt} />}
 
         <div className="absolute bottom-3 flex justify-between gap-3 w-full px-3">
-          <Button className="btn-sm" icon={WebIcon}>
+          <Button className="btn-sm" icon={WebIcon} href={siteUrl}>
             View Site
           </Button>
-          <Button className="btn-sm" icon={GithubIcon}>
+          <Button className="btn-sm" icon={GithubIcon} href={githubUrl}>
             View Code
           </Button>
         </div>

@@ -1,17 +1,36 @@
 import EditForm from "@/components/_common/_form/EditForm";
 import Title from "@/components/_common/Title";
 import Badge from "@/components/_common/Badge";
+import Grid from "@/components/_common/Grid";
+import Button from "@/components/_common/Button";
 
 import WebIcon from "@/components/_images/_icons/WebIcon";
 import GithubIcon from "@/components/_images/_icons/GithubIcon";
-import Grid from "@/components/_common/Grid";
-import Button from "@/components/_common/Button";
 
 export const metadata = {
   title: "New Project",
 };
 
-function NewProjectsPage() {
+async function NewProjectsPage() {
+  // * POST
+  const res = await fetch("http://localhost:3000/api/projects", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: "My Project",
+      description: "Test project",
+      siteUrl: "https://example.com",
+      githubUrl: "https://github.com/me/example",
+      published: true,
+      draft: false,
+      archived: false,
+    }),
+  });
+
+  const project = await res.json();
+
   return (
     <div className="flex flex-col gap-8">
       <Title
