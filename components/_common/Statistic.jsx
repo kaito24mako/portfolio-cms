@@ -1,6 +1,6 @@
 function Statistic({ title, count = "N/A" }) {
   return (
-    <div className="flex items-center gap-2 bg-base-300 shadow-md rounded w-[90%] py-3 px-4 pr-8">
+    <div className="flex items-center gap-2 bg-base-300 shadow-sm rounded w-[90%] py-3 px-4 pr-8">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="50"

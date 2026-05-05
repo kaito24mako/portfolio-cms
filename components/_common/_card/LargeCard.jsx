@@ -64,7 +64,11 @@ function LargeCard({
         </div>
 
         {/* edit button */}
-        <Button className="btn-sm" icon={EditIcon} href="/projects/edit">
+        <Button
+          className="btn-sm bg-base-100"
+          icon={EditIcon}
+          href="/projects/edit"
+        >
           Edit
         </Button>
       </div>

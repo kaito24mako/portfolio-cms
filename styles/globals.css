@@ -10,12 +10,13 @@
   --font-primary: var(--font-geist-sans);
 }
 
-[data-theme='light'] {
+[data-theme='nord'] {
   --color-base-300: var(--color-base-200);
 }
 
 [data-theme='dark'] {
-  --color-base-300: oklch(15% 0 0);
+  /* --color-base-300: oklch(16.842% 0.00002 271.152); */
+  --color-base-300: var(--color-base-200);
 }
 
 

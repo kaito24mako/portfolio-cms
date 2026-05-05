@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 async function NewProjectsPage() {
-  // * POST
+  // * POST (postProject)
   const res = await fetch("http://localhost:3000/api/projects", {
     method: "POST",
     headers: {

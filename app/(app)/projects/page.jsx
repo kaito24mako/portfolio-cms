@@ -28,7 +28,7 @@ const projectsPlaceholders = [
 
 async function ProjectsPage() {
   // const projects = await getAllProjects();
-  // * GET all projects
+  // * GET (getAllProjects)
   const res = await fetch("http://localhost:3000/api/projects", {
     cache: "no-store",
   });
