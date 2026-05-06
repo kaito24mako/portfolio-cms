@@ -2,7 +2,6 @@ import { DataTypes } from "sequelize";
 import sequelize from "@/utils/connection";
 
 const Project = sequelize.define("Project", {
-  // ? how to create foreign key of userId
   title: {
     type: DataTypes.STRING,
   },
@@ -15,20 +14,19 @@ const Project = sequelize.define("Project", {
   githubUrl: {
     type: DataTypes.STRING,
   },
-  // ! status ENUM
-  // status: {
-  //   type: DataTypes.ENUM,
-  //   values: ["published", "draft", "archived"],
+  status: {
+    type: DataTypes.ENUM,
+    values: ["published", "draft", "archived"],
+  },
+  // published: {
+  //   type: DataTypes.BOOLEAN,
   // },
-  published: {
-    type: DataTypes.BOOLEAN,
-  },
-  draft: {
-    type: DataTypes.BOOLEAN,
-  },
-  archived: {
-    type: DataTypes.BOOLEAN,
-  },
+  // draft: {
+  //   type: DataTypes.BOOLEAN,
+  // },
+  // archived: {
+  //   type: DataTypes.BOOLEAN,
+  // },
   updatedAt: {
     type: DataTypes.DATE,
     get() {
