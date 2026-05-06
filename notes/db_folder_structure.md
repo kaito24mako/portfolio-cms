@@ -35,7 +35,7 @@ portfolio-cms/
 │ └── layout/
 │
 ├── lib/ ← shared logic (IMPORTANT)
-│ ├── db.js ← initDB()
+│ ├── db.js ← connectDb()
 │ ├── auth.js ← JWT helpers
 │ └── utils.js
 │

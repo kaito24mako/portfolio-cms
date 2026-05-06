@@ -1,10 +1,10 @@
 import { getAllProjects, postProject } from "@/controllers/projects";
-import { initDb } from "@/lib/initDb";
+import { connectDb } from "@/lib/connectDb";
 
 // * GET /api/projects
 export async function GET() {
   try {
-    await initDb();
+    await connectDb();
 
     const projects = await getAllProjects();
 
@@ -17,7 +17,7 @@ export async function GET() {
 // * POST /api/projects
 export async function POST(req) {
   try {
-    await initDb();
+    await connectDb();
 
     const body = await req.json();
     const result = await postProject(body);

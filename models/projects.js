@@ -15,7 +15,11 @@ const Project = sequelize.define("Project", {
   githubUrl: {
     type: DataTypes.STRING,
   },
-  // ? should these be in 'status' instead
+  // ! status ENUM
+  // status: {
+  //   type: DataTypes.ENUM,
+  //   values: ["published", "draft", "archived"],
+  // },
   published: {
     type: DataTypes.BOOLEAN,
   },

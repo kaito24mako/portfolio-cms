@@ -40,7 +40,7 @@ Step by step:
 ```js
 export async function GET(req, { params }) {
   try {
-    await initDb();
+    await connectDb();
 
     const project = await getProject(params.id);
 
@@ -64,7 +64,7 @@ Step by step:
 3. The `try` block wraps the main logic.
    If any line inside fails, execution jumps to `catch`.
 
-4. `await initDb()` ensures the database is initialized before querying it.
+4. `await connectDb()` ensures the database is initialized before querying it.
    In this project, that means `sequelize.sync()` has run so the tables exist.
 
 5. `await getProject(params.id)` asks the controller to fetch the project whose `id` came from the URL.

@@ -1,10 +1,10 @@
 import { getProject, putProject, deleteProject } from "@/controllers/projects";
-import { initDb } from "@/lib/initDb";
+import { connectDb } from "@/lib/connectDb";
 
 // * GET
 export async function GET(req, { params }) {
   try {
-    await initDb();
+    await connectDb();
 
     const { id } = await params;
     const project = await getProject(id);
@@ -18,7 +18,7 @@ export async function GET(req, { params }) {
 // * PUT
 export async function PUT(req, { params }) {
   try {
-    await initDb();
+    await connectDb();
 
     //? same as req.body
     const data = await req.json();
@@ -37,7 +37,7 @@ export async function PUT(req, { params }) {
 // * DELETE
 export async function DELETE(req, { params }) {
   try {
-    await initDb();
+    await connectDb();
 
     const { id } = await params;
     const project = await deleteProject(id);
