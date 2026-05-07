@@ -1,5 +1,6 @@
 import { getProject, putProject, deleteProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
+import { isAuthorised } from "@/lib/auth";
 
 // * GET
 export async function GET(req, { params }) {
@@ -17,6 +18,10 @@ export async function GET(req, { params }) {
 
 // * PUT
 export async function PUT(req, { params }) {
+  if (!isAuthorised(req)) {
+    return new Response("Unauthorised", { status: 401 });
+  }
+
   try {
     await connectDb();
 
@@ -36,6 +41,10 @@ export async function PUT(req, { params }) {
 
 // * DELETE
 export async function DELETE(req, { params }) {
+  if (!isAuthorised(req)) {
+    return new Response("Unauthorised", { status: 401 });
+  }
+
   try {
     await connectDb();
 

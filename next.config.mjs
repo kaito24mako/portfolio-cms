@@ -55,7 +55,7 @@ const nextConfig = (phase) => {
           ? `https://${process.env.VERCEL_URL}`
           : undefined,
 
-      API_KEY: process.env.API_KEY,
+      // API_KEY: process.env.API_KEY,
     },
   };
 };

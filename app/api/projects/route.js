@@ -1,5 +1,6 @@
 import { getAllProjects, postProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
+import { isAuthorised } from "@/lib/auth";
 
 // * GET /api/projects
 export async function GET() {
@@ -16,6 +17,10 @@ export async function GET() {
 
 // * POST /api/projects
 export async function POST(req) {
+  if (!isAuthorised(req)) {
+    return new Response("Unauthorised", { status: 401 });
+  }
+
   try {
     await connectDb();
 
