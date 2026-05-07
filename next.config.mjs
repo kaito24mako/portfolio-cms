@@ -50,7 +50,7 @@ const nextConfig = (phase) => {
         return undefined;
       })(),
 
-      NEWS_API_KEY: process.env.NEWS_API_KEY,
+      API_KEY: process.env.API_KEY,
     },
   };
 };

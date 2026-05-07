@@ -32,9 +32,7 @@ const projectsPlaceholders = [
 async function ProjectsPage() {
   // * GET (getAllProjects)
   // fetching data in next.js
-  const data = await fetch(`${process.env.SERVER_NAME}/api/projects`, {
-    cache: "no-store",
-  });
+  const data = await fetch(`${process.env.SERVER_NAME}/api/projects`);
 
   const projects = await data.json();
 
@@ -44,7 +42,7 @@ async function ProjectsPage() {
     ...projectsPlaceholders[index],
   }));
 
-  console.log(mergedProjects);
+  // console.log(mergedProjects);
 
   return (
     <div className="flex flex-col gap-8">
