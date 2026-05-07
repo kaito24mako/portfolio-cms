@@ -4,7 +4,6 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   // change to postgres for supabase
   // tells sequelize to connect to Postgres
   dialect: "postgres",
-  storage: "postgres",
   logging: false,
   dialectOptions: {
     ssl:
