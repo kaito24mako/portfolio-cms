@@ -6,7 +6,7 @@ const Project = sequelize.define("Project", {
     type: DataTypes.STRING,
   },
   description: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
   },
   siteUrl: {
     type: DataTypes.STRING,

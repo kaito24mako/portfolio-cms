@@ -11,30 +11,24 @@ function LargeCard({
   siteUrl = "",
   githubUrl = "",
   updatedAt = "",
-  published = false,
-  draft = false,
-  archived = false,
+  status = "",
   tags = [],
   image,
   alt = "",
 }) {
   return (
-    <div className="flex flex-col md:flex-row w-fit rounded-sm overflow-hidden shadow-md bg-base-300 h-max">
+    <div className="flex flex-col md:flex-row w-fit rounded-sm shadow-md bg-base-300">
       <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm">
         <div className="flex flex-col items-center gap-2">
           {/* title and badge */}
           <div className="flex items-center gap-2 sm:gap-4">
             <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
             <Badge
-              text={
-                (published && "Published") ||
-                (draft && "Draft") ||
-                (archived && "Archived")
-              }
+              text={status}
               className={
-                (published && "badge-success") ||
-                (draft && "badge-warning") ||
-                (archived && "badge-info")
+                (status === "Published" && "badge-success") ||
+                (status === "Draft" && "badge-warning") ||
+                (status === "Archived" && "badge-info")
               }
             />
           </div>

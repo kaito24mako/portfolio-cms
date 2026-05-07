@@ -15,14 +15,17 @@ const projectsPlaceholders = [
   {
     tags: ["React", "SASS", "JavaScript"],
     image: "/placeholders/pokemon.png",
+    status: "Published",
   },
   {
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
+    status: "Draft",
   },
   {
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
+    status: "Archived",
   },
 ];
 
@@ -75,9 +78,7 @@ async function ProjectsPage() {
                 description={p.description}
                 siteUrl={p.siteUrl}
                 githubUrl={p.githubUrl}
-                published={p.published}
-                draft={p.draft}
-                archived={p.archived}
+                status={p.status}
                 updatedAt={p.updatedAt}
                 tags={p.tags}
                 image={p.image}

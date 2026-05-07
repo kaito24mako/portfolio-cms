@@ -1,6 +1,5 @@
 //! foreign key setup
-// to put all things together so that everything is synced together
-// passes to authSyncDb, which syncs all data and tables together
+
 import sequelize from "@/utils/connection";
 import User from "@/models/users";
 import Project from "@/models/projects";
@@ -20,4 +19,4 @@ User.belongsTo(Project, {
   foreignKey: "projectId",
 });
 
-export { sequelize, User };
+export { sequelize, User, Project };

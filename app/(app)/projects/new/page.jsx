@@ -23,9 +23,7 @@ async function NewProjectsPage() {
       description: "Test project",
       siteUrl: "https://example.com",
       githubUrl: "https://github.com/me/example",
-      published: true,
-      draft: false,
-      archived: false,
+      status: "Published",
     }),
   });
 
