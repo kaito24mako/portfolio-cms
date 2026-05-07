@@ -32,7 +32,7 @@ const projectsPlaceholders = [
 async function ProjectsPage() {
   // * GET (getAllProjects)
   // fetching data in next.js
-  const data = await fetch("http://localhost:3000/api/projects", {
+  const data = await fetch(`${process.env.SERVER_NAME}/api/projects`, {
     cache: "no-store",
   });
 

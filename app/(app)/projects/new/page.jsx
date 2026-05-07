@@ -13,7 +13,7 @@ export const metadata = {
 
 async function NewProjectsPage() {
   // * POST (postProject)
-  const res = await fetch("http://localhost:3000/api/projects", {
+  const res = await fetch(`${process.env.SERVER_NAME}/api/projects`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
