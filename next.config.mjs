@@ -13,7 +13,7 @@ const nextConfig = (phase) => {
 
   return {
     // Required for Sequelize + SQLite in Next.js
-    serverExternalPackages: ["sequelize", "sqlite3"],
+    serverExternalPackages: ["sequelize", "pg", "pg-hstore"],
 
     // Remote image domains
     images: {
@@ -45,8 +45,7 @@ const nextConfig = (phase) => {
     env: {
       SERVER_NAME: (() => {
         if (isDev) return "http://localhost:3000";
-        if (isProd)
-          return "codefeed-deploy-oia2-68zcd9ifv-kaito24makos-projects.vercel.app";
+        if (isProd) return "http://localhost:3000";
         return undefined;
       })(),
 

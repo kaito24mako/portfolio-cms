@@ -1,10 +1,17 @@
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize({
-  dialect: "sqlite",
-  storage: "./database.sqlite",
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  // change to postgres for supabase
+  // tells sequelize to connect to Postgres
+  dialect: "postgres",
+  storage: "postgres",
   logging: false,
-  alter: true,
+  dialectOptions: {
+    ssl:
+      process.env.NODE_ENV === "production"
+        ? { require: true, rejectUnauthorized: false }
+        : false,
+  },
 });
 
 export default sequelize;
