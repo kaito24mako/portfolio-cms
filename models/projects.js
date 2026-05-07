@@ -2,31 +2,35 @@ import { DataTypes } from "sequelize";
 import sequelize from "@/utils/connection";
 
 const Project = sequelize.define("Project", {
+  id: {
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
+    unique: true,
+    primaryKey: true,
+  },
   title: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
   description: {
     type: DataTypes.TEXT,
   },
   siteUrl: {
     type: DataTypes.STRING,
+    validate: {
+      isUrl: true,
+    },
   },
   githubUrl: {
     type: DataTypes.STRING,
+    validate: {
+      isUrl: true,
+    },
   },
   status: {
     type: DataTypes.ENUM,
     values: ["published", "draft", "archived"],
   },
-  // published: {
-  //   type: DataTypes.BOOLEAN,
-  // },
-  // draft: {
-  //   type: DataTypes.BOOLEAN,
-  // },
-  // archived: {
-  //   type: DataTypes.BOOLEAN,
-  // },
   updatedAt: {
     type: DataTypes.DATE,
     get() {

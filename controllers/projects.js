@@ -9,7 +9,7 @@ export async function getAllProjects() {
 }
 
 export async function getProject(id) {
-  const project = await Project.findByPk(parseInt(id));
+  const project = await Project.findByPk(id);
 
   if (!project) {
     throw new Error("Project not found");
@@ -31,7 +31,7 @@ export async function postProject(data) {
 // * PUT
 export async function putProject(id, data) {
   // const id = parseInt(req.params.id);
-  const project = await Project.findByPk(parseInt(id));
+  const project = await Project.findByPk(id);
 
   if (!project) {
     throw new Error("Project not found");
@@ -42,9 +42,7 @@ export async function putProject(id, data) {
     description: data.description ?? project.description,
     siteUrl: data.siteUrl ?? project.siteUrl,
     githubUrl: data.githubUrl ?? project.githubUrl,
-    published: data.published ?? project.published,
-    draft: data.draft ?? project.draft,
-    archived: data.archived ?? project.archived,
+    status: data.status ?? project.status,
   });
 
   return {
@@ -55,7 +53,7 @@ export async function putProject(id, data) {
 
 // * DELETE
 export async function deleteProject(id) {
-  const project = await Project.findByPk(parseInt(id));
+  const project = await Project.findByPk(id);
 
   if (!project) {
     throw new Error("Project not found");
