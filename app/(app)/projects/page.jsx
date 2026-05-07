@@ -1,11 +1,12 @@
+import { connectDb } from "@/lib/connectDb";
+import { getAllProjects } from "@/controllers/projects";
+
 import Button from "@/app/_components/_common/Button";
 import CardGrid from "@/app/_components/_common/Grid";
 import LargeCard from "@/app/_components/_common/_card/LargeCard";
 import Title from "@/app/_components/_common/Title";
 import Pagination from "@/app/_components/_features/_projects/Pagination";
 import SearchForm from "@/app/_components/_common/_form/SearchForm";
-
-// import { getAllProjects } from "@/controllers/projects";
 
 export const metadata = {
   title: "Projects",
@@ -30,19 +31,16 @@ const projectsPlaceholders = [
 ];
 
 async function ProjectsPage() {
-  // * GET (getAllProjects)
-  // fetching data in next.js
-  const data = await fetch(`${process.env.SERVER_NAME}/api/projects`);
-
-  const projects = await data.json();
+  // for server-rendered pages without user-triggered requests, call controllers directly instead of fetching the API
+  await connectDb();
+  const projects = await getAllProjects();
+  console.log(projects);
 
   // merging projects api with placeholders for testing
   const mergedProjects = projects?.map((project, index) => ({
-    ...project,
+    ...project.toJSON(),
     ...projectsPlaceholders[index],
   }));
-
-  // console.log(mergedProjects);
 
   return (
     <div className="flex flex-col gap-8">
@@ -68,10 +66,10 @@ async function ProjectsPage() {
         <Pagination tabs={["All", "Published", "Draft", "Archived"]} />
 
         <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
-          {mergedProjects?.map((p) => {
+          {mergedProjects?.map((p, index) => {
             return (
               <LargeCard
-                key={p.id}
+                key={index}
                 title={p.title}
                 description={p.description}
                 siteUrl={p.siteUrl}
