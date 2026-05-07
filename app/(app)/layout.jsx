@@ -1,4 +1,4 @@
-import Sidebar from "../../components/_layout/Sidebar";
+import Sidebar from "../_components/_layout/Sidebar";
 import bgWaves from "@/public/bg/background.svg";
 import Image from "next/image";
 
@@ -6,7 +6,7 @@ export default function AppLayout({ children }) {
   return (
     <Sidebar>
       {/* note: Header is nested inside Sidebar because I'm using the DaisyUI sidebar */}
-      <div className="flex flex-col p-4">
+      <div className="p-4">
         <Image
           src={bgWaves}
           fill
