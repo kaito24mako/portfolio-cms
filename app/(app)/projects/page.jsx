@@ -8,6 +8,8 @@ import Title from "@/app/_components/_common/Title";
 import Pagination from "@/app/_components/_features/_projects/Pagination";
 import SearchForm from "@/app/_components/_common/_form/SearchForm";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Projects",
 };
