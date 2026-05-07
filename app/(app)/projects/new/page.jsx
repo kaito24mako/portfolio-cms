@@ -13,21 +13,21 @@ export const metadata = {
 
 async function NewProjectsPage() {
   // * POST (postProject)
-  const res = await fetch(`${process.env.SERVER_NAME}/api/projects`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      title: "My Project",
-      description: "Test project",
-      siteUrl: "https://example.com",
-      githubUrl: "https://github.com/me/example",
-      status: "published",
-    }),
-  });
+  // const res = await fetch("/api/projects", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     title: "My Project",
+  //     description: "Test project",
+  //     siteUrl: "https://example.com",
+  //     githubUrl: "https://github.com/me/example",
+  //     status: "published",
+  //   }),
+  // });
 
-  const project = await res.json();
+  // const project = await res.json();
 
   return (
     <div className="flex flex-col gap-8">
