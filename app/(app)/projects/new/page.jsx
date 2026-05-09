@@ -8,6 +8,10 @@ export const metadata = {
   title: "New Project",
 };
 
+// * DEBUG
+// * Looking at the Next.js docs, I discovered server functions which allow for easier collection of form input values, rather than finding the e.target.value of input fields.
+// * And after some more research and questioning Codex AI on server functions, I came to understand how it works.
+
 async function createProject(formData) {
   // "use server" tells this function to run on the server
   // so, it can safely access the db and server-only code
@@ -27,7 +31,6 @@ async function createProject(formData) {
 
   await postProject(data);
 
-  // redirects to /projects afterwards
   redirect("/projects");
 }
 
@@ -50,8 +53,6 @@ function NewProjectsPage() {
   // }
 
   return (
-    // action is a server function - when this form is submitted, call createProject with the form data
-
     <CreateEditProjectPage
       formFunction={createProject}
       heading="Create New Project"

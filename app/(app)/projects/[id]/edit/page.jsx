@@ -4,13 +4,14 @@ import { redirect } from "next/navigation";
 import { getProject, putProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 
+// * DEBUG:
+// * I wasn't sure how to retrive the properties of a project, until I examined console.log(project) and found the properties were under "dataValues"
+
 async function EditProjectPage({ params }) {
   await connectDb();
 
   const { id } = await params;
   const project = await getProject(id);
-  // console.log(project);
-  // console.log(project.dataValues.title);
 
   async function editProject(formData) {
     "use server";
