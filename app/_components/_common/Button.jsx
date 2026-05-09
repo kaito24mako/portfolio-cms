@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function Button({ children, className = "", icon, alt = "", href, type }) {
+function Button({
+  children,
+  className = "",
+  icon,
+  alt = "",
+  href,
+  type = "button",
+  ...props
+}) {
   const Icon = typeof icon === "function" ? icon : null;
 
   const content = (
@@ -26,7 +34,7 @@ function Button({ children, className = "", icon, alt = "", href, type }) {
   }
 
   return (
-    <button className={`gap-2 btn shadow-sm ${className}`} type={type}>
+    <button className={`gap-2 btn shadow-sm ${className}`} {...props}>
       {content}
     </button>
   );

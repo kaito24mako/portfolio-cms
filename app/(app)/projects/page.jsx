@@ -8,6 +8,7 @@ import Title from "@/app/_components/_common/Title";
 import Pagination from "@/app/_components/_features/_projects/Pagination";
 import SearchForm from "@/app/_components/_common/_form/SearchForm";
 
+// ? what does this do? is it because this page renders dynamic data?
 export const dynamic = "force-dynamic";
 
 export const metadata = {
@@ -18,17 +19,14 @@ const projectsPlaceholders = [
   {
     tags: ["React", "SASS", "JavaScript"],
     image: "/placeholders/pokemon.png",
-    status: "Published",
   },
   {
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
-    status: "Draft",
   },
   {
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
-    status: "Archived",
   },
 ];
 

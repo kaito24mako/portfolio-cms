@@ -129,7 +129,7 @@ function NewProjectsPage() {
 
       <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm sm:flex-row">
         <Button
-          type="submit"
+          type="button"
           className="btn-ghost shadow-none! btn-sm lg:btn-md"
         >
           Delete

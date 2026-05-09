@@ -11,7 +11,7 @@ function LargeCard({
   siteUrl = "",
   githubUrl = "",
   updatedAt = "",
-  status = "",
+  status,
   tags = [],
   image,
   alt = "",
