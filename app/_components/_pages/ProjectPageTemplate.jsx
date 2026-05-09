@@ -33,29 +33,6 @@ function ProjectPageTemplate({ ...props }) {
     },
   ];
 
-  const rightFormFields = [
-    {
-      isTags: true,
-      title: "Tags",
-    },
-    {
-      isTags: false,
-      title: "Site URL",
-      icon: <WebIcon />,
-      name: "siteUrl",
-      placeholder: "https://example.com",
-      defaultValue: props.prevSiteUrl,
-    },
-    {
-      isTags: false,
-      title: "GitHub URL",
-      icon: <GithubIcon />,
-      name: "githubUrl",
-      placeholder: "https://github.com/example.com",
-      defaultValue: props.prevGithubUrl,
-    },
-  ];
-
   const statusButtons = [
     { value: "Archived", text: "Save as Archived", color: "btn-info" },
     { value: "Draft", text: "Save as Draft", color: "btn-warning" },
@@ -99,31 +76,39 @@ function ProjectPageTemplate({ ...props }) {
 
         {/* right form fields */}
         <div className="col-span-2 flex flex-col gap-3">
-          {rightFormFields?.map((f) => (
-            <EditForm title={f.title} key={f.title}>
-              {f.isTags ? (
-                <div className="flex gap-2">
-                  <Badge text="Next.js" className="badge-soft badge-primary" />
-                  <Badge text="SQLite" className="badge-soft badge-primary" />
-                  <Badge
-                    text="Tailwind CSS"
-                    className="badge-soft badge-primary"
-                  />
-                </div>
-              ) : (
-                <div className="flex items-center gap-2">
-                  {f.icon}
-                  <input
-                    className="w-full focus:outline-0"
-                    type="url"
-                    name={f.name}
-                    placeholder={f.placeholder}
-                    defaultValue={f.defaultValue}
-                  />
-                </div>
-              )}
-            </EditForm>
-          ))}
+          <EditForm title="Tags">
+            <div className="flex gap-2">
+              <Badge text="Next.js" className="badge-soft badge-primary" />
+              <Badge text="SQLite" className="badge-soft badge-primary" />
+              <Badge text="Tailwind CSS" className="badge-soft badge-primary" />
+            </div>
+          </EditForm>
+
+          <EditForm title="Site URL">
+            <div className="flex items-center gap-2">
+              <WebIcon />
+              <input
+                className="w-full focus:outline-0"
+                type="url"
+                name="siteUrl"
+                placeholder="https://example.com"
+                defaultValue={props.prevSiteUrl}
+              />
+            </div>
+          </EditForm>
+
+          <EditForm title="GitHub URL">
+            <div className="flex items-center gap-2">
+              <GithubIcon />
+              <input
+                className="w-full focus:outline-0"
+                type="url"
+                name="githubUrl"
+                placeholder="https://github.com/example.com"
+                defaultValue={props.prevGithubUrl}
+              />
+            </div>
+          </EditForm>
         </div>
       </Grid>
 
@@ -143,8 +128,8 @@ function ProjectPageTemplate({ ...props }) {
         {statusButtons?.map((btn) => (
           <Button
             key={btn.value}
-            name="status"
             value={btn.value}
+            name="status"
             type="submit"
             className={`${btn.color} shadow-none! btn-sm lg:btn-md`}
           >

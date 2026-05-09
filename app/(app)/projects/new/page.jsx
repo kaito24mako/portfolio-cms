@@ -35,23 +35,6 @@ async function createProject(formData) {
 }
 
 function NewProjectsPage() {
-  // async function handlePostProject() {
-  //   const res = await fetch("/api/projects", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       title: "My Project",
-  //       description: "Test project",
-  //       siteUrl: "https://example.com",
-  //       githubUrl: "https://github.com/me/example",
-  //       status: "published",
-  //     }),
-  //   });
-  //   const project = await res.json();
-  // }
-
   return (
     <ProjectPageTemplate
       formFunction={createProject}

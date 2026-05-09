@@ -7,6 +7,7 @@ import { connectDb } from "@/lib/connectDb";
 // * DEBUG:
 // * I wasn't sure how to retrive the properties of a project, until I examined console.log(project) and found the properties were under "dataValues"
 
+// since this page is routed by [id], it can accept params to use as the id
 async function EditProjectPage({ params }) {
   await connectDb();
 
@@ -15,9 +16,7 @@ async function EditProjectPage({ params }) {
 
   async function editProject(formData) {
     "use server";
-
     await connectDb();
-
     const data = {
       title: formData.get("title"),
       description: formData.get("description"),
@@ -25,16 +24,13 @@ async function EditProjectPage({ params }) {
       githubUrl: formData.get("githubUrl"),
       status: formData.get("status"),
     };
-
     await putProject(id, data);
     redirect("/projects");
   }
 
   async function removeProject() {
     "use server";
-
     await connectDb();
-
     await deleteProject(id);
     redirect("/projects");
   }
