@@ -28,6 +28,10 @@ const projectsPlaceholders = [
     tags: ["Next.js", "Tailwind CSS", "SQLite"],
     image: "/placeholders/library.png",
   },
+  {
+    tags: ["React", "SASS", "JavaScript"],
+    image: "/placeholders/pokemon.png",
+  },
 ];
 
 async function ProjectsPage() {

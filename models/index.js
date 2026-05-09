@@ -1,5 +1,3 @@
-//! foreign key setup
-
 import sequelize from "@/utils/connection";
 import User from "@/models/users";
 import Project from "@/models/projects";

@@ -6,12 +6,12 @@ import WebIcon from "../../_images/_icons/WebIcon";
 import EditIcon from "../../_images/_icons/EditIcon";
 
 function LargeCard({
-  title,
-  description,
+  title = "",
+  description = "",
   siteUrl = "",
   githubUrl = "",
   updatedAt = "",
-  status,
+  status = "",
   tags = [],
   image,
   alt = "",
