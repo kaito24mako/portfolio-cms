@@ -73,6 +73,7 @@ async function ProjectsPage() {
             return (
               <LargeCard
                 key={index}
+                id={p.id}
                 title={p.title}
                 description={p.description}
                 siteUrl={p.siteUrl}

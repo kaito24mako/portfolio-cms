@@ -25,6 +25,7 @@ function CreateEditProjectPage({ ...props }) {
               type="text"
               placeholder="Enter a title..."
               className="w-full focus:outline-0"
+              defaultValue={props.prevTitle}
             />
           </EditForm>
           <EditForm title="Description">
@@ -33,6 +34,7 @@ function CreateEditProjectPage({ ...props }) {
               placeholder="Enter a brief description..."
               className="w-full focus:outline-0"
               rows={8}
+              defaultValue={props.prevDescription}
             />
           </EditForm>
           <EditForm title="Image">
@@ -61,6 +63,7 @@ function CreateEditProjectPage({ ...props }) {
                 type="url"
                 placeholder="https://example.com"
                 className="w-full focus:outline-0"
+                defaultValue={props.prevSiteUrl}
               />
             </div>
           </EditForm>
@@ -72,6 +75,7 @@ function CreateEditProjectPage({ ...props }) {
                 type="url"
                 placeholder="https://github.com/example"
                 className="w-full focus:outline-0"
+                defaultValue={props.prevGithubUrl}
               />
             </div>
           </EditForm>

@@ -6,6 +6,7 @@ import WebIcon from "../../_images/_icons/WebIcon";
 import EditIcon from "../../_images/_icons/EditIcon";
 
 function LargeCard({
+  id,
   title = "",
   description = "",
   siteUrl = "",
@@ -61,7 +62,7 @@ function LargeCard({
         <Button
           className="btn-sm bg-base-100"
           icon={EditIcon}
-          href="/projects/edit"
+          href={`/projects/${id}/edit`}
         >
           Edit
         </Button>

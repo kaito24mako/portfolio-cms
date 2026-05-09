@@ -1,0 +1,47 @@
+import CreateEditProjectPage from "@/app/_components/_pages/CreateEditProjectPage";
+
+import { redirect } from "next/navigation";
+import { getProject, putProject } from "@/controllers/projects";
+import { connectDb } from "@/lib/connectDb";
+
+async function EditProjectPage({ params }) {
+  await connectDb();
+
+  const { id } = await params;
+  const project = await getProject(id);
+  // console.log(project);
+  // console.log(project.dataValues.title);
+
+  async function editProject(formData) {
+    "use server";
+
+    await connectDb();
+
+    const data = {
+      title: formData.get("title"),
+      description: formData.get("description"),
+      siteUrl: formData.get("siteUrl"),
+      githubUrl: formData.get("githubUrl"),
+      status: formData.get("status"),
+    };
+
+    await putProject(id, data);
+    redirect("/projects");
+  }
+
+  return (
+    <CreateEditProjectPage
+      formFunction={editProject}
+      heading="Edit Project"
+      subHeading="Edit the details of your stunning work"
+      exitBtnType="submit"
+      exitBtnText="Delete"
+      prevTitle={project.dataValues.title}
+      prevDescription={project.dataValues.description}
+      prevSiteUrl={project.dataValues.siteUrl}
+      prevGithubUrl={project.dataValues.githubUrl}
+    />
+  );
+}
+
+export default EditProjectPage;
