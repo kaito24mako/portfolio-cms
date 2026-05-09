@@ -1,4 +1,4 @@
-import CreateEditProjectPage from "@/app/_components/_pages/CreateEditProjectPage";
+import ProjectPageTemplate from "@/app/_components/_pages/ProjectPageTemplate";
 
 import { redirect } from "next/navigation";
 import { connectDb } from "@/lib/connectDb";
@@ -53,7 +53,7 @@ function NewProjectsPage() {
   // }
 
   return (
-    <CreateEditProjectPage
+    <ProjectPageTemplate
       formFunction={createProject}
       heading="Create New Project"
       subHeading="Fill in the details of your latest work"

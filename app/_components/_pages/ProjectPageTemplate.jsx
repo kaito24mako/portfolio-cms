@@ -7,7 +7,7 @@ import Button from "../_common/Button";
 import WebIcon from "../_images/_icons/WebIcon";
 import GithubIcon from "../_images/_icons/GithubIcon";
 
-function CreateEditProjectPage({ ...props }) {
+function ProjectPageTemplate({ ...props }) {
   // ! should these be in a custom hook or sth?
   const leftFormFields = [
     {
@@ -129,7 +129,9 @@ function CreateEditProjectPage({ ...props }) {
 
       {/* bottom buttons */}
       <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm sm:flex-row">
+        {/* cancel/delete button */}
         <Button
+          onClick={props.exitBtnFunction}
           href={props.exitBtnLink}
           type={props.exitBtnType}
           className="btn-ghost shadow-none! btn-sm lg:btn-md"
@@ -137,6 +139,7 @@ function CreateEditProjectPage({ ...props }) {
           {props.exitBtnText}
         </Button>
 
+        {/* save buttons */}
         {statusButtons?.map((btn) => (
           <Button
             key={btn.value}
@@ -153,4 +156,4 @@ function CreateEditProjectPage({ ...props }) {
   );
 }
 
-export default CreateEditProjectPage;
+export default ProjectPageTemplate;

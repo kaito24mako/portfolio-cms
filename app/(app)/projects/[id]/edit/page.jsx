@@ -1,7 +1,7 @@
-import CreateEditProjectPage from "@/app/_components/_pages/CreateEditProjectPage";
+import ProjectPageTemplate from "@/app/_components/_pages/ProjectPageTemplate";
 
 import { redirect } from "next/navigation";
-import { getProject, putProject } from "@/controllers/projects";
+import { getProject, putProject, deleteProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 
 // * DEBUG:
@@ -30,9 +30,19 @@ async function EditProjectPage({ params }) {
     redirect("/projects");
   }
 
+  async function removeProject() {
+    "use server";
+
+    await connectDb();
+
+    await deleteProject(id);
+    redirect("/projects");
+  }
+
   return (
-    <CreateEditProjectPage
+    <ProjectPageTemplate
       formFunction={editProject}
+      exitBtnFunction={removeProject}
       heading="Edit Project"
       subHeading="Edit the details of your stunning work"
       exitBtnType="submit"
