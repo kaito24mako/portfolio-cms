@@ -36,7 +36,6 @@ async function ProjectsPage() {
   // for server-rendered pages without user-triggered requests, call controllers directly instead of fetching the API
   await connectDb();
   const projects = await getAllProjects();
-  console.log(projects);
 
   // merging projects api with placeholders for testing
   const mergedProjects = projects?.map((project, index) => ({
