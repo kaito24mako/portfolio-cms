@@ -2,11 +2,9 @@ import { connectDb } from "@/lib/connectDb";
 import { getAllProjects } from "@/controllers/projects";
 
 import Button from "@/app/_components/_common/Button";
-import CardGrid from "@/app/_components/_common/Grid";
-import LargeCard from "@/app/_components/_common/_card/LargeCard";
 import Title from "@/app/_components/_common/Title";
-import Pagination from "@/app/_components/_features/_projects/Pagination";
 import SearchForm from "@/app/_components/_common/_form/SearchForm";
+import ProjectsList from "@/app/_components/_features/_projects/ProjectsList";
 
 // ? what does this do? is it because this page renders dynamic data?
 export const dynamic = "force-dynamic";
@@ -65,29 +63,7 @@ async function ProjectsPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
-        <Pagination tabs={["All", "Published", "Draft", "Archived"]} />
-
-        <CardGrid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
-          {mergedProjects?.map((p, index) => {
-            return (
-              <LargeCard
-                key={index}
-                id={p.id}
-                title={p.title}
-                description={p.description}
-                siteUrl={p.siteUrl}
-                githubUrl={p.githubUrl}
-                status={p.status}
-                updatedAt={p.updatedAt}
-                tags={p.tags}
-                image={p.image}
-                alt={p.title}
-              />
-            );
-          })}
-        </CardGrid>
-      </div>
+      <ProjectsList projects={mergedProjects} />
     </div>
   );
 }
