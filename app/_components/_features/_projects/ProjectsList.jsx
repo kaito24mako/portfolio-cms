@@ -17,7 +17,12 @@ function ProjectsList({ projects = [] }) {
   return (
     <div className="flex flex-col gap-4">
       <Filters
-        tabs={["All", "Published", "Draft", "Archived"]}
+        tabs={[
+          { title: "All", style: "btn-active" },
+          { title: "Published", style: "btn-success" },
+          { title: "Draft", style: "btn-warning" },
+          { title: "Archived", style: "btn-info" },
+        ]}
         activeTab={activeTab}
         onTabChange={setActiveTab}
       />

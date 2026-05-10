@@ -4,6 +4,10 @@ import { redirect } from "next/navigation";
 import { getProject, putProject, deleteProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 
+export const metadata = {
+  title: "Edit",
+};
+
 // * DEBUG:
 // * I wasn't sure how to retrive the properties of a project, until I examined console.log(project) and found the properties were under "dataValues"
 
