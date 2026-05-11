@@ -36,6 +36,7 @@ async function DashboardPage() {
               key={p.id}
               title={p.title}
               description={`Last edited: ${p.updatedAt}`}
+              status={p.status}
               alt={`${p.title} project`}
               btnText="Edit"
               btnIcon={EditIcon}

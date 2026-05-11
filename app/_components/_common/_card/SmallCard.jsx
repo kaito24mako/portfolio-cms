@@ -1,6 +1,7 @@
 import Image from "next/image";
 import bg from "@/public/placeholders/library.png";
 import Button from "../Button";
+import Badge from "../Badge";
 
 function SmallCard({ ...props }) {
   return (
@@ -15,7 +16,18 @@ function SmallCard({ ...props }) {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{props.title}</h2>
+        <div className="flex gap-3">
+          <h2 className="card-title">{props.title}</h2>
+          <Badge
+            text={props.status}
+            className={
+              (props.status === "Published" && "badge-success") ||
+              (props.status === "Draft" && "badge-warning") ||
+              (props.status === "Archived" && "badge-info")
+            }
+          />
+        </div>
+
         <p>{props.description}</p>
         <div className="card-actions justify-end">
           <Button

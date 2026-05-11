@@ -5,7 +5,9 @@ import Project from "@/models/projects";
 
 // * GET
 export async function getAllProjects() {
-  return await Project.findAll();
+  return await Project.findAll({
+    order: [["updatedAt", "DESC"]],
+  });
 }
 
 export async function getProject(id) {

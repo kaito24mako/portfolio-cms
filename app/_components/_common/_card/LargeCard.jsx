@@ -11,7 +11,7 @@ function LargeCard({ tags = [], ...props }) {
       <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm">
         <div className="flex flex-col items-center gap-2">
           {/* title and badge */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-3">
             <h2 className="text-xl md:text-2xl font-semibold">{props.title}</h2>
             <Badge
               text={props.status}
