@@ -3,6 +3,7 @@ import SmallCard from "../_components/_common/_card/SmallCard";
 import Statistic from "../_components/_common/Statistic";
 import Title from "../_components/_common/Title";
 import ActivityTimeline from "../_components/_features/_activity/ActivityTimeline";
+import EditIcon from "../_components/_images/_icons/EditIcon";
 
 import { getProjectsData } from "@/lib/projects";
 
@@ -34,9 +35,11 @@ async function DashboardPage() {
             <SmallCard
               key={p.id}
               title={p.title}
-              description={p.description}
-              btnText="Edit Project"
-              imgAlt={`${p.title} project`}
+              description={`Last edited: ${p.updatedAt}`}
+              alt={`${p.title} project`}
+              btnText="Edit"
+              btnIcon={EditIcon}
+              btnLink={`/projects/${p.id}/edit`}
             />
           ))}
         </CardGrid>

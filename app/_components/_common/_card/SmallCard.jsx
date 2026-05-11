@@ -2,23 +2,29 @@ import Image from "next/image";
 import bg from "@/public/placeholders/library.png";
 import Button from "../Button";
 
-function SmallCard({ imgAlt = "", title, description, btnText = "" }) {
+function SmallCard({ ...props }) {
   return (
-    <div className="card image-full shadow-md card-sm h-50 md:h-60">
-      <figure className="relative min-h-45">
+    <div className="card card-sm md:card-md 2xl:card-lg image-full shadow-md h-50 md:h-60">
+      <figure className="relative">
         <Image
           src={bg}
           fill
           className="object-cover object-top"
           placeholder="blur"
-          alt={imgAlt}
+          alt={props.alt}
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-base">{title}</h2>
-        <p className="text-sm">{description}</p>
+        <h2 className="card-title">{props.title}</h2>
+        <p>{props.description}</p>
         <div className="card-actions justify-end">
-          <Button className="btn-soft btn-sm">{btnText}</Button>
+          <Button
+            className="btn btn-sm btn-soft "
+            icon={props.btnIcon}
+            href={props.btnLink}
+          >
+            {props.btnText}
+          </Button>
         </div>
       </div>
     </div>
