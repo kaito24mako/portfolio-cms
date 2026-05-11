@@ -6,7 +6,7 @@ export default function AppLayout({ children }) {
   return (
     <Sidebar>
       {/* note: Header is nested inside Sidebar because I'm using the DaisyUI sidebar */}
-      <div className="p-4">
+      <div className="p-4 min-h-screen">
         <Image
           src={bgWaves}
           fill

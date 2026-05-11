@@ -4,11 +4,16 @@ import Statistic from "../_components/_common/Statistic";
 import Title from "../_components/_common/Title";
 import ActivityTimeline from "../_components/_features/_activity/ActivityTimeline";
 
+import { getProjectsData } from "@/lib/projects";
+
 export const metadata = {
   title: "Dashboard",
 };
 
-function DashboardPage() {
+async function DashboardPage() {
+  const projects = await getProjectsData();
+  const recentProjects = projects.slice(0, 3);
+
   return (
     <div className="flex flex-col gap-8">
       {/* title */}
@@ -18,31 +23,22 @@ function DashboardPage() {
         subHeading="Let's create a beautiful portfolio."
       />
 
-      {/* projects cards */}
+      {/* project cards */}
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-medium">Recent Projects</h2>
           <span className="text-sm">Last updated: 2 hours ago</span>
         </div>
         <CardGrid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          <SmallCard
-            imgAlt="Book Library project"
-            title="Book Library"
-            description="Description of the project"
-            btnText="Edit Project"
-          />
-          <SmallCard
-            imgAlt="Book Library project"
-            title="Book Library"
-            description="Description of the project"
-            btnText="Edit Project"
-          />
-          <SmallCard
-            imgAlt="Book Library project"
-            title="Book Library"
-            description="Description of the project"
-            btnText="Edit Project"
-          />
+          {recentProjects?.map((p) => (
+            <SmallCard
+              key={p.id}
+              title={p.title}
+              description={p.description}
+              btnText="Edit Project"
+              imgAlt={`${p.title} project`}
+            />
+          ))}
         </CardGrid>
       </div>
 

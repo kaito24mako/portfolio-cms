@@ -1,3 +1,5 @@
+// * involves client-side interaction with state, so it's a client-side component
+
 "use client";
 
 import { useState } from "react";
