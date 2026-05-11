@@ -56,9 +56,14 @@ function LargeCard({ tags = [], ...props }) {
         </Button>
       </div>
 
-      <div className="relative h-full overflow-hidden">
+      <div className="relative w-[85dvw] h-[25dvh] sm:w-[480px] sm:h-[260px] overflow-hidden">
         {props.image && (
-          <Image src={props.image} width={510} height={510} alt={props.alt} />
+          <Image
+            src={props.image}
+            fill
+            className="object-cover object-top"
+            alt={props.alt}
+          />
         )}
 
         <div className="absolute bottom-3 flex justify-between gap-3 w-full px-3">

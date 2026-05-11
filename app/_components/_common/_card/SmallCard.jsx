@@ -1,5 +1,4 @@
 import Image from "next/image";
-import bg from "@/public/placeholders/library.png";
 import Button from "../Button";
 import Badge from "../Badge";
 
@@ -8,10 +7,9 @@ function SmallCard({ ...props }) {
     <div className="card card-sm md:card-md 2xl:card-lg image-full shadow-md h-50 md:h-60">
       <figure className="relative">
         <Image
-          src={bg}
+          src={props.image}
           fill
           className="object-cover object-top"
-          placeholder="blur"
           alt={props.alt}
         />
       </figure>
