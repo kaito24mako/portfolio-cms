@@ -1,6 +1,7 @@
 import Sidebar from "../_components/_layout/Sidebar";
 import bgWaves from "@/public/bg/background.svg";
 import Image from "next/image";
+import Footer from "../_components/_layout/Footer";
 
 export default function AppLayout({ children }) {
   return (
@@ -17,6 +18,7 @@ export default function AppLayout({ children }) {
           {children}
         </main>
       </div>
+      <Footer />
     </Sidebar>
   );
 }

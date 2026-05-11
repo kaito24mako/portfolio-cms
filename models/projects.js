@@ -38,7 +38,11 @@ const Project = sequelize.define("Project", {
       if (!rawValue) return null;
       const date = new Date(rawValue);
 
-      return `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
     },
   },
 });

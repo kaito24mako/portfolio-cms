@@ -5,7 +5,7 @@ import { connectDb } from "@/lib/connectDb";
 import { postProject } from "@/controllers/projects";
 
 export const metadata = {
-  title: "New",
+  title: "Create Project",
 };
 
 // * DEBUG

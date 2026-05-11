@@ -48,7 +48,7 @@ function LargeCard({ tags = [], ...props }) {
 
         {/* edit button */}
         <Button
-          className="btn-sm bg-base-100"
+          className="btn-sm bg-base-100 hover:bg-base-300"
           icon={EditIcon}
           href={`/projects/${props.id}/edit`}
         >

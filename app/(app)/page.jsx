@@ -1,4 +1,4 @@
-import CardGrid from "../_components/_common/Grid";
+import Grid from "../_components/_common/Grid";
 import SmallCard from "../_components/_common/_card/SmallCard";
 import Statistic from "../_components/_common/Statistic";
 import Title from "../_components/_common/Title";
@@ -15,6 +15,16 @@ async function DashboardPage() {
   const projects = await getProjectsData();
   const recentProjects = projects.slice(0, 3);
 
+  // logic for statistic cards
+  const totalProjects = projects.length;
+  const publishedProjects = projects.filter(
+    (p) => p.status === "Published",
+  ).length;
+  const draftedProjects = projects.filter((p) => p.status === "Draft").length;
+  const archivedProjects = projects.filter(
+    (p) => p.status === "Archived",
+  ).length;
+
   return (
     <div className="flex flex-col gap-8">
       {/* title */}
@@ -30,7 +40,7 @@ async function DashboardPage() {
           <h2 className="text-lg font-medium">Recent Projects</h2>
           <span className="text-sm">Last updated: 2 hours ago</span>
         </div>
-        <CardGrid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <Grid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {recentProjects?.map((p) => (
             <SmallCard
               key={p.id}
@@ -43,7 +53,7 @@ async function DashboardPage() {
               btnLink={`/projects/${p.id}/edit`}
             />
           ))}
-        </CardGrid>
+        </Grid>
       </div>
 
       <div className="grid grid-cols-7">
@@ -51,9 +61,10 @@ async function DashboardPage() {
         <div className="flex flex-col gap-2 col-span-3">
           <h2 className="text-lg font-medium">Statistics</h2>
           <div className="flex flex-col gap-4">
-            <Statistic title="Total Projects" count={6} />
-            <Statistic title="Published Projects" count={3} />
-            <Statistic title="Unique Tags" count={5} />
+            <Statistic title="Total Projects" count={totalProjects} />
+            <Statistic title="Published Projects" count={publishedProjects} />
+            <Statistic title="Drafts" count={draftedProjects} />
+            <Statistic title="Archived" count={archivedProjects} />
           </div>
         </div>
 

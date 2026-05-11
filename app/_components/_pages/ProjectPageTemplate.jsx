@@ -34,9 +34,21 @@ function ProjectPageTemplate({ ...props }) {
   ];
 
   const statusButtons = [
-    { value: "Archived", text: "Save as Archived", color: "btn-info" },
-    { value: "Draft", text: "Save as Draft", color: "btn-warning" },
-    { value: "Published", text: "Publish to Portfolio", color: "btn-success" },
+    {
+      value: "Archived",
+      text: "Save as Archived",
+      color: "btn-info",
+    },
+    {
+      value: "Draft",
+      text: "Save as Draft",
+      color: "btn-warning",
+    },
+    {
+      value: "Published",
+      text: "Publish to Portfolio",
+      color: "btn-success",
+    },
   ];
 
   return (

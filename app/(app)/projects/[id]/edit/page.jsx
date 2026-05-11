@@ -5,7 +5,7 @@ import { getProject, putProject, deleteProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 
 export const metadata = {
-  title: "Edit",
+  title: "Edit Project",
 };
 
 // * DEBUG:
