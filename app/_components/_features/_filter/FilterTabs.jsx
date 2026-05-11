@@ -1,4 +1,4 @@
-function Filters({ tabs, activeTab, onTabChange }) {
+function FilterTabs({ tabs, activeTab, onTabChange }) {
   return (
     <div className="join">
       {tabs.map((tab) => (
@@ -15,4 +15,4 @@ function Filters({ tabs, activeTab, onTabChange }) {
   );
 }
 
-export default Filters;
+export default FilterTabs;

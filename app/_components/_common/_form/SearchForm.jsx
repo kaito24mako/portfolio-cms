@@ -1,6 +1,11 @@
-function SearchForm() {
+"use client";
+
+function SearchForm({ search, onSearch }) {
   return (
-    <label className="input shadow-sm border-none ">
+    <label
+      className="input shadow-sm border-none"
+      onSubmit={(e) => e.preventDefault()}
+    >
       <svg
         className="h-[1em] opacity-50"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +22,13 @@ function SearchForm() {
           <path d="m21 21-4.3-4.3"></path>
         </g>
       </svg>
-      <input type="search" className="grow" placeholder="Search" />
+      <input
+        type="search"
+        className="grow"
+        placeholder="Search"
+        value={search}
+        onChange={(e) => onSearch(e.target.value)}
+      />
       {/* <kbd className="kbd kbd-sm">⌘</kbd>
       <kbd className="kbd kbd-sm">K</kbd> */}
     </label>
