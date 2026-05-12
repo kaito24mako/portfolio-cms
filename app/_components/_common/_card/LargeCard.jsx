@@ -56,6 +56,7 @@ function LargeCard({ tags = [], ...props }) {
         </Button>
       </div>
 
+      {/* image - using fixed sizes to set prevent different images from stretching */}
       <div className="relative w-[85dvw] h-[25dvh] sm:w-[480px] sm:h-[260px] overflow-hidden">
         {props.image && (
           <Image
