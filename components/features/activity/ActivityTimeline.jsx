@@ -1,4 +1,4 @@
-import Badge from "../../_common/Badge";
+import Badge from "@/components/ui/badge/Badge";
 
 const activityPlaceholders = [
   {

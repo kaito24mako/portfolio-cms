@@ -1,4 +1,4 @@
-import ProjectPageTemplate from "@/app/_components/_pages/ProjectPageTemplate";
+import ProjectPageTemplate from "@/components/pages/ProjectPageTemplate";
 
 import { redirect } from "next/navigation";
 import { connectDb } from "@/lib/connectDb";

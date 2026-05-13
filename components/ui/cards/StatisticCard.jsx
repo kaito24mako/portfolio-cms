@@ -1,4 +1,4 @@
-function Statistic({ title, count = "N/A" }) {
+function StatisticCard({ title, count = 0 }) {
   return (
     <div className="flex items-center gap-2 bg-base-300 shadow-sm rounded w-[90%] py-3 px-4 pr-8">
       <svg
@@ -25,4 +25,4 @@ function Statistic({ title, count = "N/A" }) {
   );
 }
 
-export default Statistic;
+export default StatisticCard;

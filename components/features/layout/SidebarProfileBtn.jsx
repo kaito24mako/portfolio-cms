@@ -1,6 +1,4 @@
-import Image from "next/image";
-import UserIcon from "../../_images/_sidebar/UserIcon";
-import Button from "../../_common/Button";
+import UserIcon from "@/components/icons/sidebar/UserIcon";
 
 function SidebarProfileBtn() {
   return (

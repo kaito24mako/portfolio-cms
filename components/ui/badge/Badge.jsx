@@ -1,4 +1,4 @@
-import AlertIcon from "../_images/_icons/AlertIcon";
+import AlertIcon from "@/components/icons/ui/AlertIcon";
 
 function Badge({ icon = false, text, className = "" }) {
   return (

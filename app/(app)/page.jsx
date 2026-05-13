@@ -1,9 +1,9 @@
-import Grid from "../_components/_common/Grid";
-import SmallCard from "../_components/_common/_card/SmallCard";
-import Statistic from "../_components/_common/Statistic";
-import Title from "../_components/_common/Title";
-import ActivityTimeline from "../_components/_features/_activity/ActivityTimeline";
-import EditIcon from "../_components/_images/_icons/EditIcon";
+import ActivityTimeline from "@/components/features/activity/ActivityTimeline";
+import EditIcon from "@/components/icons/ui/EditIcon";
+import Grid from "@/components/ui/grid/Grid";
+import SmallCard from "@/components/ui/cards/SmallCard";
+import Statistic from "@/components/ui/cards/StatisticCard";
+import Title from "@/components/ui/text/Title";
 
 import { getProjectsData } from "@/lib/projects";
 
@@ -14,6 +14,8 @@ export const metadata = {
 async function DashboardPage() {
   const projects = await getProjectsData();
   const recentProjects = projects.slice(0, 3);
+
+  // ! should these be in a custom hook?
 
   // logic for statistic cards
   const totalProjects = projects.length;

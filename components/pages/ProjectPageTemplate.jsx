@@ -1,11 +1,10 @@
-import Title from "../_common/Title";
-import Grid from "../_common/Grid";
-import EditForm from "../_common/_form/EditForm";
-import Badge from "../_common/Badge";
-import Button from "../_common/Button";
-
-import WebIcon from "../_images/_icons/WebIcon";
-import GithubIcon from "../_images/_icons/GithubIcon";
+import GithubIcon from "@/components/icons/ui/GithubIcon";
+import WebIcon from "@/components/icons/ui/WebIcon";
+import Badge from "@/components/ui/badge/Badge";
+import Button from "@/components/ui/button/Button";
+import EditForm from "@/components/ui/forms/EditForm";
+import Grid from "@/components/ui/grid/Grid";
+import Title from "@/components/ui/text/Title";
 
 function ProjectPageTemplate({ ...props }) {
   // ! should these be in a custom hook or sth?
@@ -63,7 +62,7 @@ function ProjectPageTemplate({ ...props }) {
       <Grid className="grid-cols-1 sm:grid-cols-5">
         {/* left form fields */}
         <div className="col-span-3 flex flex-col gap-3">
-          {leftFormFields?.map((f) => (
+          {leftFormFields.map((f) => (
             <EditForm title={f.title} key={f.title}>
               {f.isTextArea ? (
                 <textarea
@@ -137,7 +136,7 @@ function ProjectPageTemplate({ ...props }) {
         </Button>
 
         {/* save buttons */}
-        {statusButtons?.map((btn) => (
+        {statusButtons.map((btn) => (
           <Button
             key={btn.value}
             value={btn.value}

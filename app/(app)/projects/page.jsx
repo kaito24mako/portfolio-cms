@@ -1,8 +1,8 @@
 // * only fetches data, so it stays a server-side component
 
-import Button from "@/app/_components/_common/Button";
-import Title from "@/app/_components/_common/Title";
-import ProjectsList from "@/app/_components/_features/_projects/ProjectsList";
+import ProjectsList from "@/components/features/projects/ProjectsList";
+import Button from "@/components/ui/button/Button";
+import Title from "@/components/ui/text/Title";
 import { getProjectsData } from "@/lib/projects";
 
 // ? what does this do? is it because this page renders dynamic data?

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Badge from "../Badge";
-import Button from "../Button";
-import GithubIcon from "../../_images/_icons/GithubIcon";
-import WebIcon from "../../_images/_icons/WebIcon";
-import EditIcon from "../../_images/_icons/EditIcon";
+import Badge from "../_badge/Badge";
+import Button from "../_button/Button";
+import EditIcon from "@/components/icons/ui/EditIcon";
+import GithubIcon from "@/components/icons/ui/GithubIcon";
+import WebIcon from "@/components/icons/ui/WebIcon";
 
 function LargeCard({ tags = [], ...props }) {
   return (

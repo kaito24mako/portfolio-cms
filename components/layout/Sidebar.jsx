@@ -1,16 +1,15 @@
 import Image from "next/image";
 
 import Header from "./Header";
-import SidebarItems from "../_features/_layout/SidebarItems";
-import Button from "../_common/Button";
-import SidebarProfileBtn from "../_features/_layout/SidebarProfileBtn";
-
-import DashboardIcon from "../_images/_sidebar/DashboardIcon";
-import ProjectsIcon from "../_images/_sidebar/ProjectsIcon";
-import TagsIcon from "../_images/_sidebar/TagsIcon";
-import ActivityIcon from "../_images/_sidebar/ActivityIcon";
-import AboutIcon from "../_images/_sidebar/AboutIcon";
-import ContactIcon from "../_images/_sidebar/ContactIcon";
+import SidebarItems from "@/components/features/layout/SidebarItems";
+import SidebarProfileBtn from "@/components/features/layout/SidebarProfileBtn";
+import AboutIcon from "@/components/icons/sidebar/AboutIcon";
+import ActivityIcon from "@/components/icons/sidebar/ActivityIcon";
+import ContactIcon from "@/components/icons/sidebar/ContactIcon";
+import DashboardIcon from "@/components/icons/sidebar/DashboardIcon";
+import ProjectsIcon from "@/components/icons/sidebar/ProjectsIcon";
+import TagsIcon from "@/components/icons/sidebar/TagsIcon";
+import Button from "@/components/ui/button/Button";
 
 function Sidebar({ children }) {
   return (

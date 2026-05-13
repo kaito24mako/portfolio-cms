@@ -1,6 +1,5 @@
-import React from "react";
-import DarkMode from "../_features/_layout/DarkMode";
-import ToggleIcon from "../_images/_sidebar/ToggleIcon";
+import DarkMode from "@/components/features/layout/DarkMode";
+import ToggleIcon from "@/components/icons/sidebar/ToggleIcon";
 
 function Header() {
   return (

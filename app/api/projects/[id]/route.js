@@ -19,20 +19,20 @@ export async function GET(req, { params }) {
 // * PUT
 export async function PUT(req, { params }) {
   if (!isAuthorised(req)) {
-    return new Response("Unauthorised", { status: 401 });
+    return new Response("Access denied - Unauthorised", { status: 401 });
   }
 
   try {
     await connectDb();
 
-    //? same as req.body
+    // same as req.body
     const data = await req.json();
-    //? same as req.params.id
+    // same as req.params.id
     const { id } = await params;
 
     const project = await putProject(id, data);
 
-    //? same as res.send
+    // same as res.send
     return Response.json(project);
   } catch (err) {
     return new Response(err.message, { status: 500 });
@@ -42,7 +42,7 @@ export async function PUT(req, { params }) {
 // * DELETE
 export async function DELETE(req, { params }) {
   if (!isAuthorised(req)) {
-    return new Response("Unauthorised", { status: 401 });
+    return new Response("Access denied - Unauthorised", { status: 401 });
   }
 
   try {
