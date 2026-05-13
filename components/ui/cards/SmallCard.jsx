@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Button from "../_button/Button";
-import Badge from "../_badge/Badge";
+import Button from "../button/Button";
+import Badge from "../badge/Badge";
 
 function SmallCard({ ...props }) {
   return (

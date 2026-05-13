@@ -4,7 +4,7 @@
 
 import { useState } from "react";
 
-import FilterTabs from "../_filter/FilterTabs";
+import FilterTabs from "../filter/FilterTabs";
 import LargeCard from "@/components/ui/cards/LargeCard";
 import SearchForm from "@/components/ui/forms/SearchForm";
 import Grid from "@/components/ui/grid/Grid";
