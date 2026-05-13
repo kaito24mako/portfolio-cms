@@ -21,7 +21,12 @@ export async function getProject(id) {
 
 // * POST
 export async function postProject(data) {
-  // const project = await Project.create(req.body);
+  const sameProject = await Project.findOne({
+    where: { title: data.title },
+  });
+
+  if (sameProject) throw new Error("This project title already exists");
+
   const project = await Project.create(data);
 
   return {
@@ -32,7 +37,6 @@ export async function postProject(data) {
 
 // * PUT
 export async function putProject(id, data) {
-  // const id = parseInt(req.params.id);
   const project = await Project.findByPk(id);
 
   if (!project) {

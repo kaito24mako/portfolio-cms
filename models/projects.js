@@ -2,12 +2,6 @@ import { DataTypes } from "sequelize";
 import sequelize from "@/utils/connection";
 
 const Project = sequelize.define("Project", {
-  id: {
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
-    unique: true,
-    primaryKey: true,
-  },
   title: {
     type: DataTypes.STRING,
     allowNull: false,
