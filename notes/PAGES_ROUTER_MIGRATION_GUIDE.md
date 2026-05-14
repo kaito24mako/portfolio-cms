@@ -315,7 +315,7 @@ import Head from "next/head";
 import AppShell from "@/layouts/AppShell";
 import Button from "@/components/common/Button";
 import CardGrid from "@/components/common/CardGrid";
-import LargeCard from "@/components/common/LargeCard";
+import ProjectItem from "@/components/common/ProjectItem";
 import Title from "@/components/common/Title";
 import FilterIcon from "@/components/images/icons/FilterIcon";
 
@@ -489,7 +489,7 @@ What to check:
 - import paths
 - any references to old folder names
 
-### `LargeCard.jsx`
+### `ProjectItem.jsx`
 
 This should also migrate cleanly. `next/image` works in the Pages Router the same way for your current usage.
 

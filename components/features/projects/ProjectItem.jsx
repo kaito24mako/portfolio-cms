@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Badge from "../badge/Badge";
-import Button from "../button/Button";
+import Badge from "../../ui/badge/Badge";
+import Button from "../../ui/button/Button";
 import EditIcon from "@/components/icons/ui/EditIcon";
 import GithubIcon from "@/components/icons/ui/GithubIcon";
 import WebIcon from "@/components/icons/ui/WebIcon";
 
-function LargeCard({ tags = [], ...props }) {
+function ProjectItem({ tags = [], ...props }) {
   return (
     <div className="flex flex-col md:flex-row w-fit rounded-sm shadow-md bg-base-300">
       <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm">
@@ -80,4 +80,4 @@ function LargeCard({ tags = [], ...props }) {
   );
 }
 
-export default LargeCard;
+export default ProjectItem;

@@ -5,7 +5,7 @@
 import { useState } from "react";
 
 import FilterTabs from "../filter/FilterTabs";
-import LargeCard from "@/components/ui/cards/LargeCard";
+import ProjectItem from "@/components/features/projects/ProjectItem";
 import SearchForm from "@/components/ui/forms/SearchForm";
 import Grid from "@/components/ui/grid/Grid";
 
@@ -41,10 +41,10 @@ function ProjectsList({ projects = [] }) {
       />
 
       <Grid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
-        {filteredProjects?.map((p, index) => {
+        {filteredProjects?.map((p) => {
           return (
-            <LargeCard
-              key={index}
+            <ProjectItem
+              key={p.id}
               id={p.id}
               title={p.title}
               description={p.description}

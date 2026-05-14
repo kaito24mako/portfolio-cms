@@ -5,6 +5,8 @@ import SmallCard from "@/components/ui/cards/SmallCard";
 import Statistic from "@/components/ui/cards/StatisticCard";
 import Title from "@/components/ui/text/Title";
 
+import getProjectStats from "@/components/features/dashboard/getProjectStats";
+
 import { getProjectsData } from "@/lib/projects";
 
 export const metadata = {
@@ -13,19 +15,12 @@ export const metadata = {
 
 async function DashboardPage() {
   const projects = await getProjectsData();
-  const recentProjects = projects.slice(0, 3);
 
-  // ! should these be in a custom hook?
+  const { recent, total, published, drafted, archived } =
+    getProjectStats(projects);
 
-  // logic for statistic cards
-  const totalProjects = projects.length;
-  const publishedProjects = projects.filter(
-    (p) => p.status === "Published",
-  ).length;
-  const draftedProjects = projects.filter((p) => p.status === "Draft").length;
-  const archivedProjects = projects.filter(
-    (p) => p.status === "Archived",
-  ).length;
+  // display most recent projects
+  const recentProjects = recent;
 
   return (
     <div className="flex flex-col gap-8">
@@ -64,10 +59,10 @@ async function DashboardPage() {
         <div className="flex flex-col gap-2 col-span-3">
           <h2 className="text-lg font-medium">Statistics</h2>
           <div className="flex flex-col gap-4">
-            <Statistic title="Total Projects" count={totalProjects} />
-            <Statistic title="Published Projects" count={publishedProjects} />
-            <Statistic title="Drafts" count={draftedProjects} />
-            <Statistic title="Archived" count={archivedProjects} />
+            <Statistic title="Total Projects" count={total} />
+            <Statistic title="Published Projects" count={published} />
+            <Statistic title="Drafts" count={drafted} />
+            <Statistic title="Archived" count={archived} />
           </div>
         </div>
 
