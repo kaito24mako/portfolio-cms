@@ -43,17 +43,16 @@ const nextConfig = (phase) => {
 
     // Environment variables exposed to browser + server
     env: {
-      // SERVER_NAME: (() => {
-      //   if (isDev) return "http://localhost:3000";
-      //   if (isProd)
-      //     return "codefeed-deploy-oia2-68zcd9ifv-kaito24makos-projects.vercel.app";
-      //   return undefined;
-      // })(),
-      SERVER_NAME: isDev
-        ? "http://localhost:3000"
-        : process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
-          : undefined,
+      SERVER_NAME: (() => {
+        if (isDev) return "http://localhost:3000";
+        if (isProd) return `https://${process.env.VERCEL_URL}`;
+        return undefined;
+      })(),
+      // SERVER_NAME: isDev
+      //   ? "http://localhost:3000"
+      //   : process.env.VERCEL_URL
+      //     ? `https://${process.env.VERCEL_URL}`
+      //     : undefined,
 
       // API_KEY: process.env.API_KEY,
     },

@@ -14,11 +14,14 @@ export async function getAllProjects() {
 }
 
 export async function getProject(id) {
-  const project = await Project.findByPk(id);
+  const project = await Project.findByPk(id, {
+    attributes: { exclude: ["createdAt"] },
+  });
 
   if (!project) {
     throw new Error("Project not found");
   }
+
   return project;
 }
 
@@ -30,7 +33,9 @@ export async function postProject(data) {
 
   if (sameProject) throw new Error("This project title already exists");
 
-  const project = await Project.create(data);
+  const project = await Project.create(data, {
+    attributes: { exclude: ["createdAt"] },
+  });
 
   return {
     message: `Project ${project.title} created successfully`,

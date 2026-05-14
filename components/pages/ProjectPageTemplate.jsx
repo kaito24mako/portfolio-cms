@@ -7,7 +7,6 @@ import Grid from "@/components/ui/grid/Grid";
 import Title from "@/components/ui/text/Title";
 
 function ProjectPageTemplate({ ...props }) {
-  // ! should these be in a custom hook or sth?
   const leftFormFields = [
     {
       isTextArea: false,

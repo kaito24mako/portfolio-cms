@@ -11,7 +11,7 @@ export async function GET() {
 
     return Response.json(projects);
   } catch (err) {
-    return new Response(err.message, { status: 500 });
+    return new Response(err.message, { status: 404 });
   }
 }
 

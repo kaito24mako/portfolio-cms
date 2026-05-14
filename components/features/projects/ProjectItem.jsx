@@ -5,6 +5,8 @@ import EditIcon from "@/components/icons/ui/EditIcon";
 import GithubIcon from "@/components/icons/ui/GithubIcon";
 import WebIcon from "@/components/icons/ui/WebIcon";
 
+import Skeleton from "react-loading-skeleton";
+
 function ProjectItem({ tags = [], ...props }) {
   return (
     <div className="flex flex-col md:flex-row w-fit rounded-sm shadow-md bg-base-300">
@@ -12,9 +14,11 @@ function ProjectItem({ tags = [], ...props }) {
         <div className="flex flex-col items-center gap-2">
           {/* title and badge */}
           <div className="flex items-center gap-3">
-            <h2 className="text-xl md:text-2xl font-semibold">{props.title}</h2>
+            <h2 className="text-xl md:text-2xl font-semibold">
+              {props.title || <Skeleton />}
+            </h2>
             <Badge
-              text={props.status}
+              text={props.status || <Skeleton />}
               className={
                 (props.status === "Published" && "badge-success") ||
                 (props.status === "Draft" && "badge-warning") ||
@@ -25,12 +29,12 @@ function ProjectItem({ tags = [], ...props }) {
 
           {/* updatedAt */}
           <p className="text-xs sm:text-sm opacity-87">
-            Last edited: {props.updatedAt}
+            Last edited: {props.updatedAt || <Skeleton />}
           </p>
 
           {/* project description */}
           <p className="text-xs sm:text-sm max-w-[30ch] text-center">
-            {props.description}
+            {props.description || <Skeleton />}
           </p>
 
           {/* tags */}

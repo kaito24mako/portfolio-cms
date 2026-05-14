@@ -5,9 +5,6 @@ import Button from "@/components/ui/button/Button";
 import Title from "@/components/ui/text/Title";
 import { getProjectsData } from "@/lib/projects";
 
-// ? what does this do? is it because this page renders dynamic data?
-export const dynamic = "force-dynamic";
-
 export const metadata = {
   title: "Projects",
 };
