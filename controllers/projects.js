@@ -46,14 +46,14 @@ export async function postProject(data) {
 // * PUT
 export async function putProject(id, data) {
   const project = await Project.findByPk(id);
-  const sameProject = await Project.findOne({
-    where: { title: data.title },
-  });
+  // const sameProject = await Project.findOne({
+  //   where: { title: data.title },
+  // });
 
   if (!project) {
     throw new Error("Project not found");
   }
-  if (sameProject) throw new Error("This project title already exists");
+  // if (sameProject) throw new Error("This project title already exists");
 
   await project.update({
     title: data.title ?? project.title,

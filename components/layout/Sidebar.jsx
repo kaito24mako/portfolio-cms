@@ -1,15 +1,9 @@
 import Image from "next/image";
 
 import Header from "./Header";
-import SidebarItems from "@/components/features/layout/SidebarItems";
-import SidebarProfileBtn from "@/components/features/layout/SidebarProfileBtn";
-import AboutIcon from "@/components/icons/sidebar/AboutIcon";
-import ActivityIcon from "@/components/icons/sidebar/ActivityIcon";
-import ContactIcon from "@/components/icons/sidebar/ContactIcon";
-import DashboardIcon from "@/components/icons/sidebar/DashboardIcon";
-import ProjectsIcon from "@/components/icons/sidebar/ProjectsIcon";
-import TagsIcon from "@/components/icons/sidebar/TagsIcon";
+import SidebarProfileBtn from "@/components/features/sidebar/SidebarProfileBtn";
 import Button from "@/components/ui/button/Button";
+import SidebarList from "../features/sidebar/SidebarList";
 
 function Sidebar({ children }) {
   return (
@@ -59,48 +53,7 @@ function Sidebar({ children }) {
           </Button>
 
           {/* sidebar links */}
-          <div className="flex flex-col flex-1">
-            <SidebarItems
-              items={[
-                {
-                  label: "Dashboard",
-                  icon: DashboardIcon,
-                  href: "/",
-                },
-                {
-                  label: "Projects",
-                  icon: ProjectsIcon,
-                  href: "/projects",
-                },
-                {
-                  label: "Tags",
-                  icon: TagsIcon,
-                  href: "/tags",
-                },
-                {
-                  label: "Activity",
-                  icon: ActivityIcon,
-                  href: "/activity",
-                },
-              ]}
-            />
-            <div className="mt-auto">
-              <SidebarItems
-                items={[
-                  {
-                    label: "API Guide",
-                    icon: AboutIcon,
-                    href: "/guide",
-                  },
-                  {
-                    label: "Contact",
-                    icon: ContactIcon,
-                    href: "/contact",
-                  },
-                ]}
-              />
-            </div>
-          </div>
+          <SidebarList />
 
           {/* profile */}
           <div>

@@ -1,5 +1,6 @@
 import { getProject, putProject, deleteProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
+import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
 
 // * GET
@@ -10,16 +11,21 @@ export async function GET(req, { params }) {
     const { id } = await params;
     const project = await getProject(id);
 
-    return Response.json(project);
+    return jsonWithCors(project, req);
+
+    // ? before CORS
+    // return Response.json(project);
   } catch (err) {
-    return new Response(err.message, { status: 500 });
+    return textWithCors(err.message, req, { status: 500 });
+    // return new Response(err.message, { status: 500 });
   }
 }
 
 // * PUT
 export async function PUT(req, { params }) {
   if (!isAuthorised(req)) {
-    return new Response("Access denied - Unauthorised", { status: 401 });
+    return textWithCors("Access denied - Unauthorised", req, { status: 401 });
+    // return new Response("Access denied - Unauthorised", { status: 401 });
   }
 
   try {
@@ -33,16 +39,19 @@ export async function PUT(req, { params }) {
     const project = await putProject(id, data);
 
     // same as res.send
-    return Response.json(project);
+    return jsonWithCors(project, req);
+    // return Response.json(project);
   } catch (err) {
-    return new Response(err.message, { status: 500 });
+    return textWithCors(err.message, req, { status: 500 });
+    // return new Response(err.message, { status: 500 });
   }
 }
 
 // * DELETE
 export async function DELETE(req, { params }) {
   if (!isAuthorised(req)) {
-    return new Response("Access denied - Unauthorised", { status: 401 });
+    return textWithCors("Access denied - Unauthorised", req, { status: 401 });
+    // return new Response("Access denied - Unauthorised", { status: 401 });
   }
 
   try {
@@ -51,8 +60,14 @@ export async function DELETE(req, { params }) {
     const { id } = await params;
     const project = await deleteProject(id);
 
-    return Response.json(project);
+    return jsonWithCors(project, req);
+    // return Response.json(project);
   } catch (err) {
-    return new Response(err.message, { status: 500 });
+    return textWithCors(err.message, req, { status: 500 });
+    // return new Response(err.message, { status: 500 });
   }
+}
+
+export function OPTIONS(req) {
+  return optionsWithCors(req);
 }

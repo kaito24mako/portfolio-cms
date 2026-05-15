@@ -1,4 +1,4 @@
-import DarkMode from "@/components/features/layout/DarkMode";
+import DarkMode from "@/components/features/theme/DarkMode";
 import ToggleIcon from "@/components/icons/sidebar/ToggleIcon";
 
 function Header() {
