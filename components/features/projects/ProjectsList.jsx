@@ -6,12 +6,10 @@ import { useState } from "react";
 
 import FilterTabs from "../filter/FilterTabs";
 import ProjectItem from "@/components/features/projects/ProjectItem";
-import SearchForm from "@/components/ui/forms/SearchForm";
 import Grid from "@/components/ui/grid/Grid";
 
-function ProjectsList({ projects = [] }) {
+function ProjectsList({ projects = [], search }) {
   const [activeTab, setActiveTab] = useState("All");
-  const [search, setSearch] = useState("");
 
   // filter by status
   let filteredProjects =
@@ -28,7 +26,6 @@ function ProjectsList({ projects = [] }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <SearchForm search={search} onSearch={setSearch} />
       <FilterTabs
         tabs={[
           { title: "All", style: "btn-active" },
