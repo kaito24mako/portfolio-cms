@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       data-theme="nord"
       className={`${geistSans.variable} ${poiret.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary!">
+      <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
         {children}
       </body>
     </html>
