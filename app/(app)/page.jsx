@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import ActivityTimeline from "@/components/features/activity/ActivityTimeline";
 import EditIcon from "@/components/icons/ui/EditIcon";
 import Grid from "@/components/ui/grid/Grid";
@@ -31,7 +33,7 @@ async function DashboardPage() {
         subHeading="Let's create a beautiful portfolio."
       />
 
-      {/* project cards */}
+      {/* recent projects */}
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-medium">Recent Projects</h2>
@@ -70,7 +72,12 @@ async function DashboardPage() {
         <div className="flex flex-col gap-4 col-span-4">
           <div className="flex justify-between items-center">
             <h2 className="text-lg font-medium">Recent Activity</h2>
-            <button className="cursor-pointer text-sm">View All</button>
+            <Link
+              href="/activity"
+              className="link link-hover cursor-pointer text-sm"
+            >
+              View All
+            </Link>
           </div>
 
           <ActivityTimeline />
