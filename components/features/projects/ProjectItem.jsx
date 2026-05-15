@@ -14,11 +14,9 @@ function ProjectItem({ tags = [], ...props }) {
         <div className="flex flex-col items-center gap-2">
           {/* title and badge */}
           <div className="flex items-center gap-3">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              {props.title || <Skeleton />}
-            </h2>
+            <h2 className="text-xl md:text-2xl font-semibold">{props.title}</h2>
             <Badge
-              text={props.status || <Skeleton />}
+              text={props.status}
               className={
                 (props.status === "Published" && "badge-success") ||
                 (props.status === "Draft" && "badge-warning") ||
@@ -29,12 +27,12 @@ function ProjectItem({ tags = [], ...props }) {
 
           {/* updatedAt */}
           <p className="text-xs sm:text-sm opacity-87">
-            Last edited: {props.updatedAt || <Skeleton />}
+            Last edited: {props.updatedAt}
           </p>
 
           {/* project description */}
           <p className="text-xs sm:text-sm max-w-[30ch] text-center">
-            {props.description || <Skeleton />}
+            {props.description}
           </p>
 
           {/* tags */}

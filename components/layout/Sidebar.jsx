@@ -88,9 +88,9 @@ function Sidebar({ children }) {
               <SidebarItems
                 items={[
                   {
-                    label: "About",
+                    label: "API Guide",
                     icon: AboutIcon,
-                    href: "/about",
+                    href: "/guide",
                   },
                   {
                     label: "Contact",

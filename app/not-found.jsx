@@ -5,7 +5,7 @@ import notFound from "@/public/placeholders/notFound.svg";
 
 function NotFoundPage() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary!">
       <h1>404 | Page not found </h1>
       <p>You are in the wrong place!</p>
       <Image src={notFound} alt="Not Found Page" loading="lazy" />
