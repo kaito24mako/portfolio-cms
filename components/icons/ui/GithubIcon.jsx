@@ -1,9 +1,9 @@
-function GithubIcon({ className = "" }) {
+function GithubIcon({ width = 13, height = 13, className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="13"
-      height="13"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

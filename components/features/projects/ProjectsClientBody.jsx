@@ -7,7 +7,7 @@ import SearchForm from "@/components/ui/forms/SearchForm";
 import Button from "@/components/ui/button/Button";
 import ProjectsList from "./ProjectsList";
 
-function ProjectsClientBody({ projects }) {
+function ProjectsClientBody({ projects = [] }) {
   const [search, setSearch] = useState("");
 
   return (

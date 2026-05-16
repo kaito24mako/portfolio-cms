@@ -25,6 +25,10 @@ const Project = sequelize.define("Project", {
     type: DataTypes.ENUM,
     values: ["Published", "Draft", "Archived"],
   },
+  tags: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+    defaultValue: [],
+  },
   updatedAt: {
     type: DataTypes.DATE,
     // * Used AI to help format the date

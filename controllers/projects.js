@@ -61,6 +61,7 @@ export async function putProject(id, data) {
     siteUrl: data.siteUrl ?? project.siteUrl,
     githubUrl: data.githubUrl ?? project.githubUrl,
     status: data.status ?? project.status,
+    tags: data.tags ?? project.tags,
   });
 
   return {

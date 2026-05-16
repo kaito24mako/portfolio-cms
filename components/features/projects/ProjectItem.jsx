@@ -7,7 +7,7 @@ import WebIcon from "@/components/icons/ui/WebIcon";
 
 import Skeleton from "react-loading-skeleton";
 
-function ProjectItem({ tags = [], ...props }) {
+function ProjectItem({ ...props }) {
   return (
     <div className="flex flex-col md:flex-row w-fit rounded-sm shadow-md bg-base-300">
       <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm">
@@ -37,10 +37,10 @@ function ProjectItem({ tags = [], ...props }) {
 
           {/* tags */}
           <div className="flex gap-2">
-            {tags.length > 0 &&
-              tags.map((t, index) => (
+            {props.tags.length > 0 &&
+              props.tags.map((tag, index) => (
                 <Badge
-                  text={t}
+                  text={tag}
                   className="badge-soft badge-primary"
                   key={index}
                 />
