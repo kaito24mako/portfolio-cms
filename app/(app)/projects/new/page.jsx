@@ -27,6 +27,7 @@ async function createProject(formData) {
     siteUrl: formData.get("siteUrl"),
     githubUrl: formData.get("githubUrl"),
     status: formData.get("status"),
+    tags: formData.getAll("tags"),
   };
 
   await postProject(data);

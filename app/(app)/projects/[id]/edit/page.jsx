@@ -17,6 +17,7 @@ async function EditProjectPage({ params }) {
 
   const { id } = await params;
   const project = await getProject(id);
+  console.log(project);
 
   async function editProject(formData) {
     "use server";
@@ -27,6 +28,7 @@ async function EditProjectPage({ params }) {
       siteUrl: formData.get("siteUrl"),
       githubUrl: formData.get("githubUrl"),
       status: formData.get("status"),
+      tags: formData.getAll("tags"),
     };
     await putProject(id, data);
     redirect("/projects");
@@ -49,6 +51,7 @@ async function EditProjectPage({ params }) {
       exitBtnText="Delete"
       prevTitle={project.dataValues.title}
       prevDescription={project.dataValues.description}
+      prevTags={project.dataValues.tags}
       prevSiteUrl={project.dataValues.siteUrl}
       prevGithubUrl={project.dataValues.githubUrl}
     />

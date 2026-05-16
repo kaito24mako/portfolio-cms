@@ -1,3 +1,5 @@
+"use client";
+
 import GithubIcon from "@/components/icons/ui/GithubIcon";
 import WebIcon from "@/components/icons/ui/WebIcon";
 import Badge from "@/components/ui/badge/Badge";
@@ -6,7 +8,20 @@ import EditForm from "@/components/ui/forms/EditForm";
 import Grid from "@/components/ui/grid/Grid";
 import Title from "@/components/ui/text/Title";
 
+import { useState } from "react";
+
 function ProjectPageTemplate({ ...props }) {
+  const [tags, setTags] = useState(() => props.prevTags ?? []);
+  const [tagsInput, setTagsInput] = useState("");
+
+  function handleNewTag() {
+    if (!tagsInput) return;
+
+    // to add onto the existing array, rather than replacing it
+    setTags((prev) => [...prev, tagsInput]);
+    setTagsInput("");
+  }
+
   const leftFormFields = [
     {
       isTextArea: false,
@@ -61,39 +76,66 @@ function ProjectPageTemplate({ ...props }) {
       <Grid className="grid-cols-1 sm:grid-cols-5">
         {/* left form fields */}
         <div className="col-span-3 flex flex-col gap-3">
-          {leftFormFields.map((f) => (
-            <EditForm title={f.title} key={f.title}>
-              {f.isTextArea ? (
+          {leftFormFields.map((field) => (
+            <EditForm title={field.title} key={field.title}>
+              {field.isTextArea ? (
                 <textarea
                   className="w-full focus:outline-0"
                   rows={8}
-                  name={f.name}
-                  placeholder={f.placeholder}
-                  defaultValue={f.defaultValue}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  defaultValue={field.defaultValue}
                 />
               ) : (
                 <input
                   type="text"
                   className="w-full focus:outline-0"
-                  name={f.name}
-                  placeholder={f.placeholder}
-                  defaultValue={f.defaultValue}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  defaultValue={field.defaultValue}
                 />
               )}
             </EditForm>
           ))}
         </div>
 
-        {/* right form fields */}
+        {/* tags */}
         <div className="col-span-2 flex flex-col gap-3">
           <EditForm title="Tags">
-            <div className="flex gap-2">
-              <Badge text="Next.js" className="badge-soft badge-primary" />
-              <Badge text="SQLite" className="badge-soft badge-primary" />
-              <Badge text="Tailwind CSS" className="badge-soft badge-primary" />
+            <div className="flex flex-col gap-4">
+              <div className="flex">
+                <input
+                  className="w-full focus:outline-0"
+                  type="text"
+                  placeholder="Add a technology used..."
+                  value={tagsInput}
+                  onChange={(e) => setTagsInput(e.target.value)}
+                />
+                <Button
+                  onClick={(e) => {
+                    handleNewTag();
+                    e.preventDefault();
+                  }}
+                  className=""
+                  icon={"/icons/plus.svg"}
+                >
+                  Add
+                </Button>
+              </div>
+
+              <div>
+                {tags.map((tag, index) => (
+                  <span key={index}>
+                    {/* a hidden input is rendered to allow for NewProjectPage to get the formData of the tags */}
+                    <input type="hidden" name="tags" value={tag} />
+                    <Badge text={tag} className="badge-soft badge-primary" />
+                  </span>
+                ))}
+              </div>
             </div>
           </EditForm>
 
+          {/* live site url */}
           <EditForm title="Site URL">
             <div className="flex items-center gap-2">
               <WebIcon />
@@ -107,6 +149,7 @@ function ProjectPageTemplate({ ...props }) {
             </div>
           </EditForm>
 
+          {/* github url */}
           <EditForm title="GitHub URL">
             <div className="flex items-center gap-2">
               <GithubIcon />
