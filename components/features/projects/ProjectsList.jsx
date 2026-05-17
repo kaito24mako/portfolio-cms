@@ -37,7 +37,7 @@ function ProjectsList({ projects = [], search }) {
         onTabChange={setActiveTab}
       />
 
-      <Grid className="grid-cols-1 2xl:grid-cols-2 gap-10 md:gap-6">
+      <Grid className="grid-cols-1 gap-10 md:gap-6">
         {filteredProjects?.map((p) => {
           return (
             <ProjectItem

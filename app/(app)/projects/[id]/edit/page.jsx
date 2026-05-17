@@ -17,7 +17,6 @@ async function EditProjectPage({ params }) {
 
   const { id } = await params;
   const project = await getProject(id);
-  console.log(project);
 
   async function editProject(formData) {
     "use server";

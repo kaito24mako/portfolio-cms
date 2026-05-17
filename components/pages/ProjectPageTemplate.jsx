@@ -116,14 +116,14 @@ function ProjectPageTemplate({ ...props }) {
                     handleNewTag();
                     e.preventDefault();
                   }}
-                  className=""
+                  className="btn-sm"
                   icon={"/icons/plus.svg"}
                 >
                   Add
                 </Button>
               </div>
 
-              <div>
+              <div className="flex gap-1">
                 {tags.map((tag, index) => (
                   <span key={index}>
                     {/* a hidden input is rendered to allow for NewProjectPage to get the formData of the tags */}
