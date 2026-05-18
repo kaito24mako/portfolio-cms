@@ -1,4 +1,5 @@
 import Project from "@/models/projects";
+import { badRequest, conflict, notFound } from "@/lib/errors";
 
 // in next.js, controllers shouldnt know about requests/responses (like req.params, req.body, res.send),
 // it should only return data or throw errors
@@ -10,20 +11,20 @@ export async function getAllProjects() {
     attributes: { exclude: ["createdAt"] },
   });
 
-  if (!projects) {
-    throw new Error("No projects found");
-  }
-
   return projects;
 }
 
 export async function getProject(id) {
+  if (!id) {
+    throw badRequest("Project id is required");
+  }
+
   const project = await Project.findByPk(id, {
     attributes: { exclude: ["createdAt"] },
   });
 
   if (!project) {
-    throw new Error("Project not found");
+    throw notFound("Project not found");
   }
 
   return project;
@@ -31,15 +32,25 @@ export async function getProject(id) {
 
 // * POST
 export async function postProject(data) {
+  if (!data.title) {
+    throw badRequest("Project title is required");
+  }
+
   const sameProject = await Project.findOne({
     where: { title: data.title },
   });
 
-  if (sameProject) throw new Error("This project title already exists");
+  if (sameProject) throw conflict("This project title already exists");
 
-  const project = await Project.create(data, {
-    attributes: { exclude: ["createdAt"] },
-  });
+  const project = await Project.create(
+    {
+      ...data,
+      title: data.title,
+    },
+    {
+      attributes: { exclude: ["createdAt"] },
+    },
+  );
 
   return {
     message: `Project ${project.title} created successfully`,
@@ -49,10 +60,28 @@ export async function postProject(data) {
 
 // * PUT
 export async function putProject(id, data) {
+  if (!id) {
+    throw badRequest("Project id is required");
+  }
+
   const project = await Project.findByPk(id);
 
   if (!project) {
-    throw new Error("Project not found");
+    throw notFound("Project not found");
+  }
+
+  if (data.title !== undefined && !data.title) {
+    throw badRequest("Project title is required");
+  }
+
+  if (data.title && data.title !== project.title) {
+    const sameProject = await Project.findOne({
+      where: { title: data.title },
+    });
+
+    if (sameProject) {
+      throw conflict("This project title already exists");
+    }
   }
 
   await project.update({
@@ -72,10 +101,14 @@ export async function putProject(id, data) {
 
 // * DELETE
 export async function deleteProject(id) {
+  if (!id) {
+    throw badRequest("Project id is required");
+  }
+
   const project = await Project.findByPk(id);
 
   if (!project) {
-    throw new Error("Project not found");
+    throw notFound("Project not found");
   }
 
   await project.destroy();

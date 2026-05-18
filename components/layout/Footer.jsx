@@ -16,7 +16,7 @@ const company = [
 
 function Footer() {
   return (
-    <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 mt-5 ">
+    <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mt-5 ">
       {/* Services */}
       <nav>
         <h6 className="footer-title">Services</h6>

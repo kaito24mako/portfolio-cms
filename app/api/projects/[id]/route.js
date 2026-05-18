@@ -1,7 +1,9 @@
 import { getProject, putProject, deleteProject } from "@/controllers/projects";
+
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
+import { getErrorResponse, unauthorised } from "@/lib/errors";
 
 // * GET
 export async function GET(req, { params }) {
@@ -12,46 +14,40 @@ export async function GET(req, { params }) {
     const project = await getProject(id);
 
     return jsonWithCors(project, req);
-
-    // ? before CORS
-    // return Response.json(project);
   } catch (err) {
-    return textWithCors(err.message, req, { status: 500 });
-    // return new Response(err.message, { status: 500 });
+    const { message, status } = getErrorResponse(err);
+    return textWithCors(message, req, { status });
   }
 }
 
 // * PUT
 export async function PUT(req, { params }) {
   if (!isAuthorised(req)) {
-    return textWithCors("Access denied - Unauthorised", req, { status: 401 });
-    // return new Response("Access denied - Unauthorised", { status: 401 });
+    const { message, status } = getErrorResponse(unauthorised());
+    return textWithCors(message, req, { status });
   }
 
   try {
     await connectDb();
 
-    // same as req.body
-    const data = await req.json();
-    // same as req.params.id
     const { id } = await params;
+    const data = await req.json();
 
     const project = await putProject(id, data);
 
     // same as res.send
     return jsonWithCors(project, req);
-    // return Response.json(project);
   } catch (err) {
-    return textWithCors(err.message, req, { status: 500 });
-    // return new Response(err.message, { status: 500 });
+    const { message, status } = getErrorResponse(err);
+    return textWithCors(message, req, { status });
   }
 }
 
 // * DELETE
 export async function DELETE(req, { params }) {
   if (!isAuthorised(req)) {
-    return textWithCors("Access denied - Unauthorised", req, { status: 401 });
-    // return new Response("Access denied - Unauthorised", { status: 401 });
+    const { message, status } = getErrorResponse(unauthorised());
+    return textWithCors(message, req, { status });
   }
 
   try {
@@ -61,10 +57,9 @@ export async function DELETE(req, { params }) {
     const project = await deleteProject(id);
 
     return jsonWithCors(project, req);
-    // return Response.json(project);
   } catch (err) {
-    return textWithCors(err.message, req, { status: 500 });
-    // return new Response(err.message, { status: 500 });
+    const { message, status } = getErrorResponse(err);
+    return textWithCors(message, req, { status });
   }
 }
 

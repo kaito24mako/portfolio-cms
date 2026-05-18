@@ -23,17 +23,13 @@ function ActivityTimeline() {
   return (
     <ul className="w-full flex flex-col gap-6">
       {activityPlaceholders.map((a) => (
-        <li
-          key={a.update}
-          className="rounded shadow-sm p-4 bg-base-200 dark:bg-base-300"
-        >
+        <li key={a.update} className="rounded shadow-sm p-4 bg-base-300">
           <div className="text-xs sm:text-base relative">
             <span className="absolute -top-7 -left-7">
               <Badge icon={true} text="2 hours ago" className="bg-base-100" />
             </span>
             <span className="pt-5">{a.update}</span>
           </div>
-          {a.connectorBottom && <hr />}
         </li>
       ))}
     </ul>

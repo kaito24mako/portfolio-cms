@@ -1,7 +1,9 @@
 import { getAllProjects, postProject } from "@/controllers/projects";
+
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
+import { getErrorResponse, unauthorised } from "@/lib/errors";
 
 // * GET /api/projects
 export async function GET(req) {
@@ -15,7 +17,8 @@ export async function GET(req) {
     // ? before CORS
     //  return Response.json(projects);
   } catch (err) {
-    return textWithCors(err.message, req, { status: 404 });
+    const { message, status } = getErrorResponse(err);
+    return textWithCors(message, req, { status });
     // return new Response(err.message, { status: 404 });
   }
 }
@@ -23,21 +26,21 @@ export async function GET(req) {
 // * POST /api/projects
 export async function POST(req) {
   if (!isAuthorised(req)) {
-    return textWithCors("Access denied - Unauthorised", req, { status: 401 });
-    // return new Response("Access denied - Unauthorised", { status: 401 });
+    const { message, status } = getErrorResponse(unauthorised());
+    return textWithCors(message, req, { status });
   }
 
   try {
     await connectDb();
 
-    const body = await req.json();
+    const body = await req.body();
+
     const project = await postProject(body);
 
     return jsonWithCors(project, req);
-    // return Response.json(project);
   } catch (err) {
-    return textWithCors(err.message, req, { status: 500 });
-    // return new Response(err.message, { status: 500 });
+    const { message, status } = getErrorResponse(err);
+    return textWithCors(message, req, { status });
   }
 }
 
