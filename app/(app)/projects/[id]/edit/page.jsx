@@ -42,7 +42,7 @@ async function EditProjectPage({ params }) {
 
   return (
     <ProjectPageTemplate
-      formFunction={editProject}
+      handleFormAction={editProject}
       exitBtnFunction={removeProject}
       heading="Edit Project"
       subHeading="Edit the details of your stunning work"

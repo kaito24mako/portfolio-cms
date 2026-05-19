@@ -10,7 +10,7 @@ import Title from "@/components/ui/text/Title";
 
 import { useState } from "react";
 
-function ProjectPageTemplate({ ...props }) {
+function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
   const [tags, setTags] = useState(() => props.prevTags ?? []);
   const [tagsInput, setTagsInput] = useState("");
 
@@ -66,7 +66,7 @@ function ProjectPageTemplate({ ...props }) {
 
   return (
     // action is a server function - when this form is submitted, call createProject with the form data
-    <form action={props.formFunction} className="flex flex-col gap-8">
+    <form action={handleFormAction} className="flex flex-col gap-8">
       <Title
         font="font-heading"
         heading={props.heading}

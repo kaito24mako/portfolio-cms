@@ -38,7 +38,7 @@ async function createProject(formData) {
 function NewProjectsPage() {
   return (
     <ProjectPageTemplate
-      formFunction={createProject}
+      handleFormAction={createProject}
       heading="Create New Project"
       subHeading="Fill in the details of your latest work"
       exitBtnLink="/projects"

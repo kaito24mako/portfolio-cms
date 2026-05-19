@@ -32,25 +32,22 @@ export async function getProject(id) {
 
 // * POST
 export async function postProject(data) {
-  if (!data.title) {
-    throw badRequest("Project title is required");
-  }
-
   const sameProject = await Project.findOne({
     where: { title: data.title },
   });
 
   if (sameProject) throw conflict("This project title already exists");
 
-  const project = await Project.create(
-    {
-      ...data,
-      title: data.title,
-    },
-    {
-      attributes: { exclude: ["createdAt"] },
-    },
-  );
+  if (!data.title && !data.siteUrl && !data.githubUrl)
+    throw badRequest("Must provide at least one field to create a project");
+
+  if (!data.title) {
+    throw badRequest("Project title is required");
+  }
+
+  const project = await Project.create(data, {
+    attributes: { exclude: ["createdAt"] },
+  });
 
   return {
     message: `Project ${project.title} created successfully`,
@@ -70,7 +67,7 @@ export async function putProject(id, data) {
     throw notFound("Project not found");
   }
 
-  if (data.title !== undefined && !data.title) {
+  if (!data.title) {
     throw badRequest("Project title is required");
   }
 
