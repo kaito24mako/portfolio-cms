@@ -1,9 +1,8 @@
 import { getAllProjects, postProject } from "@/controllers/projects";
-
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
-import { getErrorResponse, unauthorised } from "@/lib/errors";
+import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
 
 // * GET /api/projects
 export async function GET(req) {
@@ -26,14 +25,16 @@ export async function GET(req) {
 // * POST /api/projects
 export async function POST(req) {
   if (!isAuthorised(req)) {
-    const { message, status } = getErrorResponse(unauthorised());
+    const { message, status } = getErrorResponse(
+      denyAccess("No API key provided"),
+    );
     return textWithCors(message, req, { status });
   }
 
   try {
     await connectDb();
 
-    const body = await req.body();
+    const body = await req.json();
 
     const project = await postProject(body);
 

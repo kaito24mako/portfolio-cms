@@ -9,7 +9,7 @@ import Title from "@/components/ui/text/Title";
 
 import getProjectStats from "@/components/features/dashboard/getProjectStats";
 
-import { getProjectsData } from "@/lib/projects";
+import { getProjectsData } from "@/lib/getProjectsData";
 
 export const metadata = {
   title: "Dashboard",

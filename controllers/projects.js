@@ -1,5 +1,6 @@
 import Project from "@/models/projects";
-import { badRequest, conflict, notFound } from "@/lib/errors";
+
+import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 
 // in next.js, controllers shouldnt know about requests/responses (like req.params, req.body, res.send),
 // it should only return data or throw errors
@@ -7,8 +8,8 @@ import { badRequest, conflict, notFound } from "@/lib/errors";
 // * GET
 export async function getAllProjects() {
   const projects = await Project.findAll({
-    order: [["updatedAt", "DESC"]],
     attributes: { exclude: ["createdAt"] },
+    order: [["updatedAt", "DESC"]],
   });
 
   return projects;
@@ -37,9 +38,6 @@ export async function postProject(data) {
   });
 
   if (sameProject) throw conflict("This project title already exists");
-
-  if (!data.title && !data.siteUrl && !data.githubUrl)
-    throw badRequest("Must provide at least one field to create a project");
 
   if (!data.title) {
     throw badRequest("Project title is required");
@@ -77,7 +75,7 @@ export async function putProject(id, data) {
     });
 
     if (sameProject) {
-      throw conflict("This project title already exists");
+      throw conflict("This title already exists");
     }
   }
 

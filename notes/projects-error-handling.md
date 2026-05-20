@@ -20,9 +20,9 @@ File: [lib/errors.js](/Users/kaito24mako/programming/diploma/next_js/assessment/
 
 This file contains your custom error system.
 
-### `AppError`
+### `ApiError`
 
-`AppError` is a custom class that extends the normal JavaScript `Error`.
+`ApiError` is a custom class that extends the normal JavaScript `Error`.
 
 Normal `Error`:
 
@@ -30,13 +30,13 @@ Normal `Error`:
 throw new Error("Something went wrong");
 ```
 
-Custom `AppError`:
+Custom `ApiError`:
 
 ```js
-throw new AppError("Project not found", 404);
+throw new ApiError("Project not found", 404);
 ```
 
-The difference is that `AppError` stores:
+The difference is that `ApiError` stores:
 
 - the error message
 - the HTTP status code
@@ -45,10 +45,10 @@ That is useful because your API route needs both pieces of information.
 
 ### Helper functions
 
-Instead of writing `new AppError(...)` every time, the file gives you helper functions:
+Instead of writing `new ApiError(...)` every time, the file gives you helper functions:
 
 - `badRequest(message)` -> status `400`
-- `unauthorised(message)` -> status `401`
+- `denyAccess(message)` -> status `401`
 - `notFound(message)` -> status `404`
 - `conflict(message)` -> status `409`
 
@@ -64,7 +64,7 @@ That is shorter and easier to read.
 
 This function checks the error type.
 
-If the error is one of your custom `AppError`s, it returns:
+If the error is one of your custom `ApiError`s, it returns:
 
 ```js
 {
@@ -234,7 +234,7 @@ That means:
   Used when the client sends invalid input.
   Example: missing `title`, missing `id`, invalid JSON body.
 
-- `401 Unauthorised`
+- `401 denyAccess`
   Used when the request is not allowed.
   Example: failing `isAuthorised(req)`.
 
@@ -246,7 +246,7 @@ That means:
   Example: duplicate project title.
 
 - `500 Internal Server Error`
-  Used for unexpected errors that are not one of your custom `AppError`s.
+  Used for unexpected errors that are not one of your custom `ApiError`s.
 
 ## 6. Beginner mental model
 

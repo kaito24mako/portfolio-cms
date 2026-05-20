@@ -3,7 +3,7 @@ import { getProject, putProject, deleteProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
-import { getErrorResponse, unauthorised } from "@/lib/errors";
+import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
 
 // * GET
 export async function GET(req, { params }) {
@@ -23,7 +23,9 @@ export async function GET(req, { params }) {
 // * PUT
 export async function PUT(req, { params }) {
   if (!isAuthorised(req)) {
-    const { message, status } = getErrorResponse(unauthorised());
+    const { message, status } = getErrorResponse(
+      denyAccess("No API key provided"),
+    );
     return textWithCors(message, req, { status });
   }
 
@@ -46,7 +48,9 @@ export async function PUT(req, { params }) {
 // * DELETE
 export async function DELETE(req, { params }) {
   if (!isAuthorised(req)) {
-    const { message, status } = getErrorResponse(unauthorised());
+    const { message, status } = getErrorResponse(
+      denyAccess("No API key provided"),
+    );
     return textWithCors(message, req, { status });
   }
 
