@@ -1,4 +1,8 @@
-import { getProject, putProject, deleteProject } from "@/controllers/projects";
+import {
+  getProjectById,
+  putProject,
+  deleteProject,
+} from "@/controllers/projects";
 
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
@@ -11,7 +15,7 @@ export async function GET(req, { params }) {
     await connectDb();
 
     const { id } = await params;
-    const project = await getProject(id);
+    const project = await getProjectById(id);
 
     return jsonWithCors(project, req);
   } catch (err) {

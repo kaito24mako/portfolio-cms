@@ -168,7 +168,7 @@ Example shape:
 
 ```js
 try {
-  const project = await getProject(id);
+  const project = await getProjectById(id);
   return jsonWithCors(project, req);
 } catch (err) {
   const { message, status } = getErrorResponse(err);
@@ -269,7 +269,7 @@ That separation is good because:
 
 ### Example A: User requests a missing project
 
-1. Route calls `getProject(id)`.
+1. Route calls `getProjectById(id)`.
 2. Controller cannot find the project.
 3. Controller throws `notFound("Project not found")`.
 4. Route catches the error.

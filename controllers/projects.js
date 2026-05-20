@@ -15,9 +15,9 @@ export async function getAllProjects() {
   return projects;
 }
 
-export async function getProject(id) {
+export async function getProjectById(id) {
   if (!id) {
-    throw badRequest("Project id is required");
+    throw badRequest("Project ID is required");
   }
 
   const project = await Project.findByPk(id, {
@@ -39,9 +39,10 @@ export async function postProject(data) {
 
   if (sameProject) throw conflict("This project title already exists");
 
-  if (!data.title) {
-    throw badRequest("Project title is required");
-  }
+  if (!data.title) throw badRequest("A title is required to create a project");
+
+  if (!data.status)
+    throw badRequest("A status is required to create a project");
 
   const project = await Project.create(data, {
     attributes: { exclude: ["createdAt"] },
@@ -56,7 +57,7 @@ export async function postProject(data) {
 // * PUT
 export async function putProject(id, data) {
   if (!id) {
-    throw badRequest("Project id is required");
+    throw badRequest("Project ID is required");
   }
 
   const project = await Project.findByPk(id);
@@ -66,10 +67,14 @@ export async function putProject(id, data) {
   }
 
   if (!data.title) {
-    throw badRequest("Project title is required");
+    throw badRequest("A title is required to update a project");
   }
 
-  if (data.title && data.title !== project.title) {
+  if (!data.status)
+    throw badRequest("A status is required to update a project");
+
+  // if an existing project already has the new title...
+  if (data.title !== project.title) {
     const sameProject = await Project.findOne({
       where: { title: data.title },
     });
@@ -97,7 +102,7 @@ export async function putProject(id, data) {
 // * DELETE
 export async function deleteProject(id) {
   if (!id) {
-    throw badRequest("Project id is required");
+    throw badRequest("Project ID is required");
   }
 
   const project = await Project.findByPk(id);

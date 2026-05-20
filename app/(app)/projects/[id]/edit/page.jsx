@@ -1,7 +1,11 @@
 import ProjectPageTemplate from "@/components/pages/ProjectPageTemplate";
 
 import { redirect } from "next/navigation";
-import { getProject, putProject, deleteProject } from "@/controllers/projects";
+import {
+  getProjectById,
+  putProject,
+  deleteProject,
+} from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 
 export const metadata = {
@@ -16,7 +20,7 @@ async function EditProjectPage({ params }) {
   await connectDb();
 
   const { id } = await params;
-  const project = await getProject(id);
+  const project = await getProjectById(id);
 
   async function editProject(formData) {
     "use server";

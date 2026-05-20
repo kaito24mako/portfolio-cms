@@ -23,6 +23,7 @@ const Project = sequelize.define("Project", {
   },
   status: {
     type: DataTypes.ENUM,
+    allowNull: false,
     values: ["Published", "Draft", "Archived"],
   },
   tags: {

@@ -1,9 +1,9 @@
-# getProject Explanation (uses params)
+# getProjectById Explanation (uses params)
 
-Example code: `getProject` in `controllers/projects.js`
+Example code: `getProjectById` in `controllers/projects.js`
 
 ```js
-export async function getProject(id) {
+export async function getProjectById(id) {
   const project = await Project.findByPk(parseInt(id));
 
   if (!project) {
@@ -42,7 +42,7 @@ export async function GET(req, { params }) {
   try {
     await connectDb();
 
-    const project = await getProject(params.id);
+    const project = await getProjectById(params.id);
 
     return Response.json(project);
   } catch (err) {
@@ -67,7 +67,7 @@ Step by step:
 4. `await connectDb()` ensures the database is initialized before querying it.
    In this project, that means `sequelize.sync()` has run so the tables exist.
 
-5. `await getProject(params.id)` asks the controller to fetch the project whose `id` came from the URL.
+5. `await getProjectById(params.id)` asks the controller to fetch the project whose `id` came from the URL.
 
 6. If a project is found, `Response.json(project)` sends it back as JSON.
 
