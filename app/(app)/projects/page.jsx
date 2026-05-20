@@ -2,7 +2,7 @@
 
 import ProjectsClientBody from "@/components/features/projects/ProjectsClientBody";
 
-import { getProjectById } from "@/lib/getProjectById";
+import { getProjectById } from "@/lib/getProjectsData";
 
 export const metadata = {
   title: "Projects",
