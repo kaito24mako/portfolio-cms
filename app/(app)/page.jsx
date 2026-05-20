@@ -7,19 +7,19 @@ import SmallCard from "@/components/ui/cards/SmallCard";
 import Statistic from "@/components/ui/cards/StatisticCard";
 import Title from "@/components/ui/text/Title";
 
-import getProjectByIdStats from "@/components/features/dashboard/getProjectByIdStats";
+import getProjectStats from "@/components/features/dashboard/getProjectStats";
 
-import { getProjectByIdsData } from "@/lib/getProjectByIdsData";
+import { getProjectById } from "@/lib/getProjectsData";
 
 export const metadata = {
   title: "Dashboard",
 };
 
 async function DashboardPage() {
-  const projects = await getProjectByIdsData();
+  const projects = await getProjectById();
 
   const { recent, total, published, drafted, archived } =
-    getProjectByIdStats(projects);
+    getProjectStats(projects);
 
   // display most recent projects
   const recentProjects = recent;

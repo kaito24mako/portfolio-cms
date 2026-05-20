@@ -1,4 +1,4 @@
-export default function getProjectByIdStats(projects) {
+export default function getProjectStats(projects) {
   const recent = projects.slice(0, 3);
   const total = projects.length;
   const published = projects.filter((p) => p.status === "Published").length;

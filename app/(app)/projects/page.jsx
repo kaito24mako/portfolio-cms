@@ -2,14 +2,14 @@
 
 import ProjectsClientBody from "@/components/features/projects/ProjectsClientBody";
 
-import { getProjectByIdsData } from "@/lib/getProjectByIdsData";
+import { getProjectById } from "@/lib/getProjectById";
 
 export const metadata = {
   title: "Projects",
 };
 
 async function ProjectsPage() {
-  const projects = await getProjectByIdsData();
+  const projects = await getProjectById();
 
   // ProjectsClientBody is a CSC needed to separate search and tab states
   return <ProjectsClientBody projects={projects} />;
