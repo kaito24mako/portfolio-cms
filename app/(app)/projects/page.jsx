@@ -4,6 +4,8 @@ import ProjectsClientBody from "@/components/features/projects/ProjectsClientBod
 
 import { getProjectById } from "@/lib/getProjectsData";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Projects",
 };
