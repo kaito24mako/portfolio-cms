@@ -14,7 +14,7 @@ function SmallCard({ ...props }) {
         />
       </figure>
       <div className="card-body">
-        <div className="flex gap-3">
+        <div className="flex items-center gap-3">
           <h2 className="card-title">{props.title}</h2>
           <Badge
             text={props.status}

@@ -1,3 +1,5 @@
+"use client";
+
 import SidebarItems from "./SidebarItems";
 import AboutIcon from "@/components/icons/sidebar/AboutIcon";
 import DataIcon from "@/components/icons/sidebar/DataIcon";

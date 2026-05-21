@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-import ActivityTimeline from "@/components/features/activity/ActivityTimeline";
+import ActivityTimeline from "@/components/features/activityPage/ActivityTimeline";
 import EditIcon from "@/components/icons/ui/EditIcon";
 import Grid from "@/components/common/grid/Grid";
 import SmallCard from "@/components/common/cards/SmallCard";
 import Statistic from "@/components/common/cards/StatisticCard";
 import Title from "@/components/common/text/Title";
 
-import getProjectStats from "@/components/features/dashboard/getProjectStats";
+import getProjectStats from "@/components/features/dashboardPage/getProjectStats";
 
 import { getProjectById } from "@/lib/getProjectsData";
 

@@ -4,6 +4,7 @@ import Header from "./Header";
 import SidebarProfileBtn from "@/components/features/sidebar/SidebarProfileBtn";
 import Button from "@/components/common/button/Button";
 import SidebarList from "../features/sidebar/SidebarList";
+import Link from "next/link";
 
 function Sidebar({ children }) {
   return (
@@ -30,7 +31,7 @@ function Sidebar({ children }) {
         {/* sidebar content */}
         <div className="flex min-h-full flex-col gap-2 bg-base-200 is-drawer-close:w-16 is-drawer-open:w-60">
           {/* title */}
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo.svg"
               width={70}
@@ -41,7 +42,7 @@ function Sidebar({ children }) {
             <h1 className="is-drawer-close:hidden text-3xl font-heading font-semibold">
               Mako
             </h1>
-          </div>
+          </Link>
 
           {/* new project button */}
           <Button

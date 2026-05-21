@@ -5,7 +5,7 @@
 import { useState } from "react";
 
 import FilterTabs from "../filter/FilterTabs";
-import ProjectItem from "@/components/features/projects/ProjectItem";
+import ProjectItem from "@/components/features/projectsPage/ProjectItem";
 import Grid from "@/components/common/grid/Grid";
 
 function ProjectsList({ projects = [], search }) {

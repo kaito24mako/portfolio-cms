@@ -1,6 +1,6 @@
 // * only fetches data, so it stays a server-side component
 
-import ProjectsClientBody from "@/components/features/projects/ProjectsClientBody";
+import ProjectsClientBody from "@/components/features/projectsPage/ProjectsClientBody";
 
 import { getProjectById } from "@/lib/getProjectsData";
 

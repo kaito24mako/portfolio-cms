@@ -53,8 +53,30 @@ function AboutPage() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Title font="font-heading" subHeading="I hope you enjoy the app!" />
+        <Title font="font-heading" subHeading="Features coming soon..." />
+        <ul className="pl-8">
+          <li className="list-disc">
+            Tags page with statistics on what and how many projects are using a
+            certain technology
+          </li>
+          <li className="list-disc">
+            An authentication/login system to make projects unique to each user
+          </li>
+          <li className="list-disc">
+            Uploading a thumbnail image to a project
+          </li>
+          <li className="list-disc">
+            Activity page with logs on the user&apos;s activities over time
+          </li>
+          <li className="list-disc">
+            API endpoint for only published projects
+          </li>
+        </ul>
       </div>
+
+      {/* <div className="flex flex-col gap-2">
+        <Title font="font-heading" subHeading="I hope you enjoy the app!" />
+      </div> */}
     </div>
   );
 }
