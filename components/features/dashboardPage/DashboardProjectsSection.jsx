@@ -2,6 +2,10 @@ import SmallCard from "@/components/common/cards/SmallCard";
 import Grid from "@/components/common/grid/Grid";
 import EditIcon from "@/components/icons/ui/EditIcon";
 import getProjectStats from "./getProjectStats";
+import LoadingSkeleton from "@/components/common/loader/LoadingSkeleton";
+
+// to attach loaders for only the slow data, nested components
+import { Suspense } from "react";
 import { getProjectsData } from "@/lib/getProjectsData";
 
 async function DashboardProjectsSection() {
@@ -17,17 +21,18 @@ async function DashboardProjectsSection() {
 
       <Grid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {recentProjects?.map((p) => (
-          <SmallCard
-            key={p.id}
-            title={p.title}
-            description={`Last edited: ${p.updatedAt}`}
-            status={p.status}
-            image={p.image}
-            alt={`${p.title} project`}
-            btnText="Edit"
-            btnIcon={EditIcon}
-            btnLink={`/projects/${p.id}/edit`}
-          />
+          <Suspense fallback={<LoadingSkeleton />} key={p.id}>
+            <SmallCard
+              title={p.title}
+              description={`Last edited: ${p.updatedAt}`}
+              status={p.status}
+              image={p.image}
+              alt={`${p.title} project`}
+              btnText="Edit"
+              btnIcon={EditIcon}
+              btnLink={`/projects/${p.id}/edit`}
+            />
+          </Suspense>
         ))}
       </Grid>
     </div>
