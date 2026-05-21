@@ -17,7 +17,7 @@ function SidebarItems({ items }) {
             <Link
               href={href}
               className={`py-3 is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-open:tooltip-left ${
-                isActive && "bg-gray-300"
+                isActive && "bg-gray-400/35"
               }`}
               data-tip={label}
             >

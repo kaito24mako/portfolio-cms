@@ -1,8 +1,7 @@
 // * only fetches data, so it stays a server-side component
 
 import ProjectsClientBody from "@/components/features/projectsPage/ProjectsClientBody";
-
-import { getProjectById } from "@/lib/getProjectsData";
+import { getProjectsData } from "@/lib/getProjectsData";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +10,7 @@ export const metadata = {
 };
 
 async function ProjectsPage() {
-  const projects = await getProjectById();
+  const projects = await getProjectsData();
 
   // ProjectsClientBody is a CSC needed to separate search and tab states
   return <ProjectsClientBody projects={projects} />;

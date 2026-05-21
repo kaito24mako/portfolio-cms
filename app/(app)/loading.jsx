@@ -1,5 +1,5 @@
-import { ClipLoader, RingLoader } from "react-spinners";
+import { ClipLoader } from "react-spinners";
 
 export default function Loading() {
-  return <ClipLoader color="currentColor" size="50" />;
+  return <ClipLoader color="currentColor" size={50} />;
 }
