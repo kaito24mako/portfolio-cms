@@ -1,4 +1,4 @@
-import Title from "@/components/ui/text/Title";
+import Title from "@/components/common/text/Title";
 
 function CodeItem({ ...props }) {
   return (

@@ -2,14 +2,17 @@ import Link from "next/link";
 
 import ActivityTimeline from "@/components/features/activity/ActivityTimeline";
 import EditIcon from "@/components/icons/ui/EditIcon";
-import Grid from "@/components/ui/grid/Grid";
-import SmallCard from "@/components/ui/cards/SmallCard";
-import Statistic from "@/components/ui/cards/StatisticCard";
-import Title from "@/components/ui/text/Title";
+import Grid from "@/components/common/grid/Grid";
+import SmallCard from "@/components/common/cards/SmallCard";
+import Statistic from "@/components/common/cards/StatisticCard";
+import Title from "@/components/common/text/Title";
 
 import getProjectStats from "@/components/features/dashboard/getProjectStats";
 
 import { getProjectById } from "@/lib/getProjectsData";
+
+// force page to render data dynamically since in production, data wasn't dynamically being rendered
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Dashboard",
@@ -18,11 +21,8 @@ export const metadata = {
 async function DashboardPage() {
   const projects = await getProjectById();
 
-  const { recent, total, published, drafted, archived } =
+  const { recentProjects, total, published, drafted, archived } =
     getProjectStats(projects);
-
-  // display most recent projects
-  const recentProjects = recent;
 
   return (
     <div className="flex flex-col gap-8">

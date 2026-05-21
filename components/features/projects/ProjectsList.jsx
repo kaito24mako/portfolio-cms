@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import FilterTabs from "../filter/FilterTabs";
 import ProjectItem from "@/components/features/projects/ProjectItem";
-import Grid from "@/components/ui/grid/Grid";
+import Grid from "@/components/common/grid/Grid";
 
 function ProjectsList({ projects = [], search }) {
   const [activeTab, setActiveTab] = useState("All");

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import Title from "@/components/ui/text/Title";
-import SearchForm from "@/components/ui/forms/SearchForm";
-import Button from "@/components/ui/button/Button";
+import Title from "@/components/common/text/Title";
+import SearchForm from "@/components/common/forms/SearchForm";
+import Button from "@/components/common/button/Button";
 import ProjectsList from "./ProjectsList";
 
 function ProjectsClientBody({ projects = [] }) {

@@ -2,11 +2,11 @@
 
 import GithubIcon from "@/components/icons/ui/GithubIcon";
 import WebIcon from "@/components/icons/ui/WebIcon";
-import Badge from "@/components/ui/badge/Badge";
-import Button from "@/components/ui/button/Button";
-import EditForm from "@/components/ui/forms/EditForm";
-import Grid from "@/components/ui/grid/Grid";
-import Title from "@/components/ui/text/Title";
+import Badge from "@/components/common/badge/Badge";
+import Button from "@/components/common/button/Button";
+import EditForm from "@/components/common/forms/EditForm";
+import Grid from "@/components/common/grid/Grid";
+import Title from "@/components/common/text/Title";
 
 import { useState } from "react";
 

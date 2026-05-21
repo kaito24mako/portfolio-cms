@@ -1,5 +1,5 @@
 import CodeItem from "@/components/features/guidePage/CodeItem";
-import Title from "@/components/ui/text/Title";
+import Title from "@/components/common/text/Title";
 
 const endpointSections = [
   {

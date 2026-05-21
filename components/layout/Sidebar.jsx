@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Header from "./Header";
 import SidebarProfileBtn from "@/components/features/sidebar/SidebarProfileBtn";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/common/button/Button";
 import SidebarList from "../features/sidebar/SidebarList";
 
 function Sidebar({ children }) {
