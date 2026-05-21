@@ -1,12 +1,8 @@
 import StatisticCard from "@/components/common/cards/StatisticCard";
-import getProjectStats from "./getProjectStats";
+import getProjectStats from "../getProjectStats";
 
-import { Suspense } from "react";
-import { getProjectsData } from "@/lib/getProjectsData";
-import LoadingSkeleton from "@/components/common/loader/LoadingSkeleton";
-
-async function DashboardStatsSection() {
-  const projects = await getProjectsData();
+async function DashboardStatsSection({ projectsPromise }) {
+  const projects = await projectsPromise;
   const { total, published, drafted, archived } = getProjectStats(projects);
 
   const statistics = [
@@ -21,9 +17,7 @@ async function DashboardStatsSection() {
       <h2 className="text-lg font-medium">Statistics</h2>
       <div className="flex flex-col gap-4">
         {statistics.map((s) => (
-          <Suspense fallback={<LoadingSkeleton />} key={s.title}>
-            <StatisticCard title={s.title} count={s.count} />
-          </Suspense>
+          <StatisticCard title={s.title} count={s.count} key={s.title} />
         ))}
       </div>
     </div>

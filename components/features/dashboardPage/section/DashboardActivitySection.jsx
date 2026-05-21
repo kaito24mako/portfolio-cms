@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ActivityTimeline from "../activityPage/ActivityTimeline";
+import ActivityTimeline from "../../activityPage/ActivityTimeline";
 
 function DashboardActivitySection() {
   return (
