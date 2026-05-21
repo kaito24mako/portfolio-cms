@@ -1,9 +1,13 @@
 // import styles
 import "@/styles/globals.css";
-import Script from "next/script";
 
-// fonts
+// use this library instead of Scripts - recommended by next.js docs
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import { Geist, Poiret_One } from "next/font/google";
+// import { useRouter } from "next/navigation";
+// import { useEffect } from "react";
+// import * as ga from "@/lib/google-analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <>
-      {/* Google analytics script */}
-      <Script
+      {/* <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
         strategy="afterInteractive"
       />
@@ -37,7 +40,7 @@ export default function RootLayout({ children }) {
         {`window.dataLayer = window.dataLayer || []; function gtag()
         {dataLayer.push(arguments)}
         gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}')`}
-      </Script>
+      </Script> */}
 
       <html
         lang="en"
@@ -47,6 +50,8 @@ export default function RootLayout({ children }) {
         <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
           {children}
         </body>
+        {/* Google analytics script */}
+        <GoogleAnalytics gaId={NEXT_PUBLIC_GA_ID} />
       </html>
     </>
   );

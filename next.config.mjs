@@ -50,6 +50,11 @@ const nextConfig = (phase) => {
       })(),
       // API_KEY: process.env.API_KEY,
       NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+      // DB_CONNECTION_URL: (() => {
+      //   if (isDev) return `${process.env.DB_DEV_CONNECTION_URL}`;
+      //   if (isProd) return `${process.env.DB_PROD_CONNECTION_URL}`;
+      //   return undefined;
+      // })(),
     },
   };
 };

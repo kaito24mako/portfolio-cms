@@ -2,8 +2,7 @@ import { Sequelize } from "sequelize";
 import pg from "pg";
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  // change to postgres for supabase
-  // tells sequelize to connect to Postgres
+  // tells sequelize to connect to Postgres (for Supabase)
   dialect: "postgres",
   dialectModule: pg,
   logging: false,

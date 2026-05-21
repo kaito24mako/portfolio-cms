@@ -66,4 +66,6 @@ const Project = sequelize.define("Project", {
   },
 });
 
+// ! JOI validation needed?
+
 export default Project;
