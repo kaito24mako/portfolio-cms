@@ -5,9 +5,6 @@ import "@/styles/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { Geist, Poiret_One } from "next/font/google";
-// import { useRouter } from "next/navigation";
-// import { useEffect } from "react";
-// import * as ga from "@/lib/google-analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,7 +48,7 @@ export default function RootLayout({ children }) {
           {children}
         </body>
         {/* Google analytics script */}
-        <GoogleAnalytics gaId={NEXT_PUBLIC_GA_ID} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </html>
     </>
   );
