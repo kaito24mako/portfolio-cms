@@ -48,13 +48,8 @@ const nextConfig = (phase) => {
         if (isProd) return `https://${process.env.VERCEL_URL}`;
         return undefined;
       })(),
-      // SERVER_NAME: isDev
-      //   ? "http://localhost:3000"
-      //   : process.env.VERCEL_URL
-      //     ? `https://${process.env.VERCEL_URL}`
-      //     : undefined,
-
       // API_KEY: process.env.API_KEY,
+      NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     },
   };
 };

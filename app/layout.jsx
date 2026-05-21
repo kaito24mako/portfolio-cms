@@ -30,13 +30,13 @@ export default function RootLayout({ children }) {
     <>
       {/* Google analytics script */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-324X829Q4T"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics-script" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || []; function gtag()
         {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'G-324X829Q4T')`}
+        gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}')`}
       </Script>
 
       <html
