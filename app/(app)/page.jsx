@@ -5,9 +5,7 @@ import DashboardActivitySection from "@/components/features/dashboardPage/sectio
 import DashboardProjectsSkeleton from "@/components/features/dashboardPage/skeleton/DashboardProjectsSkeleton";
 import DashboardStatsSkeleton from "@/components/features/dashboardPage/skeleton/DashboardStatsSkeleton";
 
-// to attach Spinners for only the slow data, nested components
 import { Suspense } from "react";
-
 import { getProjectsData } from "@/lib/getProjectsData";
 
 // force page to render data dynamically since in production, data wasn't dynamically being rendered
@@ -29,6 +27,7 @@ function DashboardPage() {
         subHeading="Let's create a beautiful portfolio."
       />
 
+      {/* to attach loading skeleton for only the slow data, nested components */}
       <Suspense fallback={<DashboardProjectsSkeleton />}>
         <DashboardProjectsSection projectsPromise={projectsPromise} />
       </Suspense>

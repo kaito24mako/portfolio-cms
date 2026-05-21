@@ -1,12 +1,10 @@
-// * involves client-side interaction with state, so it's a client-side component
-
 "use client";
-
-import { useState } from "react";
 
 import FilterTabs from "../filter/FilterTabs";
 import ProjectItem from "@/components/features/projectsPage/ProjectItem";
 import Grid from "@/components/common/grid/Grid";
+
+import { useState } from "react";
 
 function ProjectsList({ projects = [], search }) {
   const [activeTab, setActiveTab] = useState("All");
@@ -38,23 +36,21 @@ function ProjectsList({ projects = [], search }) {
       />
 
       <Grid className="grid-cols-1 gap-10 md:gap-6">
-        {filteredProjects?.map((p) => {
-          return (
-            <ProjectItem
-              key={p.id}
-              id={p.id}
-              title={p.title}
-              description={p.description}
-              siteUrl={p.siteUrl}
-              githubUrl={p.githubUrl}
-              status={p.status}
-              updatedAt={p.updatedAt}
-              tags={p.tags}
-              image={p.image}
-              alt={p.title}
-            />
-          );
-        })}
+        {filteredProjects?.map((p) => (
+          <ProjectItem
+            key={p.id}
+            id={p.id}
+            title={p.title}
+            description={p.description}
+            siteUrl={p.siteUrl}
+            githubUrl={p.githubUrl}
+            status={p.status}
+            updatedAt={p.updatedAt}
+            tags={p.tags}
+            image={p.image}
+            alt={p.title}
+          />
+        ))}
       </Grid>
     </div>
   );

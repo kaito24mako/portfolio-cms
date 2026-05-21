@@ -1,6 +1,5 @@
-// * only fetches data, so it stays a server-side component
-
 import ProjectsClientBody from "@/components/features/projectsPage/ProjectsClientBody";
+
 import { getProjectsData } from "@/lib/getProjectsData";
 
 export const dynamic = "force-dynamic";

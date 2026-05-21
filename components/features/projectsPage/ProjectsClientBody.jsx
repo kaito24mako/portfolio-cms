@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
-
 import Title from "@/components/common/text/Title";
 import SearchForm from "@/components/common/forms/SearchForm";
 import Button from "@/components/common/button/Button";
 import ProjectsList from "./ProjectsList";
+import Spinner from "@/components/common/loader/Spinner";
+
+import { Suspense, useState } from "react";
 
 function ProjectsClientBody({ projects = [] }) {
   const [search, setSearch] = useState("");
@@ -30,7 +31,9 @@ function ProjectsClientBody({ projects = [] }) {
         </div>
       </div>
 
-      <ProjectsList projects={projects} search={search} />
+      <Suspense fallback={<Spinner />}>
+        <ProjectsList projects={projects} search={search} />
+      </Suspense>
     </div>
   );
 }

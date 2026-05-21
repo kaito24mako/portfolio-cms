@@ -5,8 +5,6 @@ import EditIcon from "@/components/icons/ui/EditIcon";
 import GithubIcon from "@/components/icons/ui/GithubIcon";
 import WebIcon from "@/components/icons/ui/WebIcon";
 
-import Skeleton from "react-loading-skeleton";
-
 function ProjectItem({ ...props }) {
   return (
     <div className="flex flex-col md:flex-row w-fit rounded-sm shadow-md bg-base-300">
