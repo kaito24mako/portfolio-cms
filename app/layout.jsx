@@ -1,5 +1,6 @@
 // import styles
 import "@/styles/globals.css";
+import Script from "next/script";
 
 // fonts
 import { Geist, Poiret_One } from "next/font/google";
@@ -26,14 +27,27 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      data-theme="nord"
-      className={`${geistSans.variable} ${poiret.variable}`}
-    >
-      <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
-        {children}
-      </body>
-    </html>
+    <>
+      {/* Google analytics script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-324X829Q4T"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics-script" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', 'G-324X829Q4T')`}
+      </Script>
+
+      <html
+        lang="en"
+        data-theme="nord"
+        className={`${geistSans.variable} ${poiret.variable}`}
+      >
+        <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
