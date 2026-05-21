@@ -14,7 +14,7 @@ function Sidebar({ children }) {
         className="drawer-toggle"
         defaultChecked
       />
-      <div className="drawer-content">
+      <div className="drawer-content flex min-h-screen flex-col">
         <Header />
         {/* page content */}
         {children}

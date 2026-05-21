@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 
 // use this library instead of Scripts - recommended by next.js docs
 import { GoogleAnalytics } from "@next/third-parties/google";
-
 import { Geist, Poiret_One } from "next/font/google";
 
 const geistSans = Geist({
@@ -28,28 +27,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <>
-      {/* <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics-script" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || []; function gtag()
-        {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}')`}
-      </Script> */}
-
-      <html
-        lang="en"
-        data-theme="nord"
-        className={`${geistSans.variable} ${poiret.variable}`}
-      >
-        <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
-          {children}
-        </body>
-        {/* Google analytics script */}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-      </html>
-    </>
+    <html
+      lang="en"
+      data-theme="nord"
+      className={`${geistSans.variable} ${poiret.variable}`}
+    >
+      <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
+        {children}
+      </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+    </html>
   );
 }
