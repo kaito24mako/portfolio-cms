@@ -6,7 +6,7 @@ import DashboardProjectsSkeleton from "@/components/features/dashboardPage/skele
 import DashboardStatsSkeleton from "@/components/features/dashboardPage/skeleton/DashboardStatsSkeleton";
 
 import { Suspense } from "react";
-import { getProjectsData } from "@/lib/getProjectsData";
+import { getProjectsData } from "@/utils/getProjectsData";
 
 // force page to render data dynamically since in production, data wasn't dynamically being rendered
 export const dynamic = "force-dynamic";

@@ -4,10 +4,10 @@ import GithubIcon from "@/components/icons/ui/GithubIcon";
 function SocialsList() {
   return (
     <>
-      <Link href="https://github.com/">
+      <Link href="https://github.com/kaito24mako" target="_blank">
         <GithubIcon width={24} height={24} />
       </Link>
-      <Link href="https://facebook.com/">
+      <Link href="https://facebook.com/" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -23,7 +23,7 @@ function SocialsList() {
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
       </Link>
-      <Link href="https://instagram.com/">
+      <Link href="https://instagram.com/" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

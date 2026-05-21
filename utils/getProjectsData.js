@@ -1,4 +1,4 @@
-import { connectDb } from "./connectDb";
+import { connectDb } from "../lib/connectDb";
 import { getAllProjects } from "@/controllers/projects";
 
 const projectsPlaceholders = [

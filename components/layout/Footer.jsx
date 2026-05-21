@@ -17,7 +17,7 @@ const company = [
 function Footer() {
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mt-5 ">
-      {/* Services */}
+      {/* services */}
       <nav>
         <h6 className="footer-title">Services</h6>
         {services.map((s) => (
@@ -27,7 +27,7 @@ function Footer() {
         ))}
       </nav>
 
-      {/* Company */}
+      {/* company */}
       <nav>
         <h6 className="footer-title">Company</h6>
         {company.map((c) => (
@@ -37,7 +37,7 @@ function Footer() {
         ))}
       </nav>
 
-      {/* Socials */}
+      {/* socials */}
       <nav className="flex flex-col gap-10">
         <div>
           <h6 className="footer-title">Social</h6>
@@ -47,7 +47,7 @@ function Footer() {
         </div>
 
         <h6 className="footer-title">
-          Kaito Watanabe © {new Date().getFullYear()}
+          Made by Kaito © {new Date().getFullYear()}
         </h6>
       </nav>
     </footer>
