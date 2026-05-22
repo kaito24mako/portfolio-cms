@@ -1,7 +1,7 @@
 "use client";
 
 import Title from "@/components/common/text/Title";
-import SearchForm from "@/components/common/forms/SearchForm";
+import SearchForm from "@/components/common/form/SearchForm";
 import Button from "@/components/common/button/Button";
 import ProjectsList from "./ProjectsList";
 import Spinner from "@/components/common/loader/Spinner";

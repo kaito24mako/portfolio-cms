@@ -1,4 +1,4 @@
-import StatisticCard from "@/components/common/cards/StatisticCard";
+import StatisticCard from "@/components/common/card/StatisticCard";
 import getProjectStats from "../../../../utils/getProjectStats";
 
 async function DashboardStatsSection({ projectsPromise }) {

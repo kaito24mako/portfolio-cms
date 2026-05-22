@@ -1,4 +1,4 @@
-import SmallCard from "@/components/common/cards/SmallCard";
+import SmallCard from "@/components/common/card/SmallCard";
 import Grid from "@/components/common/grid/Grid";
 import EditIcon from "@/components/icons/ui/EditIcon";
 import getProjectStats from "../../../../utils/getProjectStats";

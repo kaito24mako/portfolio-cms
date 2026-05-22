@@ -4,11 +4,12 @@ import GithubIcon from "@/components/icons/ui/GithubIcon";
 import WebIcon from "@/components/icons/ui/WebIcon";
 import Badge from "@/components/common/badge/Badge";
 import Button from "@/components/common/button/Button";
-import EditForm from "@/components/common/forms/EditForm";
+import EditForm from "@/components/common/form/EditForm";
 import Grid from "@/components/common/grid/Grid";
 import Title from "@/components/common/text/Title";
 
 import { useState } from "react";
+import FormLoader from "@/app/hooks/FormLoader";
 
 function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
   const [tags, setTags] = useState(() => props.prevTags ?? []);
@@ -73,6 +74,9 @@ function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
         subHeading={props.subHeading}
       />
 
+      {/* feedback while form is submitting */}
+      <FormLoader />
+
       <Grid className="grid-cols-1 sm:grid-cols-5">
         {/* left form fields */}
         <div className="col-span-3 flex flex-col gap-3">
@@ -117,9 +121,8 @@ function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
                     e.preventDefault();
                   }}
                   className="btn-sm"
-                  icon={"/icons/plus.svg"}
                 >
-                  Add
+                  + Add
                 </Button>
               </div>
 
@@ -165,7 +168,7 @@ function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
         </div>
       </Grid>
 
-      {/* bottom buttons */}
+      {/* submit buttons */}
       <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm sm:flex-row">
         {/* cancel/delete button */}
         <Button
