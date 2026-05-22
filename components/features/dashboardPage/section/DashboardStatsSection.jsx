@@ -1,5 +1,5 @@
 import StatisticCard from "@/components/common/card/StatisticCard";
-import getProjectStats from "../../../../utils/getProjectStats";
+import getProjectStats from "../../../../utils/projects/getProjectStats";
 
 async function DashboardStatsSection({ projectsPromise }) {
   const projects = await projectsPromise;

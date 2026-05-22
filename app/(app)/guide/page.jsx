@@ -1,80 +1,10 @@
-import CodeItem from "@/components/features/guidePage/CodeItem";
+import EndpointItem from "@/components/features/guidePage/EndpointItem";
 import Title from "@/components/common/text/Title";
-
-const endpointSections = [
-  {
-    title: "✴︎ Get all projects",
-    description: "Retrieve a list of all projects",
-    items: [
-      {
-        title: "URL Request",
-        code: "https://portfolio-cms-blond-five.vercel.app/api/projects",
-      },
-      {
-        title: "200 Response",
-        code: `[
-    {
-        "updatedAt": "May 16, 2:17am",
-        "id": 24,
-        "title": "Book Library",
-        "description": "This is a book library app",
-        "siteUrl": "https://github.com/example",
-        "githubUrl": "https://github.com/example",
-        "status": "Published",
-        "tags": [
-            "HTML",
-            "CSS",
-            "JS"
-        ]
-    },
-    {
-        "updatedAt": "May 16, 2:16am",
-        "id": 23,
-        "title": "Pokemon App",
-        "description": "This is a pokemon card collection site",
-        "siteUrl": "https://github.com/example",
-        "githubUrl": "https://github.com/example",
-        "status": "Published",
-        "tags": [
-            "React",
-            "SCSS",
-            "JavaScript"
-        ]
-    }
-]`,
-      },
-    ],
-  },
-  {
-    title: "✴︎ Get a single project",
-    description: "Retrieve the details of a single project by ID",
-    items: [
-      {
-        title: "URL Request",
-        code: "https://portfolio-cms-blond-five.vercel.app/api/projects/24",
-      },
-      {
-        title: "200 Response",
-        code: `{
-        "updatedAt": "May 16, 2:17am",
-        "id": 24,
-        "title": "Book Library",
-        "description": "This is a book library app",
-        "siteUrl": "https://github.com/example",
-        "githubUrl": "https://github.com/example",
-        "status": "Published",
-        "tags": [
-            "HTML",
-            "CSS",
-            "JS"
-        ]
-    }`,
-      },
-    ],
-  },
-];
+import getEndpointData from "@/utils/guide/getEndpointData";
 
 function ApiGuidePage() {
+  const { endpointSections } = getEndpointData();
+
   return (
     <div className="flex flex-col gap-8">
       <Title font="font-heading" heading="API Guide" />
@@ -112,7 +42,7 @@ function ApiGuidePage() {
           <p>{section.description}</p>
 
           {section.items.map((item, index) => (
-            <CodeItem
+            <EndpointItem
               key={index}
               titleHeading={item.title}
               titleStyle="md:text-xl!"

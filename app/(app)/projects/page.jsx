@@ -1,6 +1,6 @@
 import ProjectsClientBody from "@/components/features/projectsPage/ProjectsClientBody";
 
-import { getProjectsData } from "@/utils/getProjectsData";
+import { getProjectsData } from "@/utils/projects/getProjectsData";
 
 export const dynamic = "force-dynamic";
 

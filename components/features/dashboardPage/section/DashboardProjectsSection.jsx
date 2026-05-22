@@ -1,7 +1,7 @@
 import SmallCard from "@/components/common/card/SmallCard";
 import Grid from "@/components/common/grid/Grid";
 import EditIcon from "@/components/icons/ui/EditIcon";
-import getProjectStats from "../../../../utils/getProjectStats";
+import getProjectStats from "../../../../utils/projects/getProjectStats";
 
 async function DashboardProjectsSection({ projectsPromise }) {
   const projects = await projectsPromise;

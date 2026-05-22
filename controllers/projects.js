@@ -40,6 +40,8 @@ export async function getPublishedProjects() {
     order: [["updatedAt", "DESC"]],
   });
 
+  if (!projects) throw badRequest("No published projects found");
+
   return projects;
 }
 
@@ -49,7 +51,8 @@ export async function postProject(data) {
     where: { title: data.title },
   });
 
-  if (sameProject) throw conflict("This project title already exists");
+  if (sameProject)
+    throw conflict("A project with the same title already exists");
 
   if (!data.title) throw badRequest("A title is required to create a project");
 
@@ -79,11 +82,10 @@ export async function putProject(id, data) {
   }
 
   if (!data.title) {
-    throw badRequest("A title is required to update a project");
+    throw badRequest("A title is required to edit a project");
   }
 
-  if (!data.status)
-    throw badRequest("A status is required to update a project");
+  if (!data.status) throw badRequest("A status is required to edit a project");
 
   // if an existing project already has the new title...
   if (data.title !== project.title) {
@@ -92,7 +94,7 @@ export async function putProject(id, data) {
     });
 
     if (sameProject) {
-      throw conflict("This title already exists");
+      throw conflict("A project with the same title already exists");
     }
   }
 

@@ -1,6 +1,6 @@
 import Title from "@/components/common/text/Title";
 
-function CodeItem({ ...props }) {
+function EndpointItem({ ...props }) {
   return (
     <div className="flex flex-col gap-2">
       <Title subHeading={props.titleHeading} style={props.titleStyle} />
@@ -13,4 +13,4 @@ function CodeItem({ ...props }) {
   );
 }
 
-export default CodeItem;
+export default EndpointItem;
