@@ -26,13 +26,13 @@ function ProjectsClientBody({ projects = [] }) {
 
     if (toastType === "saved") {
       toast.success("Project saved!");
+      router.replace("/projects");
     }
 
     if (toastType === "deleted") {
       toast.success("Project deleted");
+      router.replace("/projects");
     }
-
-    router.replace("/projects");
   }, [searchParams, router]);
 
   return (
