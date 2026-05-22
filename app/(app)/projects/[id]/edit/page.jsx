@@ -34,14 +34,14 @@ async function EditProjectPage({ params }) {
       tags: formData.getAll("tags"),
     };
     await putProject(id, data);
-    redirect("/projects");
+    redirect("/projects?toast=saved");
   }
 
   async function removeProject() {
     "use server";
     await connectDb();
     await deleteProject(id);
-    redirect("/projects");
+    redirect("/projects?toast=deleted");
   }
 
   return (

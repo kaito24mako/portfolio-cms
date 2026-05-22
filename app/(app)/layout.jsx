@@ -17,7 +17,7 @@ export default function AppLayout({ children }) {
           className="object-cover object-top pointer-events-none"
         />
         <main className="relative z-5 px-4 lg:px-10 xl:px-16 2xl:px-36 flex-1 w-full">
-          <ToastContainer position="top-right" autoClose={2000} />
+          <ToastContainer position="top-right" autoClose={2500} />
           {children}
         </main>
       </div>

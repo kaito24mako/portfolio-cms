@@ -6,10 +6,34 @@ import Button from "@/components/common/button/Button";
 import ProjectsList from "./ProjectsList";
 import Spinner from "@/components/common/loader/Spinner";
 
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { toast } from "react-toastify";
 
 function ProjectsClientBody({ projects = [] }) {
   const [search, setSearch] = useState("");
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // once a project has been created/edited...
+  // route is redirected to /projects?toast=saved...
+  // then display toast...
+  // and replace route to /projects
+
+  useEffect(() => {
+    const toastType = searchParams.get("toast");
+
+    if (toastType === "saved") {
+      toast.success("Project saved!");
+    }
+
+    if (toastType === "deleted") {
+      toast.success("Project deleted");
+    }
+
+    router.replace("/projects");
+  }, [searchParams, router]);
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">

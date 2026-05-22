@@ -7,9 +7,9 @@ import Button from "@/components/common/button/Button";
 import EditForm from "@/components/common/form/EditForm";
 import Grid from "@/components/common/grid/Grid";
 import Title from "@/components/common/text/Title";
+import FormLoader from "@/app/hooks/FormLoader";
 
 import { useState } from "react";
-import FormLoader from "@/app/hooks/FormLoader";
 
 function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
   const [tags, setTags] = useState(() => props.prevTags ?? []);

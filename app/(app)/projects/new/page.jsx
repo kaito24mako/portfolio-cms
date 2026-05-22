@@ -32,7 +32,7 @@ async function createProject(formData) {
 
   await postProject(data);
 
-  redirect("/projects");
+  redirect("/projects?toast=saved");
 }
 
 function NewProjectsPage() {
