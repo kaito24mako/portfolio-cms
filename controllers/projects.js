@@ -31,6 +31,18 @@ export async function getProjectById(id) {
   return project;
 }
 
+export async function getPublishedProjects() {
+  const projects = await Project.findAll({
+    where: {
+      status: "Published",
+    },
+    attributes: { exclude: ["createdAt"] },
+    order: [["updatedAt", "DESC"]],
+  });
+
+  return projects;
+}
+
 // * POST
 export async function postProject(data) {
   const sameProject = await Project.findOne({

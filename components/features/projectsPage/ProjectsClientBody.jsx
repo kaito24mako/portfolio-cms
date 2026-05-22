@@ -5,6 +5,7 @@ import SearchForm from "@/components/common/form/SearchForm";
 import Button from "@/components/common/button/Button";
 import ProjectsList from "./ProjectsList";
 import Spinner from "@/components/common/loader/Spinner";
+import DeleteIcon from "@/components/icons/ui/DeleteIcon";
 
 import { Suspense, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -30,7 +31,7 @@ function ProjectsClientBody({ projects = [] }) {
     }
 
     if (toastType === "deleted") {
-      toast.success("Project deleted");
+      toast.success("Project deleted", { icon: DeleteIcon });
       router.replace("/projects");
     }
   }, [searchParams, router]);

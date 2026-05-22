@@ -46,9 +46,7 @@ function Footer() {
           </div>
         </div>
 
-        <h6 className="footer-title">
-          Made by Kaito © {new Date().getFullYear()}
-        </h6>
+        <h6 className="footer-title">Copyright © 2026 Kaito Watanabe</h6>
       </nav>
     </footer>
   );
