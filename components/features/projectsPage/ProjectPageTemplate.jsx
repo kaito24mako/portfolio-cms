@@ -9,7 +9,7 @@ import Grid from "@/components/common/grid/Grid";
 import Title from "@/components/common/text/Title";
 import SubmitFormToast from "@/components/features/toast/SubmitFormToast";
 
-import { useTags } from "../tags/useTags";
+import { useTags } from "../../../app/hooks/useTags";
 
 function ProjectPageTemplate({
   errorMessage,
@@ -127,9 +127,10 @@ function ProjectPageTemplate({
                   <span key={index}>
                     {/* a hidden input is rendered to allow for NewProjectPage to get the formData of the tags */}
                     <input type="hidden" name="tags" value={tag} />
-                    <div>
+                    <div className="flex items-center">
                       <Badge text={tag} className="badge-soft badge-primary">
                         <button
+                          className="cursor-pointer"
                           onClick={(e) => {
                             handleDeleteTag(index);
                             e.preventDefault();
