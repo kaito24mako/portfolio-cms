@@ -12,7 +12,10 @@ export function useTags(prevTags) {
     setTagsInput("");
   }
 
-  function handleDeleteTag() {}
+  function handleDeleteTag(index) {
+    // _ ignores the first argument
+    setTags((prev) => prev.filter((_, i) => i !== index));
+  }
 
-  return { tags, tagsInput, setTagsInput, handleCreateTag };
+  return { tags, tagsInput, setTagsInput, handleCreateTag, handleDeleteTag };
 }

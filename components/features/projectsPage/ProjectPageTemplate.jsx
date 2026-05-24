@@ -17,7 +17,8 @@ function ProjectPageTemplate({
   prevTags,
   ...props
 }) {
-  const { tags, tagsInput, setTagsInput, handleCreateTag } = useTags(prevTags);
+  const { tags, tagsInput, setTagsInput, handleCreateTag, handleDeleteTag } =
+    useTags(prevTags);
 
   const leftFormFields = [
     {
@@ -121,13 +122,23 @@ function ProjectPageTemplate({
                   + Add
                 </Button>
               </div>
-
               <div className="flex gap-1">
                 {tags.map((tag, index) => (
                   <span key={index}>
                     {/* a hidden input is rendered to allow for NewProjectPage to get the formData of the tags */}
                     <input type="hidden" name="tags" value={tag} />
-                    <Badge text={tag} className="badge-soft badge-primary" />
+                    <div>
+                      <Badge text={tag} className="badge-soft badge-primary">
+                        <button
+                          onClick={(e) => {
+                            handleDeleteTag(index);
+                            e.preventDefault();
+                          }}
+                        >
+                          x
+                        </button>
+                      </Badge>
+                    </div>
                   </span>
                 ))}
               </div>

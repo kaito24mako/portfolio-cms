@@ -85,7 +85,7 @@ export async function putProject(id, data) {
     throw badRequest("A title is required to edit a project");
   }
 
-  if (!data.status) throw badRequest("A status is required to edit a project");
+  // if (!data.status) throw badRequest("A status is required to edit a project");
 
   // if an existing project already has the new title...
   if (data.title !== project.title) {
