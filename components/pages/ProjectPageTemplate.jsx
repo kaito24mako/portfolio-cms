@@ -111,6 +111,7 @@ function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
                 <input
                   className="w-full focus:outline-0"
                   type="text"
+                  name="tech"
                   placeholder="Add a technology used..."
                   value={tagsInput}
                   onChange={(e) => setTagsInput(e.target.value)}

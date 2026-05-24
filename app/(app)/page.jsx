@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 function DashboardPage() {
-  // since the same projects data is shared between nested components, pass it as props
+  // since the same projects data is shared between nested components, pass it as props and only await it in the nested comp
   const projectsPromise = getProjectsData();
 
   return (
@@ -27,7 +27,7 @@ function DashboardPage() {
         subHeading="Let's create a beautiful portfolio."
       />
 
-      {/* to attach loading skeleton for only the slow data, nested components */}
+      {/* displays loading fallback until all the code and data needed by the children has been loaded */}
       <Suspense fallback={<DashboardProjectsSkeleton />}>
         <DashboardProjectsSection projectsPromise={projectsPromise} />
       </Suspense>

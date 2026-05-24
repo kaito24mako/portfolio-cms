@@ -1,16 +1,16 @@
-import sequelize from "@/utils/connection";
-import User from "@/models/users";
-import Project from "@/models/projects";
+// import sequelize from "@/utils/connection";
+// import User from "@/models/users";
+// import Project from "@/models/projects";
 
-// * 1 User | M Project
-Project.hasMany(User, {
-  foreignKey: "projectId",
-  onDelete: "SET NULL",
-  onUpdate: "CASCADE",
-});
+// // * 1 User | M Project
+// User.hasMany(Project, {
+//   foreignKey: "userId",
+//   onDelete: "CASCADE",
+//   onUpdate: "CASCADE",
+// });
 
-User.belongsTo(Project, {
-  foreignKey: "projectId",
-});
+// Project.belongsTo(User, {
+//   foreignKey: "userId",
+// });
 
-export { sequelize, User, Project };
+// export { sequelize, User, Project };

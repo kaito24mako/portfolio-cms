@@ -4,10 +4,9 @@ import Title from "@/components/common/text/Title";
 import SearchForm from "@/components/common/form/SearchForm";
 import Button from "@/components/common/button/Button";
 import ProjectsList from "./ProjectsList";
-import Spinner from "@/components/common/loader/Spinner";
 import DeleteIcon from "@/components/icons/ui/DeleteIcon";
 
-import { Suspense, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -56,9 +55,7 @@ function ProjectsClientBody({ projects = [] }) {
         </div>
       </div>
 
-      <Suspense fallback={<Spinner />}>
-        <ProjectsList projects={projects} search={search} />
-      </Suspense>
+      <ProjectsList projects={projects} search={search} />
     </div>
   );
 }

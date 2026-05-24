@@ -1,7 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function Button({ children, className = "", icon, alt = "", href, ...props }) {
+function Button({
+  children,
+  className = "",
+  icon,
+  alt = "",
+  href,
+  newTab = false,
+  ariaLabel = "",
+  ...props
+}) {
   const IconIsComponent = typeof icon === "function" ? icon : null;
 
   const content = (
@@ -20,14 +29,23 @@ function Button({ children, className = "", icon, alt = "", href, ...props }) {
 
   if (href) {
     return (
-      <Link href={href} className={`gap-2 btn shadow-sm ${className}`}>
+      <Link
+        href={href}
+        className={`gap-2 btn shadow-sm ${className}`}
+        target={newTab ? "_blank" : undefined}
+        aria-label={ariaLabel}
+      >
         {content}
       </Link>
     );
   }
 
   return (
-    <button className={`gap-2 btn shadow-sm ${className}`} {...props}>
+    <button
+      className={`gap-2 btn shadow-sm ${className}`}
+      aria-label={ariaLabel}
+      {...props}
+    >
       {content}
     </button>
   );

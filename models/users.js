@@ -8,16 +8,6 @@ const User = sequelize.define("User", {
     unique: true,
     primaryKey: true,
   },
-  projectId: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-      model: "Projects",
-      key: "id",
-    },
-    onDelete: "SET NULL",
-    onUpdate: "CASCADE",
-  },
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -69,6 +59,13 @@ const User = sequelize.define("User", {
       },
       isAscii: true,
       // is: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\x21-\x2F\x3A-\x40\x5B-\x60\x7B-\x7E])[\x20-\x7E]+$/,
+    },
+  },
+  isAdmin: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+    validate: {
+      isIn: [[0, 1, true, false, "true", "false"]],
     },
   },
 });

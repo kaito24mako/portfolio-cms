@@ -17,6 +17,8 @@ function DarkMode() {
       className={`transition-transform duration-600 ease-in-out cursor-pointer px-4 py-3 
         ${theme === "nord" ? "rotate-0" : "rotate-180"}`}
       onClick={toggleTheme}
+      aria-label="A dark/light mode toggle button"
+      type="button"
     >
       {theme === "nord" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
     </button>

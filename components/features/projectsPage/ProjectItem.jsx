@@ -68,10 +68,20 @@ function ProjectItem({ ...props }) {
         )}
 
         <div className="absolute bottom-3 flex justify-between gap-3 w-full px-3">
-          <Button className="btn-sm" icon={WebIcon} href={props.siteUrl}>
+          <Button
+            className="btn-sm"
+            icon={WebIcon}
+            href={props.siteUrl}
+            newTab="true"
+          >
             View Site
           </Button>
-          <Button className="btn-sm" icon={GithubIcon} href={props.githubUrl}>
+          <Button
+            className="btn-sm"
+            icon={GithubIcon}
+            href={props.githubUrl}
+            newTab="true"
+          >
             View Code
           </Button>
         </div>

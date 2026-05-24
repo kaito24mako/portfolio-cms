@@ -2,6 +2,16 @@ import { DataTypes } from "sequelize";
 import sequelize from "@/utils/connection";
 
 const Project = sequelize.define("Project", {
+  // userId: {
+  //   type: DataTypes.UUID,
+  //   allowNull: false,
+  //   references: {
+  //     model: "Users",
+  //     key: "id",
+  //   },
+  //   onDelete: "CASCADE",
+  //   onUpdate: "CASCADE",
+  // },
   title: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -32,7 +42,6 @@ const Project = sequelize.define("Project", {
   },
   updatedAt: {
     type: DataTypes.DATE,
-    // * Used AI to help format the date
     get() {
       const rawValue = this.getDataValue("updatedAt");
       if (!rawValue) return null;
