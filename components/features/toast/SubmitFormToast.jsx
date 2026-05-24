@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { toast } from "react-toastify";
 
-function FormLoader() {
+function SubmitFormToast() {
   // useFormStatus provides status info of the last form submission
   const { pending } = useFormStatus();
 
@@ -35,4 +35,4 @@ function FormLoader() {
   return null;
 }
 
-export default FormLoader;
+export default SubmitFormToast;

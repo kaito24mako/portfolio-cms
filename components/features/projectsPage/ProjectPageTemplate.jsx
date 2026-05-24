@@ -7,21 +7,17 @@ import Button from "@/components/common/button/Button";
 import EditForm from "@/components/common/form/EditForm";
 import Grid from "@/components/common/grid/Grid";
 import Title from "@/components/common/text/Title";
-import FormLoader from "@/app/hooks/FormLoader";
+import SubmitFormToast from "@/components/features/toast/SubmitFormToast";
 
-import { useState } from "react";
+import { useTags } from "../tags/useTags";
 
-function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
-  const [tags, setTags] = useState(() => props.prevTags ?? []);
-  const [tagsInput, setTagsInput] = useState("");
-
-  function handleNewTag() {
-    if (!tagsInput) return;
-
-    // to add onto the existing array, rather than replacing it
-    setTags((prev) => [...prev, tagsInput]);
-    setTagsInput("");
-  }
+function ProjectPageTemplate({
+  errorMessage,
+  handleFormAction,
+  prevTags,
+  ...props
+}) {
+  const { tags, tagsInput, setTagsInput, handleCreateTag } = useTags(prevTags);
 
   const leftFormFields = [
     {
@@ -74,8 +70,7 @@ function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
         subHeading={props.subHeading}
       />
 
-      {/* feedback while form is submitting */}
-      <FormLoader />
+      <SubmitFormToast />
 
       <Grid className="grid-cols-1 sm:grid-cols-5">
         {/* left form fields */}
@@ -118,7 +113,7 @@ function ProjectPageTemplate({ errorMessage, handleFormAction, ...props }) {
                 />
                 <Button
                   onClick={(e) => {
-                    handleNewTag();
+                    handleCreateTag();
                     e.preventDefault();
                   }}
                   className="btn-sm"
