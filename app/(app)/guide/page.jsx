@@ -14,8 +14,9 @@ function ApiGuidePage() {
         <p>
           Mako provides a free RESTful API that external portfolio sites can use
           to dynamically render projects from. <br />
-          Using our API endpoints, users can create and update their projects,
-          and publish projects that they want to display on their portfolio.
+          Using our API endpoints, users can retrieve the projects that they
+          have saved on Mako, which will then be rendered on their portfolio
+          site.
         </p>
       </div>
 
@@ -26,13 +27,6 @@ function ApiGuidePage() {
             The RESTful API returns JSON responses in the body
           </li>
           <li className="list-disc">Every request must be GET requests</li>
-          <li className="list-disc">
-            Authentication is only required for CMS-side create, update, and
-            delete actions
-          </li>
-          <li className="list-disc">
-            This guide assumes the use of JavaScript for data fetching
-          </li>
         </ul>
       </div>
 
