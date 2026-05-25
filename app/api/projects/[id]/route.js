@@ -17,9 +17,11 @@ export async function GET(req, { params }) {
     const { id } = await params;
     const project = await getProjectById(id);
 
+    // sends project as JSON with CORS headers added
     return jsonWithCors(project, req);
   } catch (err) {
     const { message, status } = getErrorResponse(err);
+    // sends error message as a text response with status and CORS headers
     return textWithCors(message, req, { status });
   }
 }
@@ -41,7 +43,6 @@ export async function PUT(req, { params }) {
 
     const project = await putProject(id, data);
 
-    // same as res.send
     return jsonWithCors(project, req);
   } catch (err) {
     const { message, status } = getErrorResponse(err);
@@ -71,6 +72,7 @@ export async function DELETE(req, { params }) {
   }
 }
 
+// added by AI...not sure what it does yet
 export function OPTIONS(req) {
   return optionsWithCors(req);
 }

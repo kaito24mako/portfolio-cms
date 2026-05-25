@@ -1,6 +1,6 @@
 import ProjectsClientBody from "@/components/features/projectsPage/ProjectsClientBody";
 
-import { getProjectsData } from "@/utils/projects/getProjectsData";
+import { retrieveAllProjects } from "@/utils/projects/projectActions";
 
 export const dynamic = "force-dynamic";
 
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 async function ProjectsPage() {
-  const projects = await getProjectsData();
+  const projects = await retrieveAllProjects();
 
   // ProjectsClientBody is a CSC needed to separate search and tab states
   return <ProjectsClientBody projects={projects} />;

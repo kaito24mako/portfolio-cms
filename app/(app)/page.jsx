@@ -6,7 +6,7 @@ import DashboardProjectsSkeleton from "@/components/features/dashboardPage/skele
 import DashboardStatsSkeleton from "@/components/features/dashboardPage/skeleton/DashboardStatsSkeleton";
 
 import { Suspense } from "react";
-import { getProjectsData } from "@/utils//projects/getProjectsData";
+import { retrieveAllProjects } from "@/utils/projects/projectActions";
 
 // force page to render data dynamically since in production, data wasn't dynamically being rendered
 export const dynamic = "force-dynamic";
@@ -17,7 +17,7 @@ export const metadata = {
 
 function DashboardPage() {
   // since the same projects data is shared between nested components, pass it as props and only await it in the nested comp
-  const projectsPromise = getProjectsData();
+  const projectsPromise = retrieveAllProjects();
 
   return (
     <div className="flex flex-col gap-8">

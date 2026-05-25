@@ -180,7 +180,7 @@ function ProjectPageTemplate({
       <div className="flex flex-col gap-5 shadow-sm p-4 justify-end bg-base-200 rounded-sm sm:flex-row">
         {/* cancel/delete button */}
         <Button
-          onClick={props.exitBtnFunction}
+          onClick={props.exitBtnAction}
           href={props.exitBtnLink}
           type={props.exitBtnType}
           className="btn-ghost shadow-none! btn-sm lg:btn-md"

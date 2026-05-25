@@ -1,6 +1,37 @@
-import { postProject, putProject, deleteProject } from "@/controllers/projects";
+import {
+  getAllProjects,
+  postProject,
+  putProject,
+  deleteProject,
+} from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 import { redirect } from "next/navigation";
+
+const imagePlaceholders = [
+  {
+    image: "/placeholders/pokemon.png",
+  },
+  {
+    image: "/placeholders/library.png",
+  },
+  {
+    image: "/placeholders/tictactoe.png",
+  },
+  {
+    image: "/placeholders/pokemon.png",
+  },
+];
+
+// for server-rendered pages without user-triggered requests, call controllers directly instead of fetching the API
+export async function retrieveAllProjects() {
+  "use server";
+  await connectDb();
+  const projects = await getAllProjects();
+  return projects?.map((project, index) => ({
+    ...project.toJSON(),
+    ...imagePlaceholders[index],
+  }));
+}
 
 export async function createProject(formData) {
   "use server";
