@@ -3,7 +3,7 @@ import ToggleIcon from "@/components/icons/sidebar/ToggleIcon";
 
 function Header() {
   return (
-    <nav className="Header w-full flex justify-between">
+    <nav className="Header w-full flex justify-between sticky top-0 z-100">
       <label
         htmlFor="my-drawer-4"
         aria-label="open sidebar"
