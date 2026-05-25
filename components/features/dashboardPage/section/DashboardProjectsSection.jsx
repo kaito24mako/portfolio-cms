@@ -14,21 +14,25 @@ async function DashboardProjectsSection({ projectsPromise }) {
         <span className="text-sm">Last updated: 2 hours ago</span>
       </div>
 
-      <Grid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {recentProjects?.map((p) => (
-          <SmallCard
-            key={p.id}
-            title={p.title}
-            description={`Last edited: ${p.updatedAt}`}
-            status={p.status}
-            image={p.image}
-            alt={`${p.title} project`}
-            btnText="Edit"
-            btnIcon={EditIcon}
-            btnLink={`/projects/${p.id}/edit`}
-          />
-        ))}
-      </Grid>
+      {!projects ? (
+        <p>Create some projects first!</p>
+      ) : (
+        <Grid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {recentProjects?.map((p) => (
+            <SmallCard
+              key={p.id}
+              title={p.title}
+              description={`Last edited: ${p.updatedAt}`}
+              status={p.status}
+              image={p.image}
+              alt={`${p.title} project`}
+              btnText="Edit"
+              btnIcon={EditIcon}
+              btnLink={`/projects/${p.id}/edit`}
+            />
+          ))}
+        </Grid>
+      )}
     </div>
   );
 }

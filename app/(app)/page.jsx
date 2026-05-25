@@ -27,7 +27,7 @@ function DashboardPage() {
         subHeading="Let's create a beautiful portfolio."
       />
 
-      {/* displays loading fallback until all the code and data needed by the children has been loaded */}
+      {/* <Suspense> displays loading fallback until all the code and data needed by the children has been loaded */}
       <Suspense fallback={<DashboardProjectsSkeleton />}>
         <DashboardProjectsSection projectsPromise={projectsPromise} />
       </Suspense>

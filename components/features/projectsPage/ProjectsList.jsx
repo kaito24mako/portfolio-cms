@@ -35,23 +35,27 @@ function ProjectsList({ projects = [], search }) {
         onTabChange={setActiveTab}
       />
 
-      <Grid className="grid-cols-1 gap-10 md:gap-6">
-        {filteredProjects?.map((p) => (
-          <ProjectItem
-            key={p.id}
-            id={p.id}
-            title={p.title}
-            description={p.description}
-            siteUrl={p.siteUrl}
-            githubUrl={p.githubUrl}
-            status={p.status}
-            updatedAt={p.updatedAt}
-            tags={p.tags}
-            image={p.image}
-            alt={p.title}
-          />
-        ))}
-      </Grid>
+      {!projects ? (
+        <p>Create some projects to get started!</p>
+      ) : (
+        <Grid className="grid-cols-1 gap-10 md:gap-6">
+          {filteredProjects?.map((p) => (
+            <ProjectItem
+              key={p.id}
+              id={p.id}
+              title={p.title}
+              description={p.description}
+              siteUrl={p.siteUrl}
+              githubUrl={p.githubUrl}
+              status={p.status}
+              updatedAt={p.updatedAt}
+              tags={p.tags}
+              image={p.image}
+              alt={p.title}
+            />
+          ))}
+        </Grid>
+      )}
     </div>
   );
 }
