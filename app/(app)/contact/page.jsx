@@ -23,6 +23,8 @@ function ContactPage() {
           </Link>
         </ul>
       </div>
+
+      <p>This page is a work in progress...</p>
     </div>
   );
 }

@@ -10,7 +10,7 @@ function ActivityPage() {
       />
 
       <div className="flex flex-col gap-2">
-        <p>This page is still a work in progress...</p>
+        <p>This page is a work in progress...</p>
       </div>
     </div>
   );

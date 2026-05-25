@@ -23,19 +23,20 @@ function AboutPage() {
         <Title font="font-heading" subHeading="Key features:" />
         <ul className="pl-3">
           <li>
-            ✴︎ A <strong>free</strong> API to connect your portfolio site to
+            ✴︎ A <span className="text-secondary">free</span> API to connect your
+            portfolio site to
           </li>
           <li>
-            ✴︎ <strong>Create</strong> your projects on Mako and publish to your
-            portfolio
+            ✴︎ <span className="text-secondary">Create</span> your projects on
+            Mako and publish to your portfolio
           </li>
           <li>
-            ✴︎ <strong>Store</strong> your projects, published and unpublished,
-            for tracking purposes
+            ✴︎ <span className="text-secondary">Store</span> your projects,
+            published and unpublished, for tracking purposes
           </li>
           <li>
-            ✴︎ Get <strong>statistics</strong> on how many projects use certain
-            technologies
+            ✴︎ Get <span className="text-secondary">statistics</span> on how many
+            projects use certain technologies
           </li>
         </ul>
       </div>
@@ -56,27 +57,20 @@ function AboutPage() {
         <Title font="font-heading" subHeading="Features coming soon..." />
         <ul className="pl-8">
           <li className="list-disc">
-            Tags page with statistics on what and how many projects are using a
-            certain technology
-          </li>
-          <li className="list-disc">
-            An authentication/login system to make projects unique to each user
+            A login system to make projects unique to each user
           </li>
           <li className="list-disc">
             Uploading a thumbnail image to a project
           </li>
           <li className="list-disc">
-            Activity page with logs on the user&apos;s activities over time
+            Tags page with statistics on what and how many projects are using a
+            certain technology
           </li>
           <li className="list-disc">
-            API endpoint for only published projects
+            Activity page with logs on the user&apos;s activities over time
           </li>
         </ul>
       </div>
-
-      {/* <div className="flex flex-col gap-2">
-        <Title font="font-heading" subHeading="I hope you enjoy the app!" />
-      </div> */}
     </div>
   );
 }

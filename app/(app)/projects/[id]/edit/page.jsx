@@ -1,19 +1,12 @@
 import ProjectPageTemplate from "@/components/features/projectsPage/ProjectPageTemplate";
 
-import { redirect } from "next/navigation";
-import {
-  getProjectById,
-  putProject,
-  deleteProject,
-} from "@/controllers/projects";
+import { editProject, removeProject } from "@/utils/projects/projectActions";
+import { getProjectById } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 
 export const metadata = {
   title: "Edit Project",
 };
-
-// * DEBUG:
-// * I wasn't sure how to retrive the properties of a project, until I examined console.log(project) and found the properties were under "dataValues"
 
 // since this page is routed by [id], it can accept params to use as the id
 async function EditProjectPage({ params }) {
@@ -22,32 +15,22 @@ async function EditProjectPage({ params }) {
   const { id } = await params;
   const project = await getProjectById(id);
 
-  async function editProject(formData) {
+  // needed to get the id from params for projectActions.js
+  async function editProjectAction(formData) {
     "use server";
-    await connectDb();
-    const data = {
-      title: formData.get("title"),
-      description: formData.get("description"),
-      siteUrl: formData.get("siteUrl"),
-      githubUrl: formData.get("githubUrl"),
-      status: formData.get("status"),
-      tags: formData.getAll("tags"),
-    };
-    await putProject(id, data);
-    redirect("/projects?toast=saved");
+    await editProject(id, formData);
   }
 
-  async function removeProject() {
+  async function removeProjectAction() {
     "use server";
-    await connectDb();
-    await deleteProject(id);
-    redirect("/projects?toast=deleted");
+    await removeProject(id);
   }
 
+  // dataValues are the current project's values
   return (
     <ProjectPageTemplate
-      handleFormAction={editProject}
-      exitBtnFunction={removeProject}
+      handleFormAction={editProjectAction}
+      exitBtnFunction={removeProjectAction}
       heading="Edit Project"
       subHeading="Edit the details of your stunning work"
       exitBtnType="submit"

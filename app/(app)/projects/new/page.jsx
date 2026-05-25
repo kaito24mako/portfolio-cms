@@ -1,39 +1,10 @@
 import ProjectPageTemplate from "@/components/features/projectsPage/ProjectPageTemplate";
 
-import { redirect } from "next/navigation";
-import { connectDb } from "@/lib/connectDb";
-import { postProject } from "@/controllers/projects";
+import { createProject } from "@/utils/projects/projectActions";
 
 export const metadata = {
   title: "Create Project",
 };
-
-// * DEBUG
-// * Looking at the Next.js docs, I discovered server functions which allow for easier collection of form input values, rather than finding the e.target.value of input fields.
-// * And after some more research and questioning Codex AI on server functions, I came to understand how it works.
-
-async function createProject(formData) {
-  // "use server" tells this function to run on the server
-  // so, it can safely access the db and server-only code
-  "use server";
-
-  await connectDb();
-
-  // when user clicks a submit button, the broswer collects all the inputs with named fields and sends them as formData
-  // so, an object of each of the form inputs are passed to postProject(), which creates the project
-  const data = {
-    title: formData.get("title"),
-    description: formData.get("description"),
-    siteUrl: formData.get("siteUrl"),
-    githubUrl: formData.get("githubUrl"),
-    status: formData.get("status"),
-    tags: formData.getAll("tags"),
-  };
-
-  await postProject(data);
-
-  redirect("/projects?toast=saved");
-}
 
 function NewProjectsPage() {
   return (
