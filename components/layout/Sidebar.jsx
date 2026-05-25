@@ -21,7 +21,8 @@ function Sidebar({ children }) {
         {children}
       </div>
 
-      <div className="drawer-side is-drawer-close:overflow-visible">
+      {/* sidebar */}
+      <div className="drawer-side is-drawer-close:overflow-visible z-100">
         <label
           htmlFor="my-drawer-4"
           aria-label="close sidebar"

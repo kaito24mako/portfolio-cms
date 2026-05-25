@@ -14,7 +14,7 @@ function DarkMode() {
 
   return (
     <button
-      className={`transition-transform duration-600 ease-in-out cursor-pointer px-4 py-3 
+      className={`transition-transform duration-600 ease-in-out cursor-pointer px-2 py-1 md:px-4 md:py-3 
         ${theme === "nord" ? "rotate-0" : "rotate-180"}`}
       onClick={toggleTheme}
       aria-label="Dark/light mode"
