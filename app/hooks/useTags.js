@@ -13,7 +13,6 @@ export function useTags(prevTags) {
   }
 
   function handleDeleteTag(index) {
-    // _ ignores the first argument
     setTags((prev) => prev.filter((_, i) => i !== index));
   }
 
