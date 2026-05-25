@@ -21,7 +21,9 @@ export const metadata = {
     template: "%s | Mako",
     default: "Mako",
   },
-  description: "A portfolio CMS for easy customisation of portfolios.",
+  description: "A portfolio CMS for easy customisation of portfolio sites.",
+  keywords: ["portfolio-cms", "cms", "Mako"],
+  author: "Kaito Watanabe",
 };
 
 export default function RootLayout({ children }) {

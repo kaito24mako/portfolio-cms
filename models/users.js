@@ -1,5 +1,7 @@
-import { DataTypes } from "sequelize";
 import sequelize from "@/utils/connection";
+import { DataTypes } from "sequelize";
+
+// ! NOT used for v1
 
 const User = sequelize.define("User", {
   id: {

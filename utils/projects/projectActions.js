@@ -20,9 +20,14 @@ const imagePlaceholders = [
   {
     image: "/placeholders/pokemon.png",
   },
+  {
+    image: "/placeholders/library.png",
+  },
+  {
+    image: "/placeholders/tictactoe.png",
+  },
 ];
 
-// for server-rendered pages without user-triggered requests, call controllers directly instead of fetching the API
 export async function retrieveAllProjects() {
   "use server";
   await connectDb();

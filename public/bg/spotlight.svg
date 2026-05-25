@@ -21,8 +21,8 @@
     </radialGradient>
   </defs>
 
-  <ellipse cx="180" cy="120" rx="340" ry="260" fill="url(#spot-coral)"/>
-  <ellipse cx="1080" cy="200" rx="300" ry="240" fill="url(#spot-blue)"/>
+  <ellipse cx="1080" cy="120" rx="340" ry="260" fill="url(#spot-coral)"/>
+  <ellipse cx="180" cy="200" rx="300" ry="240" fill="url(#spot-blue)"/>
   <ellipse cx="200" cy="820" rx="360" ry="240" fill="url(#spot-teal)"/>
   <ellipse cx="1380" cy="780" rx="260" ry="200" fill="url(#spot-amber)"/>
 </svg>

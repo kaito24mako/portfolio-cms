@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
-import bgWaves from "@/public/bg/background.svg";
+import bgWaves from "@/public/bg/spotlight.svg";
 
 function NotFoundPage() {
   return (

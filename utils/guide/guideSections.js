@@ -1,4 +1,4 @@
-export default function getEndpointData() {
+export default function guideSections() {
   const endpointSections = [
     {
       title: "✴︎ Get all published projects (recommended)",

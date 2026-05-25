@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
 import pg from "pg";
+import { Sequelize } from "sequelize";
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   // tells sequelize to connect to Postgres (for Supabase)

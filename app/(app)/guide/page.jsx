@@ -1,13 +1,13 @@
 import EndpointItem from "@/components/features/guidePage/EndpointItem";
 import Title from "@/components/common/text/Title";
-import getEndpointData from "@/utils/guide/getEndpointData";
+import guideSections from "@/utils/guide/guideSections";
 
 export const metadata = {
   title: "API Guide",
 };
 
 function ApiGuidePage() {
-  const { endpointSections } = getEndpointData();
+  const { endpointSections } = guideSections();
 
   return (
     <div className="flex flex-col gap-8">
