@@ -3,7 +3,9 @@ import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { getErrorResponse } from "@/lib/errorHandler";
 
-// * GET /api/projects/published
+//* /api/projects/published
+
+// * GET
 export async function GET(req) {
   try {
     await connectDb();

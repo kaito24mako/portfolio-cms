@@ -2,7 +2,7 @@ import UserIcon from "@/components/icons/sidebar/UserIcon";
 
 function SidebarProfileBtn() {
   return (
-    <button className="flex items-center gap-5 mx-5 py-8">
+    <button className="flex items-center gap-5 mx-5 py-8" aria-label="Profile">
       <UserIcon />
 
       <div className="flex flex-col items-start is-drawer-close:hidden">

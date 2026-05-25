@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 
 function SidebarItems({ items }) {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <ul className="menu w-full grow">
@@ -20,6 +20,7 @@ function SidebarItems({ items }) {
                 isActive && "bg-gray-400/35"
               }`}
               data-tip={label}
+              aria-label={label}
             >
               <Icon />
               <span className="is-drawer-close:hidden">{label}</span>

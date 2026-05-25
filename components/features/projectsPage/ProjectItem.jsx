@@ -23,7 +23,7 @@ function ProjectItem({ ...props }) {
             />
           </div>
 
-          {/* updatedAt */}
+          {/* last edited */}
           <p className="text-xs sm:text-sm opacity-87">
             Last edited: {props.updatedAt}
           </p>
@@ -51,6 +51,7 @@ function ProjectItem({ ...props }) {
           className="btn-sm bg-base-100 hover:bg-base-300"
           icon={EditIcon}
           href={`/projects/${props.id}/edit`}
+          ariaLabel="Edit project"
         >
           Edit
         </Button>

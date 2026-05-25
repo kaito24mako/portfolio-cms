@@ -1,12 +1,16 @@
 import Title from "@/components/common/text/Title";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact",
+};
+
 function ContactPage() {
   return (
     <div className="flex flex-col gap-8">
       <Title
         font="font-heading"
-        heading="Contact Us"
+        heading="Contact"
         subHeading="Have any questions or want to contact me for business inquiries?"
       />
 

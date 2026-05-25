@@ -1,6 +1,10 @@
 import Button from "@/components/common/button/Button";
 import Title from "@/components/common/text/Title";
 
+export const metadata = {
+  title: "About Us",
+};
+
 function AboutPage() {
   return (
     <div className="flex flex-col gap-8">

@@ -2,6 +2,10 @@ import EndpointItem from "@/components/features/guidePage/EndpointItem";
 import Title from "@/components/common/text/Title";
 import getEndpointData from "@/utils/guide/getEndpointData";
 
+export const metadata = {
+  title: "API Guide",
+};
+
 function ApiGuidePage() {
   const { endpointSections } = getEndpointData();
 

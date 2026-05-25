@@ -4,7 +4,9 @@ import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
 import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
 
-// * GET /api/projects
+//* /api/projects
+
+// * GET
 export async function GET(req) {
   try {
     await connectDb();

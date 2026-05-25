@@ -1,5 +1,9 @@
 import Title from "@/components/common/text/Title";
 
+export const metadata = {
+  title: "Tags",
+};
+
 function TagsPage() {
   return (
     <div className="flex flex-col gap-8">

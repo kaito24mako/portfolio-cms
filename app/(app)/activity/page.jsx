@@ -1,5 +1,9 @@
 import Title from "@/components/common/text/Title";
 
+export const metadata = {
+  title: "Activity",
+};
+
 function ActivityPage() {
   return (
     <div className="flex flex-col gap-8">

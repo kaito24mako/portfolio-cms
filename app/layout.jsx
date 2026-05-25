@@ -1,7 +1,6 @@
-// import styles
 import "@/styles/globals.css";
 
-// use this library instead of Scripts - recommended by next.js docs
+// use this GA library instead of Scripts - recommended by next.js docs
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Geist, Poiret_One } from "next/font/google";
 

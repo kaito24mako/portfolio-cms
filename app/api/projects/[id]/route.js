@@ -9,6 +9,8 @@ import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
 import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
 
+//* /api/projects/[id]
+
 // * GET
 export async function GET(req, { params }) {
   try {
