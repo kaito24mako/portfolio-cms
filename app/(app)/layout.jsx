@@ -9,6 +9,19 @@ export default function AppLayout({ children }) {
   return (
     // note: Header is nested inside Sidebar because I'm using the DaisyUI sidebar
     <Sidebar>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        closeOnClick
+        pauseOnFocusLoss={false}
+        theme="dark"
+        limit={3}
+        closeButton={false}
+        transition={Slide}
+        style={{ zIndex: 100 }}
+      />
+
       <div className="flex-1 p-4 pb-10">
         <Image
           src={bgWaves}
@@ -16,19 +29,7 @@ export default function AppLayout({ children }) {
           alt=""
           className="object-cover object-top pointer-events-none"
         />
-
         <main className="relative z-5 px-4 lg:px-10 xl:px-16 2xl:px-36 flex-1 w-full">
-          <ToastContainer
-            position="top-right"
-            autoClose={2000}
-            hideProgressBar
-            closeOnClick
-            pauseOnFocusLoss={false}
-            theme="dark"
-            limit={3}
-            closeButton={false}
-            transition={Slide}
-          />
           {children}
         </main>
       </div>
