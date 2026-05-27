@@ -10,6 +10,7 @@ export async function POST(req) {
     const body = await req.json();
     const { token, ...payload } = await login(body);
 
+    // return only the payload (without token), with token being attached to the 'x-auth-token' header
     return jsonWithCors(payload, req, {
       headers: {
         "x-auth-token": token,
