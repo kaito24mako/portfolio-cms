@@ -14,7 +14,7 @@ async function DashboardProjectsSection({ projectsPromise }) {
         <span className="text-sm">Last updated: 2 hours ago</span>
       </div>
 
-      {!projects ? (
+      {projects.length === 0 ? (
         <p>Create some projects first!</p>
       ) : (
         <Grid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
