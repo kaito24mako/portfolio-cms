@@ -1,5 +1,6 @@
 import User from "@/models/users";
 import bcrypt from "bcrypt";
+import { Op } from "sequelize";
 
 import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 
@@ -19,7 +20,7 @@ export async function getUserById(id) {
   }
 
   const user = await User.findByPk(id, {
-    attributes: { exclude: ["createdAt"] },
+    attributes: { exclude: ["createdAt", "password", "isAdmin"] },
   });
 
   if (!user) {
@@ -54,7 +55,9 @@ export async function postUser(data) {
   }
 
   const sameUser = await User.findOne({
-    where: { username: data.username, email: data.username },
+    where: {
+      [Op.or]: [{ username: data.username }, { email: data.email }],
+    },
   });
 
   if (sameUser) {
@@ -72,5 +75,19 @@ export async function postUser(data) {
     password: hashedPassword,
   });
 
-  return { message: `User ${user.username} created successfully`, user };
+  const token = user.generateAuthToken();
+
+  return {
+    message: `User ${user.username} created successfully`,
+    user: {
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      username: user.username,
+      email: user.email,
+    },
+    token,
+  };
 }
+
+//* DELETE
