@@ -5,7 +5,7 @@ import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 // in next.js, controllers shouldnt know about requests/responses (like req.params, req.body, res.send),
 // it should only return data or throw errors
 
-// * GET
+//* GET
 export async function getAllProjects() {
   const projects = await Project.findAll({
     attributes: { exclude: ["createdAt"] },
