@@ -3,7 +3,6 @@ import {
   putProject,
   deleteProject,
 } from "@/controllers/projects";
-
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { isAuthorised } from "@/lib/auth";
@@ -11,7 +10,7 @@ import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
 
 //* /api/projects/[id]
 
-// * GET
+//* GET
 export async function GET(req, { params }) {
   try {
     await connectDb();
@@ -28,7 +27,7 @@ export async function GET(req, { params }) {
   }
 }
 
-// * PUT
+//* PUT
 export async function PUT(req, { params }) {
   if (!isAuthorised(req)) {
     const { message, status } = getErrorResponse(
@@ -52,7 +51,7 @@ export async function PUT(req, { params }) {
   }
 }
 
-// * DELETE
+//* DELETE
 export async function DELETE(req, { params }) {
   if (!isAuthorised(req)) {
     const { message, status } = getErrorResponse(

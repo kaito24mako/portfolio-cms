@@ -37,7 +37,6 @@ export async function POST(req) {
     await connectDb();
 
     const body = await req.json();
-
     const project = await postProject(body);
 
     return jsonWithCors(project, req);
