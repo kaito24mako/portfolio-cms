@@ -12,10 +12,10 @@ const imagePlaceholders = [
     image: "/placeholders/pokemon.png",
   },
   {
-    image: "/placeholders/library.png",
+    image: "/placeholders/tictactoe.png",
   },
   {
-    image: "/placeholders/tictactoe.png",
+    image: "/placeholders/library.png",
   },
   {
     image: "/placeholders/pokemon.png",
@@ -26,6 +26,24 @@ const imagePlaceholders = [
   {
     image: "/placeholders/tictactoe.png",
   },
+  // {
+  //   image: "/placeholders/pokemon-resized.webp",
+  // },
+  // {
+  //   image: "/placeholders/library.webp",
+  // },
+  // {
+  //   image: "/placeholders/dashboard.webp",
+  // },
+  // {
+  //   image: "/placeholders/pokemon-resized.webp",
+  // },
+  // {
+  //   image: "/placeholders/library.webp",
+  // },
+  // {
+  //   image: "/placeholders/dashboard.webp",
+  // },
 ];
 
 export async function retrieveAllProjects() {
