@@ -16,9 +16,9 @@ function ProjectsClientBody({ projects = [] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // once a project has been created/edited...
-  // route is redirected to /projects?toast=saved...
-  // then display toast...
+  // once a project has been created or edited,
+  // route is redirected to /projects?toast=saved,
+  // then display toast,
   // and replace route to /projects
 
   useEffect(() => {

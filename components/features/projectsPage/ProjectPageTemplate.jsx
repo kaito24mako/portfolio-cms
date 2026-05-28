@@ -125,7 +125,7 @@ function ProjectPageTemplate({
               <div className="flex gap-1">
                 {tags.map((tag, index) => (
                   <span key={index}>
-                    {/* a hidden input is rendered to allow for NewProjectPage to get the formData of the tags */}
+                    {/* a hidden input is rendered for NewProjectPage to get the formData of the tags from */}
                     <input type="hidden" name="tags" value={tag} />
                     <div className="flex items-center">
                       <Badge text={tag} className="badge-soft badge-primary">
