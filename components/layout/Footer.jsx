@@ -18,7 +18,7 @@ function Footer() {
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mt-5 ">
       <nav>
-        <h6 className="footer-title">Services</h6>
+        <h3 className="footer-title">Services</h3>
         {services.map((s) => (
           <Link href={s.link} className="link link-hover" key={s.title}>
             {s.title}
@@ -27,7 +27,7 @@ function Footer() {
       </nav>
 
       <nav>
-        <h6 className="footer-title">Company</h6>
+        <h3 className="footer-title">Company</h3>
         {company.map((c) => (
           <Link href={c.link} className="link link-hover" key={c.title}>
             {c.title}
@@ -37,13 +37,13 @@ function Footer() {
 
       <nav className="flex flex-col gap-10">
         <div>
-          <h6 className="footer-title">Social</h6>
+          <h3 className="footer-title">Social</h3>
           <div className="grid grid-flow-col gap-4">
             <SocialsList />
           </div>
         </div>
 
-        <h6 className="footer-title">Copyright © 2026 Kaito Watanabe</h6>
+        <h3 className="footer-title">Copyright © 2026 Kaito Watanabe</h3>
       </nav>
     </footer>
   );

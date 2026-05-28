@@ -11,6 +11,7 @@ function SmallCard({ ...props }) {
           fill
           className="object-cover object-top"
           alt={props.alt}
+          priority
         />
       </figure>
       <div className="card-body">
@@ -32,6 +33,7 @@ function SmallCard({ ...props }) {
             className="btn btn-sm btn-soft "
             icon={props.btnIcon}
             href={props.btnLink}
+            aria-label={`Edit ${props.title}`}
           >
             {props.btnText}
           </Button>
