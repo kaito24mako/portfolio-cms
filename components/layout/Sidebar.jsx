@@ -1,10 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Header from "./Header";
 import SidebarProfileBtn from "@/components/features/sidebar/SidebarProfileBtn";
 import Button from "@/components/common/button/Button";
 import SidebarList from "../features/sidebar/SidebarList";
-import Link from "next/link";
 
 function Sidebar({ children }) {
   return (

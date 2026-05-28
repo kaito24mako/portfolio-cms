@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function SidebarItems({ items }) {
+  // pathname used to change color of sidebar item depending on if its active
   const pathname = usePathname();
 
   return (
