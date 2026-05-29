@@ -21,15 +21,9 @@ const Project = sequelize.define("Project", {
   },
   siteUrl: {
     type: DataTypes.STRING,
-    validate: {
-      isUrl: true,
-    },
   },
   githubUrl: {
     type: DataTypes.STRING,
-    validate: {
-      isUrl: true,
-    },
   },
   status: {
     type: DataTypes.ENUM,

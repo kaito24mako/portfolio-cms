@@ -5,6 +5,16 @@ import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 // in next.js, controllers shouldnt know about requests/responses (like req.params, req.body, res.send),
 // it should only return data or throw errors
 
+function isValidUrl(value) {
+  if (!value) return true;
+  try {
+    new URL(value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 //* GET
 export async function getAllProjects() {
   const projects = await Project.findAll({
@@ -59,6 +69,14 @@ export async function postProject(data) {
   if (!data.status)
     throw badRequest("A status is required to create a project");
 
+  if (!isValidUrl(data.siteUrl)) {
+    throw badRequest("Site URL must be a valid URL");
+  }
+
+  if (!isValidUrl(data.githubUrl)) {
+    throw badRequest("GitHub URL must be a valid URL");
+  }
+
   const project = await Project.create(data, {
     attributes: { exclude: ["createdAt"] },
   });
@@ -83,6 +101,14 @@ export async function putProject(id, data) {
 
   if (!data.title) {
     throw badRequest("A title is required to edit a project");
+  }
+
+  if (!isValidUrl(data.siteUrl)) {
+    throw badRequest("Site URL must be a valid URL");
+  }
+
+  if (!isValidUrl(data.githubUrl)) {
+    throw badRequest("GitHub URL must be a valid URL");
   }
 
   if (data.title !== project.title) {

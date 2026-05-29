@@ -73,13 +73,13 @@ function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
         subHeading={props.subHeading}
       />
 
-      <SubmitFormToast />
-
-      {/* for error messages */}
-      {state.error && (
+      {/* error messages and saving toast */}
+      {state.error ? (
         <span className="alert alert-error" role="alert">
           {state.error}
         </span>
+      ) : (
+        <SubmitFormToast />
       )}
 
       <Grid className="grid-cols-1 sm:grid-cols-5">
