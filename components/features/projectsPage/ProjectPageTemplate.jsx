@@ -9,14 +9,16 @@ import Grid from "@/components/common/grid/Grid";
 import Title from "@/components/common/text/Title";
 import SubmitFormToast from "@/components/features/toast/SubmitFormToast";
 
+import { useActionState } from "react";
 import { useTags } from "../../../app/hooks/useTags";
 
-function ProjectPageTemplate({
-  errorMessage,
-  handleProjectAction,
-  prevTags,
-  ...props
-}) {
+function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
+  // useActionState lets the server action return a value back to this client form - similar to storing state
+  // so, projectActions.js returns { error: "message" } when a controller throws an error
+  const [state, formAction] = useActionState(handleProjectAction, {
+    error: null,
+  });
+
   const { tags, tagsInput, setTagsInput, handleCreateTag, handleDeleteTag } =
     useTags(prevTags);
 
@@ -63,8 +65,8 @@ function ProjectPageTemplate({
   ];
 
   return (
-    // action is a server function - when this form is submitted, call createProject with the form data
-    <form action={handleProjectAction} className="flex flex-col gap-8">
+    // action is a server function - when this form is submitted, call createProject/editProject with the form data
+    <form action={formAction} className="flex flex-col gap-8">
       <Title
         font="font-heading"
         heading={props.heading}
@@ -72,6 +74,13 @@ function ProjectPageTemplate({
       />
 
       <SubmitFormToast />
+
+      {/* for error messages */}
+      {state.error && (
+        <span className="alert alert-error" role="alert">
+          {state.error}
+        </span>
+      )}
 
       <Grid className="grid-cols-1 sm:grid-cols-5">
         {/* left form fields */}

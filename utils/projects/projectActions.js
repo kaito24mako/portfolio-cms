@@ -5,6 +5,7 @@ import {
   deleteProject,
 } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
+import { getErrorResponse } from "@/lib/errorHandler";
 import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
@@ -38,35 +39,50 @@ export async function retrieveAllProjects() {
   }));
 }
 
-export async function createProject(formData) {
+export async function createProject(prevState, formData) {
   "use server";
-  await connectDb();
-  // when user clicks a submit button, the broswer collects all the inputs with named fields and sends them as formData
-  // so, an object of each of the form inputs are passed to postProject(), which creates the project
-  const data = {
-    title: formData.get("title"),
-    description: formData.get("description"),
-    siteUrl: formData.get("siteUrl"),
-    githubUrl: formData.get("githubUrl"),
-    status: formData.get("status"),
-    tags: formData.getAll("tags"),
-  };
-  await postProject(data);
+
+  try {
+    await connectDb();
+    const data = {
+      title: formData.get("title"),
+      description: formData.get("description"),
+      siteUrl: formData.get("siteUrl"),
+      githubUrl: formData.get("githubUrl"),
+      status: formData.get("status"),
+      tags: formData.getAll("tags"),
+    };
+    await postProject(data);
+  } catch (err) {
+    return {
+      // return the controller's throw as "error" to display on client-side
+      error: getErrorResponse(err).message,
+    };
+  }
+
   redirect("/projects?toast=saved");
 }
 
-export async function editProject(id, formData) {
+export async function editProject(id, prevState, formData) {
   "use server";
-  await connectDb();
-  const data = {
-    title: formData.get("title"),
-    description: formData.get("description"),
-    siteUrl: formData.get("siteUrl"),
-    githubUrl: formData.get("githubUrl"),
-    status: formData.get("status"),
-    tags: formData.getAll("tags"),
-  };
-  await putProject(id, data);
+
+  try {
+    await connectDb();
+    const data = {
+      title: formData.get("title"),
+      description: formData.get("description"),
+      siteUrl: formData.get("siteUrl"),
+      githubUrl: formData.get("githubUrl"),
+      status: formData.get("status"),
+      tags: formData.getAll("tags"),
+    };
+    await putProject(id, data);
+  } catch (err) {
+    return {
+      error: getErrorResponse(err).message,
+    };
+  }
+
   redirect("/projects?toast=saved");
 }
 

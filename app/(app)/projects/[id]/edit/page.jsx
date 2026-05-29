@@ -15,10 +15,9 @@ async function EditProjectPage({ params }) {
   const { id } = await params;
   const project = await getProjectById(id);
 
-  // needed to get the id from params for projectActions.js
-  async function editProjectAction(formData) {
+  async function editProjectAction(prevState, formData) {
     "use server";
-    await editProject(id, formData);
+    return editProject(id, prevState, formData);
   }
 
   async function removeProjectAction() {
