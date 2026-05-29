@@ -10,7 +10,7 @@ import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
   {
-    image: "/placeholders/pokemon.png",
+    image: "/placeholders/pokemon.webp",
   },
   {
     image: "/placeholders/library.webp",
@@ -19,7 +19,7 @@ const imagePlaceholders = [
     image: "/placeholders/dashboard.webp",
   },
   {
-    image: "/placeholders/pokemon.png",
+    image: "/placeholders/pokemon.webp",
   },
   {
     image: "/placeholders/library.webp",
@@ -41,7 +41,6 @@ export async function retrieveAllProjects() {
 
 export async function createProject(prevState, formData) {
   "use server";
-
   try {
     await connectDb();
     const data = {
@@ -59,13 +58,11 @@ export async function createProject(prevState, formData) {
       error: getErrorResponse(err).message,
     };
   }
-
   redirect("/projects?toast=saved");
 }
 
 export async function editProject(id, prevState, formData) {
   "use server";
-
   try {
     await connectDb();
     const data = {
@@ -82,7 +79,6 @@ export async function editProject(id, prevState, formData) {
       error: getErrorResponse(err).message,
     };
   }
-
   redirect("/projects?toast=saved");
 }
 
