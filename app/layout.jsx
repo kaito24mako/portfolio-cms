@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 
-// use this GA library instead of Scripts - recommended by next.js docs
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Geist, Poiret_One } from "next/font/google";
 
@@ -15,7 +14,6 @@ const poiret = Poiret_One({
   weight: ["400"],
 });
 
-// metadata
 export const metadata = {
   title: {
     template: "%s | Mako",
@@ -28,11 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      data-theme="nord"
-      className={`${geistSans.variable} ${poiret.variable}`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${poiret.variable}`}>
       <body className="min-h-screen flex flex-col bg-base-100 text-base-content text-base antialiased font-primary! ">
         {children}
       </body>
