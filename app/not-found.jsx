@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
 import spotlightBg from "@/public/bg/spotlight.svg";
@@ -12,7 +11,7 @@ function NotFoundPage() {
         <Image
           src={spotlightBg}
           fill
-          alt=""
+          alt="four colourful spotlights"
           className="object-cover object-top pointer-events-none"
         />
         <div className="relative flex justify-center z-5 px-4 lg:px-10 xl:px-16 2xl:px-36 min-h-full">

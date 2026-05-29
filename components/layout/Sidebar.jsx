@@ -38,7 +38,7 @@ function Sidebar({ children }) {
               width={70}
               height={70}
               loading="eager"
-              alt="Logo of Mako"
+              alt="logo of Mako"
             />
             <h1 className="is-drawer-close:hidden text-3xl font-heading font-semibold">
               Mako

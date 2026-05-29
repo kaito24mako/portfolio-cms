@@ -26,7 +26,7 @@ export default function AppLayout({ children }) {
         <Image
           src={spotlightBg}
           fill
-          alt="Colourful spotlights"
+          alt="four colourful spotlights"
           className="object-cover object-top pointer-events-none"
         />
         <main className="relative z-5 px-4 lg:px-10 xl:px-16 2xl:px-36 flex-1 w-full">
