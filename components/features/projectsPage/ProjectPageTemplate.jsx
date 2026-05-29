@@ -42,7 +42,7 @@ function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
       isTextArea: false,
       title: "Image",
       name: "image",
-      placeholder: "Upload a thumbnail...",
+      placeholder: "This feature is in development...",
       defaultValue: null,
     },
   ];

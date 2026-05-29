@@ -23,9 +23,9 @@ function ProjectItem({ ...props }) {
             />
           </div>
 
-          {/* last edited */}
+          {/* Last updated */}
           <p className="text-xs sm:text-sm opacity-87">
-            Last edited: {props.updatedAt}
+            Last updated: {props.updatedAt}
           </p>
 
           {/* project description */}

@@ -28,7 +28,7 @@ function ContactPage() {
         </ul>
       </div>
 
-      <p>This page is a work in progress...</p>
+      <p>This page is in development...</p>
     </div>
   );
 }

@@ -25,7 +25,7 @@ async function DashboardProjectsSection({ projectsPromise }) {
             <SmallCard
               key={p.id}
               title={p.title}
-              description={`Last edited: ${p.updatedAt}`}
+              description={`Last updated: ${p.updatedAt}`}
               status={p.status}
               image={p.image}
               alt={`${p.title} project`}

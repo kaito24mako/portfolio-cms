@@ -5,7 +5,9 @@ function DashboardActivitySection() {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h2 className="text-lg font-medium">Recent Activity</h2>
+        <h2 className="text-lg font-medium">
+          Recent Activity (in development...)
+        </h2>
         <Link
           href="/activity"
           className="link link-hover cursor-pointer text-sm"

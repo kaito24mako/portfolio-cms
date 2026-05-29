@@ -14,7 +14,7 @@ function TagsPage() {
       />
 
       <div className="flex flex-col gap-2">
-        <p>This page is a work in progress...</p>
+        <p>This page is in development...</p>
       </div>
     </div>
   );
