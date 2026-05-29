@@ -8,26 +8,8 @@ import { connectDb } from "@/lib/connectDb";
 import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
-  // {
-  //   image: "/placeholders/pokemon.png",
-  // },
-  // {
-  //   image: "/placeholders/tictactoe.png",
-  // },
-  // {
-  //   image: "/placeholders/library.png",
-  // },
-  // {
-  //   image: "/placeholders/pokemon.png",
-  // },
-  // {
-  //   image: "/placeholders/library.png",
-  // },
-  // {
-  //   image: "/placeholders/tictactoe.png",
-  // },
   {
-    image: "/placeholders/pokemon-resized.webp",
+    image: "/placeholders/pokemon.png",
   },
   {
     image: "/placeholders/library.webp",
@@ -36,7 +18,7 @@ const imagePlaceholders = [
     image: "/placeholders/dashboard.webp",
   },
   {
-    image: "/placeholders/pokemon-resized.webp",
+    image: "/placeholders/pokemon.png",
   },
   {
     image: "/placeholders/library.webp",

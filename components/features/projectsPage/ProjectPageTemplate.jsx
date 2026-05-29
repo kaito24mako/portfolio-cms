@@ -13,7 +13,7 @@ import { useTags } from "../../../app/hooks/useTags";
 
 function ProjectPageTemplate({
   errorMessage,
-  handleFormAction,
+  handleProjectAction,
   prevTags,
   ...props
 }) {
@@ -64,7 +64,7 @@ function ProjectPageTemplate({
 
   return (
     // action is a server function - when this form is submitted, call createProject with the form data
-    <form action={handleFormAction} className="flex flex-col gap-8">
+    <form action={handleProjectAction} className="flex flex-col gap-8">
       <Title
         font="font-heading"
         heading={props.heading}

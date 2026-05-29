@@ -29,7 +29,7 @@ async function EditProjectPage({ params }) {
   // dataValues are the current project's values
   return (
     <ProjectPageTemplate
-      handleFormAction={editProjectAction}
+      handleProjectAction={editProjectAction}
       exitBtnAction={removeProjectAction}
       heading="Edit Project"
       subHeading="Edit the details of your stunning work"

@@ -9,7 +9,7 @@ export const metadata = {
 function NewProjectsPage() {
   return (
     <ProjectPageTemplate
-      handleFormAction={createProject}
+      handleProjectAction={createProject}
       heading="Create New Project"
       subHeading="Fill in the details of your latest work"
       exitBtnLink="/projects"
