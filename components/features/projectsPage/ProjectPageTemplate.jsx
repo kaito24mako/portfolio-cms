@@ -10,7 +10,7 @@ import Title from "@/components/common/text/Title";
 import SubmitFormToast from "@/components/features/toast/SubmitFormToast";
 
 import { useActionState } from "react";
-import { useTags } from "../../../app/hooks/useTags";
+import { useTags } from "@/app/hooks/useTags";
 
 function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
   // useActionState lets the server action return a value back to this client form - similar to storing state
@@ -75,9 +75,22 @@ function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
 
       {/* error messages and saving toast */}
       {state.error ? (
-        <span className="alert alert-error" role="alert">
-          {state.error}
-        </span>
+        <div className="alert alert-error alert-soft w-fit pr-5" role="alert">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 shrink-0 stroke-current"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>{state.error}</span>
+        </div>
       ) : (
         <SubmitFormToast />
       )}

@@ -3,9 +3,9 @@ function DashboardProjectsSkeleton() {
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-medium">Recent Projects</h2>
-        <span className="skeleton skeleton-text text-sm">
+        {/* <span className="skeleton skeleton-text text-sm">
           Loading latest updates...
-        </span>
+        </span> */}
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
