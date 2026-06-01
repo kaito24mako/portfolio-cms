@@ -11,7 +11,7 @@ import Title from "@/components/common/text/Title";
 import SubmitFormToast from "@/components/features/toast/SubmitFormToast";
 
 import { useActionState } from "react";
-import { useTags } from "@/app/hooks/useTags";
+import { useTags } from "@/hooks/useTags";
 
 function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
   // useActionState lets the server action return a value back to this client form - similar to storing state
