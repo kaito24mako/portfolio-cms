@@ -1,3 +1,4 @@
+import Button from "@/components/common/button/Button";
 import SmallCard from "@/components/common/card/SmallCard";
 import Grid from "@/components/common/grid/Grid";
 import EditIcon from "@/components/icons/ui/EditIcon";
@@ -18,7 +19,9 @@ async function DashboardProjectsSection({ projectsPromise }) {
       </div>
 
       {projects.length === 0 ? (
-        <p>Create some projects first!</p>
+        <p className="card card-sm md:card-md 2xl:card-lg bg-base-200 shadow-md h-50 md:h-60 flex items-center justify-center w-full lg:w-[30%]">
+          None
+        </p>
       ) : (
         <Grid className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {recentProjects?.map((p) => (

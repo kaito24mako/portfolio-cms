@@ -4,7 +4,7 @@ import Badge from "../badge/Badge";
 
 function SmallCard({ ...props }) {
   return (
-    <div className="card card-sm md:card-md 2xl:card-lg image-full shadow-md h-50 md:h-60">
+    <div className="card card-sm md:card-md 2xl:card-lg image-full shadow-md h-50 md:h-60 2xl:h-70">
       <figure className="relative">
         <Image
           src={props.image}
