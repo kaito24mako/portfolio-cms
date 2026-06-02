@@ -53,10 +53,10 @@ const Project = sequelize.define("Project", {
         dateOptions.year = "numeric";
       }
 
-      const formattedDate = date.toLocaleDateString("en-US", dateOptions);
+      const formattedDate = date.toLocaleDateString(undefined, dateOptions);
 
       const formattedTime = date
-        .toLocaleTimeString("en-US", {
+        .toLocaleTimeString(undefined, {
           hour: "numeric",
           minute: "2-digit",
           hour12: true,
