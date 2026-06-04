@@ -79,7 +79,7 @@ function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
 
       {/* error messages and saving toast */}
       {state.error && (
-        <div className="alert alert-error alert-soft w-fit pr-5" role="alert">
+        <div role="alert" className="alert alert-error alert-soft w-fit pr-5">
           <ErrorIcon />
           <span>{state.error}</span>
         </div>

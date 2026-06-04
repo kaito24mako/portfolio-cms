@@ -24,7 +24,7 @@ export async function GET(req) {
   }
 }
 
-// * POST /api/projects
+// * POST
 export async function POST(req) {
   if (!isAuthorised(req)) {
     const { message, status } = getErrorResponse(
