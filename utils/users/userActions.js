@@ -2,6 +2,7 @@ import { postUser } from "@/controllers/users";
 import { login } from "@/controllers/auth";
 import { connectDb } from "@/lib/connectDb";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 export async function loginUser(formData) {
   "use server";
@@ -12,7 +13,16 @@ export async function loginUser(formData) {
     password: formData.get("password"),
   };
 
-  await login(data);
+  const { token } = await login(data);
+
+  const cookieStore = await cookies();
+  cookieStore.set("auth-token", token, {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+  });
+
   redirect("/");
 }
 

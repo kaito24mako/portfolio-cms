@@ -5,6 +5,7 @@ import {
   deleteProject,
 } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
+import { requireCookieAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
@@ -31,7 +32,9 @@ const imagePlaceholders = [
 export async function retrieveAllProjects() {
   "use server";
   await connectDb();
-  const projects = await getAllProjects();
+  const user = await requireCookieAuth();
+  const projects = await getAllProjects(user.id);
+
   return projects?.map((project, index) => ({
     ...project.toJSON(),
     ...imagePlaceholders[index],
@@ -41,9 +44,13 @@ export async function retrieveAllProjects() {
 export async function createProject(formData) {
   "use server";
   await connectDb();
+
+  const user = await requireCookieAuth();
+
   // when user clicks a submit button, the broswer collects all the inputs with named fields and sends them as formData
   // so, an object of each of the form inputs are passed to postProject(), which creates the project
   const data = {
+    userId: user.id,
     title: formData.get("title"),
     description: formData.get("description"),
     siteUrl: formData.get("siteUrl"),

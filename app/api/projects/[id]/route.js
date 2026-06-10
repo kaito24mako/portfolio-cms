@@ -29,19 +29,11 @@ export async function GET(req, { params }) {
 
 //* PUT
 export async function PUT(req, { params }) {
-  if (!isAuthorised(req)) {
-    const { message, status } = getErrorResponse(
-      denyAccess("No API key provided"),
-    );
-    return textWithCors(message, req, { status });
-  }
-
   try {
     await connectDb();
 
     const { id } = await params;
     const data = await req.json();
-
     const project = await putProject(id, data);
 
     return jsonWithCors(project, req);

@@ -1,7 +1,7 @@
 import User from "@/models/users";
 import bcrypt from "bcrypt";
-import { Op } from "sequelize";
 
+import { Op } from "sequelize";
 import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 
 //* GET

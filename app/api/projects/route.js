@@ -1,8 +1,8 @@
 import { getAllProjects, postProject } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
-import { isAuthorised } from "@/lib/auth";
-import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
+import { requireAuth } from "@/lib/auth";
+import { getErrorResponse } from "@/lib/errorHandler";
 
 //* /api/projects
 
@@ -11,7 +11,8 @@ export async function GET(req) {
   try {
     await connectDb();
 
-    const projects = await getAllProjects();
+    const user = requireAuth(req);
+    const projects = await getAllProjects(user.id);
 
     return jsonWithCors(projects, req);
 
@@ -26,17 +27,14 @@ export async function GET(req) {
 
 // * POST /api/projects
 export async function POST(req) {
-  if (!isAuthorised(req)) {
-    const { message, status } = getErrorResponse(
-      denyAccess("No API key provided"),
-    );
-    return textWithCors(message, req, { status });
-  }
-
   try {
     await connectDb();
 
+    const user = requireAuth(req);
     const body = await req.json();
+
+    body.userId = user.id;
+
     const project = await postProject(body);
 
     return jsonWithCors(project, req);

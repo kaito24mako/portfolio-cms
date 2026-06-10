@@ -1,4 +1,5 @@
 import Project from "@/models/projects";
+// import User from "@/models/users";
 
 import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 
@@ -6,10 +7,18 @@ import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 // it should only return data or throw errors
 
 //* GET
-export async function getAllProjects() {
-  const projects = await Project.findAll({
+export async function getAllProjects(userId) {
+  const options = {
     attributes: { exclude: ["createdAt"] },
     order: [["updatedAt", "DESC"]],
+  };
+
+  if (userId) {
+    options.where = { userId };
+  }
+
+  const projects = await Project.findAll({
+    ...options,
   });
 
   return projects;
