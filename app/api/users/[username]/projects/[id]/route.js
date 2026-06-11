@@ -21,7 +21,7 @@ export async function GET(req, { params }) {
     // vertify ownership of project to current user
     const user = await getUserByUsername(username);
     const project = await getProjectById(id);
-    if (project.userId !== user.id) {
+    if (project.userId !== user.id || project.status !== "Published") {
       throw denyAccess("No authorization to access this project");
     }
 
