@@ -35,10 +35,10 @@ export async function loginUser(formData) {
   // set 'auth-token' to jwt token of user as a cookie
   const cookieStore = await cookies();
   cookieStore.set("auth-token", token, {
-    httpOnly: true,
-    sameSite: "lax",
+    httpOnly: true, // prevent JS from reading cookie
+    sameSite: "lax", // prevent cross-site attacks
     secure: process.env.NODE_ENV === "production",
-    path: "/",
+    path: "/", // make cookie available for entire site
   });
 
   redirect("/");
