@@ -8,7 +8,7 @@ export const metadata = {
 
 function RegisterPage() {
   return (
-    <main className="flex flex-col items-center justify-center pt-10 md:pt-20 gap-4">
+    <main className="flex flex-col items-center justify-center pt-3 md:pt-10 gap-4">
       <Logo />
       <RegisterForm />
       <p className="text-sm">
