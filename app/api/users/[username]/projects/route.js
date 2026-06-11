@@ -4,6 +4,7 @@ import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { requireAuth } from "@/lib/auth";
 import { getErrorResponse } from "@/lib/errorHandler";
 import { getUserByUsername } from "@/controllers/users";
+import { denyAccess } from "@/lib/errorHandler";
 
 //* /api/projects
 
@@ -14,23 +15,26 @@ export async function GET(req, { params }) {
 
     const { username } = await params;
 
-    const authUser = requireAuth(req);
+    // require authorization to access all projects - only published projects are public
+    const authUser = requireAuth(req); // verifies token from x-auth-token
     const user = await getUserByUsername(username);
+
+    if (authUser.id !== user.id) {
+      throw denyAccess("No authorization to access these projects");
+    }
 
     const projects = await getAllProjects(user.id);
 
+    // sends project as JSON with CORS headers added
     return jsonWithCors(projects, req);
-
-    // ? before CORS
-    //  return Response.json(projects);
   } catch (err) {
     const { message, status } = getErrorResponse(err);
+    // sends error message as a text response with status and CORS headers
     return textWithCors(message, req, { status });
-    // return new Response(err.message, { status: 404 });
   }
 }
 
-// * POST /api/projects
+// * POST
 export async function POST(req) {
   try {
     await connectDb();

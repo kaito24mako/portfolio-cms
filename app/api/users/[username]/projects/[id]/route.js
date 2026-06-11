@@ -5,8 +5,8 @@ import {
 } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
-import { isAuthorised } from "@/lib/auth";
 import { getErrorResponse, denyAccess } from "@/lib/errorHandler";
+import { requireAuth } from "@/lib/auth";
 
 //* /api/projects/[id]
 
@@ -15,14 +15,21 @@ export async function GET(req, { params }) {
   try {
     await connectDb();
 
-    const { id } = await params;
+    const { username, id } = await params;
+
+    // require authorization
+    const authUser = requireAuth(req);
+    const user = await getUserByUsername(username);
+
+    if (authUser.id !== user.id) {
+      throw denyAccess("No authorization to access this project");
+    }
+
     const project = await getProjectById(id);
 
-    // sends project as JSON with CORS headers added
     return jsonWithCors(project, req);
   } catch (err) {
     const { message, status } = getErrorResponse(err);
-    // sends error message as a text response with status and CORS headers
     return textWithCors(message, req, { status });
   }
 }
@@ -32,7 +39,15 @@ export async function PUT(req, { params }) {
   try {
     await connectDb();
 
-    const { id } = await params;
+    const { username, id } = await params;
+
+    const authUser = requireAuth(req);
+    const user = await getUserByUsername(username);
+
+    if (authUser.id !== user.id) {
+      throw denyAccess("No authorization to access this project");
+    }
+
     const data = await req.json();
     const project = await putProject(id, data);
 
@@ -45,17 +60,18 @@ export async function PUT(req, { params }) {
 
 //* DELETE
 export async function DELETE(req, { params }) {
-  if (!isAuthorised(req)) {
-    const { message, status } = getErrorResponse(
-      denyAccess("No API key provided"),
-    );
-    return textWithCors(message, req, { status });
-  }
-
   try {
     await connectDb();
 
-    const { id } = await params;
+    const { username, id } = await params;
+
+    const authUser = requireAuth(req);
+    const user = await getUserByUsername(username);
+
+    if (authUser.id !== user.id) {
+      throw denyAccess("No authorization to access this project");
+    }
+
     const project = await deleteProject(id);
 
     return jsonWithCors(project, req);
