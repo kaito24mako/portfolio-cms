@@ -11,7 +11,7 @@ import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
   {
-    image: "/placeholders/pokemon.webp",
+    image: "/placeholders/tictactoe.webp",
   },
   {
     image: "/placeholders/library.webp",
@@ -20,7 +20,7 @@ const imagePlaceholders = [
     image: "/placeholders/dashboard.webp",
   },
   {
-    image: "/placeholders/pokemon.webp",
+    image: "/placeholders/tictactoe.webp",
   },
   {
     image: "/placeholders/library.webp",
