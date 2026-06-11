@@ -1,5 +1,4 @@
 import Project from "@/models/projects";
-// import User from "@/models/users";
 
 import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 
@@ -9,7 +8,7 @@ import { badRequest, conflict, notFound } from "@/lib/errorHandler";
 //* GET
 export async function getAllProjects(userId) {
   const options = {
-    attributes: { exclude: ["createdAt"] },
+    attributes: { exclude: ["createdAt", "userId"] },
     order: [["updatedAt", "DESC"]],
   };
 
@@ -46,7 +45,7 @@ export async function getPublishedProjects(userId) {
       userId,
       status: "Published",
     },
-    attributes: { exclude: ["createdAt"] },
+    attributes: { exclude: ["createdAt", "userId"] },
     order: [["updatedAt", "DESC"]],
   });
 
@@ -68,7 +67,7 @@ export async function postProject(data) {
     throw badRequest("A status is required to create a project");
 
   const project = await Project.create(data, {
-    attributes: { exclude: ["createdAt"] },
+    attributes: { exclude: ["createdAt", "userId"] },
   });
 
   return {
@@ -110,6 +109,10 @@ export async function putProject(id, data) {
     githubUrl: data.githubUrl ?? project.githubUrl,
     status: data.status ?? project.status,
     tags: data.tags ?? project.tags,
+  });
+
+  await project.reload({
+    attributes: { exclude: ["createdAt", "userId"] },
   });
 
   return {
