@@ -10,24 +10,30 @@ import { requireCookieAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
-  {
-    image: "/placeholders/tictactoe.webp",
-  },
-  {
-    image: "/placeholders/library.webp",
-  },
-  {
-    image: "/placeholders/dashboard.webp",
-  },
-  {
-    image: "/placeholders/tictactoe.webp",
-  },
+  // {
+  //   image: "/placeholders/pokemon.webp",
+  // },
   {
     image: "/placeholders/library.webp",
   },
   {
     image: "/placeholders/dashboard.webp",
   },
+  // {
+  //   image: "/placeholders/tictactoe.webp",
+  // },
+  // {
+  //   image: "/placeholders/pokemon.webp",
+  // },
+  {
+    image: "/placeholders/library.webp",
+  },
+  {
+    image: "/placeholders/dashboard.webp",
+  },
+  // {
+  //   image: "/placeholders/tictactoe.webp",
+  // },
 ];
 
 export async function retrieveAllProjects() {
