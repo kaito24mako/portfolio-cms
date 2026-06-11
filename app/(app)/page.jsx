@@ -7,6 +7,7 @@ import DashboardStatsSkeleton from "@/components/features/dashboardPage/skeleton
 
 import { Suspense } from "react";
 import { retrieveAllProjects } from "@/utils/projects/projectActions";
+import { requireCookieAuth } from "@/lib/auth";
 
 // force page to render data dynamically since in production, data wasn't dynamically being rendered
 export const dynamic = "force-dynamic";
@@ -15,19 +16,18 @@ export const metadata = {
   title: "Dashboard",
 };
 
-function DashboardPage() {
-  // since the same projects data is shared between nested components, pass it as props and only await it in the nested comp
+async function DashboardPage() {
+  const user = await requireCookieAuth();
   const projectsPromise = retrieveAllProjects();
 
   return (
     <div className="flex flex-col gap-8">
       <Title
         font="font-heading"
-        heading="Hello Kaito,"
+        heading={`Hello ${user.firstName},`}
         subHeading="Let's create a beautiful portfolio."
       />
 
-      {/* <Suspense> displays loading fallback until all the code and data needed by the children has been loaded */}
       <Suspense fallback={<DashboardProjectsSkeleton />}>
         <DashboardProjectsSection projectsPromise={projectsPromise} />
       </Suspense>

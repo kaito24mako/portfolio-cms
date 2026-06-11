@@ -4,8 +4,18 @@ import Image from "next/image";
 import Footer from "@/components/layout/Footer";
 
 import { ToastContainer, Slide } from "react-toastify";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function AppLayout({ children }) {
+export default async function AppLayout({ children }) {
+  // redirect to login page if user has no token
+  const cookieStore = await cookies();
+  const token = cookieStore.get("auth-token")?.value;
+
+  if (!token) {
+    redirect("/login");
+  }
+
   return (
     // note: Header is nested inside Sidebar because I'm using the DaisyUI sidebar
     <Sidebar>

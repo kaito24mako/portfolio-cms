@@ -1,10 +1,12 @@
 import Image from "next/image";
-
 import Header from "./Header";
 import SidebarProfileBtn from "@/components/features/sidebar/SidebarProfileBtn";
 import Button from "@/components/common/button/Button";
 import SidebarList from "../features/sidebar/SidebarList";
 import Link from "next/link";
+import LogoutIcon from "../icons/sidebar/LogoutIcon";
+
+import { logoutUser } from "@/utils/users/userActions";
 
 function Sidebar({ children }) {
   return (
@@ -57,10 +59,21 @@ function Sidebar({ children }) {
           {/* sidebar links */}
           <SidebarList />
 
-          {/* profile */}
           <div>
+            {/* profile */}
             <span className="divider w-[80%] mx-auto my-0"></span>
             <SidebarProfileBtn />
+
+            {/* log out */}
+            <form action={logoutUser}>
+              <Button
+                className="btn btn-sm mx-5 mb-5 is-drawer-close:hidden font-normal"
+                icon={LogoutIcon}
+                type="submit"
+              >
+                Log out
+              </Button>
+            </form>
           </div>
         </div>
       </div>
