@@ -31,6 +31,12 @@ const imagePlaceholders = [
   {
     image: "/placeholders/dashboard.webp",
   },
+  {
+    image: "/placeholders/library.webp",
+  },
+  {
+    image: "/placeholders/dashboard.webp",
+  },
   // {
   //   image: "/placeholders/tictactoe.webp",
   // },
