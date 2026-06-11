@@ -6,7 +6,7 @@ import { getUserByUsername } from "@/controllers/users";
 
 //* /api/projects/published
 
-// * GET
+// * GET - public
 export async function GET(req, { params }) {
   try {
     await connectDb();

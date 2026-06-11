@@ -8,17 +8,16 @@ import { denyAccess } from "@/lib/errorHandler";
 
 //* /api/projects
 
-// * GET
+// * GET - private
 export async function GET(req, { params }) {
   try {
     await connectDb();
 
     const { username } = await params;
 
-    // require authorization to access all projects - only published projects are public
+    // vertify ownership of project to current user
     const authUser = requireAuth(req); // verifies token from x-auth-token
     const user = await getUserByUsername(username);
-
     if (authUser.id !== user.id) {
       throw denyAccess("No authorization to access these projects");
     }
@@ -34,7 +33,7 @@ export async function GET(req, { params }) {
   }
 }
 
-// * POST
+// * POST - private
 export async function POST(req) {
   try {
     await connectDb();
