@@ -40,7 +40,7 @@ export async function getProjectById(id) {
   return project;
 }
 
-export async function getPublishedProjects() {
+export async function getPublishedProjects(userId) {
   const projects = await Project.findAll({
     where: {
       userId,
@@ -49,8 +49,6 @@ export async function getPublishedProjects() {
     attributes: { exclude: ["createdAt"] },
     order: [["updatedAt", "DESC"]],
   });
-
-  if (!projects) throw badRequest("No published projects found");
 
   return projects;
 }

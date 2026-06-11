@@ -30,6 +30,23 @@ export async function getUserById(id) {
   return user;
 }
 
+export async function getUserByUsername(username) {
+  if (!username) {
+    throw badRequest("Username is required");
+  }
+
+  const user = await User.findOne({
+    where: { username },
+    attributes: { exclude: ["createdAt", "password", "isAdmin"] },
+  });
+
+  if (!user) {
+    throw notFound("User not found");
+  }
+
+  return user;
+}
+
 //* POST
 export async function postUser(data) {
   if (!data.firstName) {

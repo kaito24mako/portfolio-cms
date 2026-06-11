@@ -3,15 +3,20 @@ import { connectDb } from "@/lib/connectDb";
 import { jsonWithCors, optionsWithCors, textWithCors } from "@/lib/cors";
 import { requireAuth } from "@/lib/auth";
 import { getErrorResponse } from "@/lib/errorHandler";
+import { getUserByUsername } from "@/controllers/users";
 
 //* /api/projects
 
 // * GET
-export async function GET(req) {
+export async function GET(req, { params }) {
   try {
     await connectDb();
 
-    const user = requireAuth(req);
+    const { username } = await params;
+
+    const authUser = requireAuth(req);
+    const user = await getUserByUsername(username);
+
     const projects = await getAllProjects(user.id);
 
     return jsonWithCors(projects, req);
