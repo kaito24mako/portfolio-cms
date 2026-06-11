@@ -43,6 +43,7 @@ export async function getProjectById(id) {
 export async function getPublishedProjects() {
   const projects = await Project.findAll({
     where: {
+      userId,
       status: "Published",
     },
     attributes: { exclude: ["createdAt"] },
