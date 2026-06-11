@@ -36,7 +36,7 @@ function ProjectsList({ projects = [], search }) {
       />
 
       {filteredProjects.length === 0 ? (
-        <p>No projects stored</p>
+        <p>No projects</p>
       ) : (
         <Grid className="grid-cols-1 gap-10 md:gap-6">
           {filteredProjects?.map((p) => (
