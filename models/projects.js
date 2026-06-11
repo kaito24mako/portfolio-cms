@@ -2,16 +2,16 @@ import sequelize from "@/utils/connection";
 import { DataTypes } from "sequelize";
 
 const Project = sequelize.define("Project", {
-  // userId: {
-  //   type: DataTypes.UUID,
-  //   allowNull: false,
-  //   references: {
-  //     model: "Users",
-  //     key: "id",
-  //   },
-  //   onDelete: "CASCADE",
-  //   onUpdate: "CASCADE",
-  // },
+  userId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    references: {
+      model: "Users",
+      key: "id",
+    },
+    onDelete: "CASCADE",
+    onUpdate: "CASCADE",
+  },
   title: {
     type: DataTypes.STRING,
     allowNull: false,

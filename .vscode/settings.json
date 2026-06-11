@@ -1,0 +1,19 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "entity.other.attribute-name.html",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ],
+    "comments": ""
+  }
+}

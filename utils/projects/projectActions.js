@@ -6,6 +6,7 @@ import {
 } from "@/controllers/projects";
 import { connectDb } from "@/lib/connectDb";
 import { getErrorResponse } from "@/lib/errorHandler";
+import { requireCookieAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 const imagePlaceholders = [
@@ -32,7 +33,9 @@ const imagePlaceholders = [
 export async function retrieveAllProjects() {
   "use server";
   await connectDb();
-  const projects = await getAllProjects();
+  const user = await requireCookieAuth();
+  const projects = await getAllProjects(user.id);
+
   return projects?.map((project, index) => ({
     ...project.toJSON(),
     ...imagePlaceholders[index],
@@ -43,7 +46,11 @@ export async function createProject(prevState, formData) {
   "use server";
   try {
     await connectDb();
+
+    const user = await requireCookieAuth();
+
     const data = {
+      userId: user.id,
       title: formData.get("title"),
       description: formData.get("description"),
       siteUrl: formData.get("siteUrl"),
@@ -54,7 +61,6 @@ export async function createProject(prevState, formData) {
     await postProject(data);
   } catch (err) {
     return {
-      // return the controller's throw as "error" to display on client-side
       error: getErrorResponse(err).message,
     };
   }

@@ -16,10 +16,18 @@ function isValidUrl(value) {
 }
 
 //* GET
-export async function getAllProjects() {
-  const projects = await Project.findAll({
-    attributes: { exclude: ["createdAt"] },
+export async function getAllProjects(userId) {
+  const options = {
+    attributes: { exclude: ["createdAt", "userId"] },
     order: [["updatedAt", "DESC"]],
+  };
+
+  if (userId) {
+    options.where = { userId };
+  }
+
+  const projects = await Project.findAll({
+    ...options,
   });
 
   return projects;
@@ -41,16 +49,15 @@ export async function getProjectById(id) {
   return project;
 }
 
-export async function getPublishedProjects() {
+export async function getPublishedProjects(userId) {
   const projects = await Project.findAll({
     where: {
+      userId,
       status: "Published",
     },
-    attributes: { exclude: ["createdAt"] },
+    attributes: { exclude: ["createdAt", "userId"] },
     order: [["updatedAt", "DESC"]],
   });
-
-  if (!projects) throw badRequest("No published projects found");
 
   return projects;
 }
@@ -78,7 +85,7 @@ export async function postProject(data) {
   }
 
   const project = await Project.create(data, {
-    attributes: { exclude: ["createdAt"] },
+    attributes: { exclude: ["createdAt", "userId"] },
   });
 
   return {
@@ -128,6 +135,10 @@ export async function putProject(id, data) {
     githubUrl: data.githubUrl ?? project.githubUrl,
     status: data.status ?? project.status,
     tags: data.tags ?? project.tags,
+  });
+
+  await project.reload({
+    attributes: { exclude: ["createdAt", "userId"] },
   });
 
   return {

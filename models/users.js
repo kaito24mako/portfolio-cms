@@ -1,7 +1,8 @@
 import sequelize from "@/utils/connection";
-import { DataTypes } from "sequelize";
+import jwt from "jsonwebtoken";
+import { configError } from "@/lib/errorHandler";
 
-// ! NOT used for v1
+import { DataTypes } from "sequelize";
 
 const User = sequelize.define("User", {
   id: {
@@ -67,5 +68,24 @@ const User = sequelize.define("User", {
     },
   },
 });
+
+// creates a web token and attaches user details to it
+User.prototype.generateAuthToken = function () {
+  if (!process.env.API_KEY) {
+    throw configError("API_KEY is not configured");
+  }
+
+  return jwt.sign(
+    {
+      id: this.id,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      username: this.username,
+      email: this.email,
+      isAdmin: this.isAdmin,
+    },
+    process.env.API_KEY,
+  );
+};
 
 export default User;
