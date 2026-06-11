@@ -22,6 +22,7 @@ function LoginForm() {
         className="input"
         placeholder="password"
         name="password"
+        autoComplete="current-password"
       />
 
       <button className="btn btn-neutral mt-4">Login</button>

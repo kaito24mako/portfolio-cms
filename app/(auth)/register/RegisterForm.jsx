@@ -1,4 +1,5 @@
 import { createUser } from "@/utils/users/userActions";
+import ClientForm from "./ClientForm";
 
 function RegisterForm() {
   return (
@@ -47,15 +48,28 @@ function RegisterForm() {
         required
       />
 
-      {/* need validation message! */}
       <label className="label">Password</label>
       <input
         type="password"
         className="input"
         name="password"
         placeholder="password"
+        pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\x21-\x2F\x3A-\x40\x5B-\x60\x7B-\x7E])[\x20-\x7E]+$"
+        title="Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
         required
       />
+      {/* need password visibility functionality! */}
+      {/* <ClientForm /> */}
+      <p className="label text-xs opacity-75">
+        Must contain:
+        <br />
+        • 1 uppercase letter
+        <br />
+        • 1 lowercase letter
+        <br />
+        • 1 number
+        <br />• 1 special character
+      </p>
 
       <button className="btn btn-neutral mt-4">Create account</button>
     </form>
