@@ -31,6 +31,10 @@ function ApiGuidePage() {
             The RESTful API returns JSON responses in the body
           </li>
           <li className="list-disc">Every request must be GET requests</li>
+          <li className="list-disc">
+            Every request retrieves only published projects - all other projects
+            are made private for privacy and security reasons
+          </li>
         </ul>
       </div>
 
@@ -38,6 +42,13 @@ function ApiGuidePage() {
         <div key={section.title} className="flex flex-col gap-2">
           <Title subHeading={section.title} style="text-xl font-semibold!" />
           <p>{section.description}</p>
+          <ul className="pl-8">
+            {section.notes.map((note, index) => (
+              <li key={index} className="list-disc">
+                {note.description}
+              </li>
+            ))}
+          </ul>
 
           {section.items.map((item, index) => (
             <EndpointItem

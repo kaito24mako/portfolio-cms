@@ -3,10 +3,13 @@ export default function guideSections() {
     {
       title: "✴︎ Get all published projects",
       description: "Retrieve a list of published projects",
+      notes: [
+        { description: "[ username ]: the username of your Mako account" },
+      ],
       items: [
         {
           title: "URL Request",
-          code: "https://portfolio-cms-blond-five.vercel.app/api/users/[yourUsername]/projects/published",
+          code: "https://portfolio-cms-blond-five.vercel.app/api/users/[username]/projects/published",
         },
         {
           title: "200 Response",
@@ -47,10 +50,14 @@ export default function guideSections() {
     {
       title: "✴︎ Get a single published project",
       description: "Retrieve the details of a single published project by ID",
+      notes: [
+        { description: "[ username ]: the username of your Mako account" },
+        { description: "[ id ]: the project ID" },
+      ],
       items: [
         {
           title: "URL Request",
-          code: "https://portfolio-cms-blond-five.vercel.app/api/users/[yourUsername]/projects/[id]",
+          code: "https://portfolio-cms-blond-five.vercel.app/api/users/[username]/projects/[id]",
         },
         {
           title: "200 Response",
