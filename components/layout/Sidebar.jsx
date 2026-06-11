@@ -66,7 +66,7 @@ function Sidebar({ children }) {
             {/* log out */}
             <form action={logoutUser}>
               <Button
-                className="btn btn-sm mx-5 mb-5 is-drawer-close:hidden font-normal"
+                className="btn mx-5 mb-5 w-[85%] is-drawer-close:hidden font-normal"
                 icon={LogoutIcon}
                 type="submit"
               >
