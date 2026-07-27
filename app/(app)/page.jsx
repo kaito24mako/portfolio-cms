@@ -32,15 +32,13 @@ async function DashboardPage() {
         <DashboardProjectsSection projectsPromise={projectsPromise} />
       </Suspense>
 
-      <div className="grid grid-cols-7">
-        <Suspense fallback={<DashboardStatsSkeleton />}>
-          <DashboardStatsSection projectsPromise={projectsPromise} />
-        </Suspense>
+      <Suspense fallback={<DashboardStatsSkeleton />}>
+        <DashboardStatsSection projectsPromise={projectsPromise} />
+      </Suspense>
 
-        <div className="flex flex-col gap-4 col-span-4">
+      {/* <div className="flex flex-col gap-4 col-span-4">
           <DashboardActivitySection />
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 }

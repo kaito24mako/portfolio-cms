@@ -13,9 +13,9 @@ async function DashboardStatsSection({ projectsPromise }) {
   ];
 
   return (
-    <div className="flex flex-col gap-2 col-span-3">
+    <div className="flex flex-col gap-2">
       <h2 className="text-lg font-medium">Statistics</h2>
-      <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {statistics.map((s) => (
           <StatisticCard title={s.title} count={s.count} key={s.title} />
         ))}
