@@ -14,7 +14,7 @@ function RegisterForm() {
       <label className="label">First name</label>
       <input
         type="text"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         name="firstName"
         placeholder="first name"
         required
@@ -23,7 +23,7 @@ function RegisterForm() {
       <label className="label">Last name</label>
       <input
         type="text"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         name="lastName"
         placeholder="last name"
         required
@@ -32,7 +32,7 @@ function RegisterForm() {
       <label className="label">Username</label>
       <input
         type="text"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         name="username"
         placeholder="username"
         minLength={4}
@@ -42,7 +42,7 @@ function RegisterForm() {
       <label className="label">Email</label>
       <input
         type="email"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         name="email"
         placeholder="email"
         required
@@ -51,7 +51,7 @@ function RegisterForm() {
       <label className="label">Password</label>
       <input
         type="password"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         name="password"
         placeholder="password"
         pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\x21-\x2F\x3A-\x40\x5B-\x60\x7B-\x7E])[\x20-\x7E]+$"

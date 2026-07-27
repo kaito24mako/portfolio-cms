@@ -12,7 +12,7 @@ function LoginForm() {
       <label className="label">Username</label>
       <input
         type="text"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         placeholder="username"
         name="username"
       />
@@ -20,7 +20,7 @@ function LoginForm() {
       <label className="label">Password</label>
       <input
         type="password"
-        className="input"
+        className="input focus-within:outline-none focus-within:ring-0"
         placeholder="password"
         name="password"
         autoComplete="current-password"
