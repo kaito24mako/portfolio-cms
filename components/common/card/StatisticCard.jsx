@@ -3,8 +3,8 @@ function StatisticCard({ title, count = 0 }) {
     <div className="flex items-center gap-2 bg-base-300 shadow-sm rounded py-3 px-4 pr-8 col-span-1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
+        width="65"
+        height="65"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -18,7 +18,7 @@ function StatisticCard({ title, count = 0 }) {
         <line x1="6" y1="20" x2="6" y2="14" />
       </svg>
       <div>
-        <h3 className="text-sm sm:text-base">{title}</h3>
+        <p className="text-sm sm:text-lg">{title}</p>
         <span className="text-base md:text-lg font-semibold">{count}</span>
       </div>
     </div>
