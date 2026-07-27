@@ -7,7 +7,7 @@ function loading() {
         <span className="text-xl skeleton skeleton-text">
           Loading project data...
         </span>
-        <Spinner size={50} />
+        <Spinner size={45} />
       </div>
     </div>
   );
