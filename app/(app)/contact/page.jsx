@@ -1,4 +1,5 @@
 import Title from "@/components/common/text/Title";
+import SocialsList from "@/components/features/footer/SocialsList";
 import Link from "next/link";
 
 export const metadata = {
@@ -11,24 +12,31 @@ function ContactPage() {
       <Title
         font="font-heading"
         heading="Contact"
-        subHeading="Have any questions or want to contact me for business inquiries?"
+        subHeading="Have any problems or inquiries? Contact us via phone or email."
       />
 
-      <div className="flex flex-col gap-2">
-        <Title font="font-primary" subHeading="Contact details:" />
-        <ul className="pl-8 w-fit">
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-1">
+          <Title font="font-primary" subHeading="Phone number" />
           <Link href="tel:+61416127431">
-            <li className="link link-hover list-disc w-fit">(+61) 416127431</li>
+            <p className="link link-hover">(+61) 416127431</p>
           </Link>
-          <Link href="mailto:kaitowatanabemcc@gmail.com">
-            <li className="link link-hover list-disc w-fit">
-              kaitowatanabemcc@gmail.com
-            </li>
-          </Link>
-        </ul>
-      </div>
+        </div>
 
-      <p>This page is in development...</p>
+        <div className="flex flex-col gap-1">
+          <Title font="font-primary" subHeading="Email" />
+          <Link href="mailto:kaitowatanabemcc@gmail.com">
+            <p className="link link-hover">kaitowatanabemcc@gmail.com</p>
+          </Link>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Title font="font-primary" subHeading="Social network" />
+          <div className="flex gap-3">
+            <SocialsList />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
