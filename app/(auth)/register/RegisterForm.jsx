@@ -59,7 +59,6 @@ function RegisterForm() {
         required
       />
       {/* need password visibility functionality! */}
-      {/* <ClientForm /> */}
       <p className="label text-xs opacity-75">
         Must contain:
         <br />
