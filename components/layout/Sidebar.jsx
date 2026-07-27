@@ -41,7 +41,7 @@ function Sidebar({ children }) {
               loading="eager"
               alt="logo of Mako"
             />
-            <h1 className="is-drawer-close:hidden text-3xl font-heading font-semibold">
+            <h1 className="text-3xl font-heading font-semibold is-drawer-close:hidden">
               Mako
             </h1>
           </Link>

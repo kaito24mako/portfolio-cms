@@ -24,16 +24,16 @@ function SidebarList() {
             icon: ProjectsIcon,
             href: "/projects",
           },
-          {
-            label: "Tags",
-            icon: TagsIcon,
-            href: "/tags",
-          },
-          {
-            label: "Activity",
-            icon: ActivityIcon,
-            href: "/activity",
-          },
+          // {
+          //   label: "Tags",
+          //   icon: TagsIcon,
+          //   href: "/tags",
+          // },
+          // {
+          //   label: "Activity",
+          //   icon: ActivityIcon,
+          //   href: "/activity",
+          // },
         ]}
       />
       <div className="mt-auto">

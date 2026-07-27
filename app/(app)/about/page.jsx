@@ -27,19 +27,19 @@ function AboutPage() {
         <Title font="font-heading" subHeading="Key features:" />
         <ul className="pl-3">
           <li>
-            ✴︎ A <span className="text-secondary">free</span> API to connect your
+            ✴︎ A <span className="font-bold">free</span> API to connect your
             portfolio site to
           </li>
           <li>
-            ✴︎ <span className="text-secondary">Create</span> your projects on
-            Mako and publish to your portfolio
+            ✴︎ <span className="font-bold">Create</span> your projects on Mako
+            and publish to your portfolio
           </li>
           <li>
-            ✴︎ <span className="text-secondary">Store</span> your projects,
-            published and unpublished, for tracking purposes
+            ✴︎ <span className="font-bold">Store</span> your projects, published
+            and unpublished, for tracking purposes
           </li>
           <li>
-            ✴︎ Get <span className="text-secondary">statistics</span> on how many
+            ✴︎ Get <span className="font-bold">statistics</span> on how many
             projects use certain technologies
           </li>
         </ul>
