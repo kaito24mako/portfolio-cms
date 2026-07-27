@@ -129,7 +129,7 @@ function ProjectPageTemplate({ handleProjectAction, prevTags, ...props }) {
                     handleCreateTag();
                     e.preventDefault();
                   }}
-                  className="btn-sm"
+                  className="btn-sm btn-soft"
                 >
                   + Add
                 </Button>
