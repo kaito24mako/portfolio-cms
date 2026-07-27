@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./Header";
-import SidebarProfileBtn from "@/components/features/sidebar/SidebarProfileBtn";
+import SidebarUsername from "@/components/features/sidebar/SidebarUsername";
 import Button from "@/components/common/button/Button";
 import SidebarList from "../features/sidebar/SidebarList";
 import LogoutIcon from "../icons/sidebar/LogoutIcon";
@@ -59,14 +59,14 @@ function Sidebar({ children }) {
           <SidebarList />
 
           <div>
+            <span className="divider w-[80%] mx-auto my-0 is-drawer-close:hidden"></span>
             {/* profile */}
-            <span className="divider w-[80%] mx-auto my-0"></span>
-            <SidebarProfileBtn />
+            <SidebarUsername />
 
             {/* log out */}
             <form action={logoutUser}>
               <Button
-                className="btn btn-soft mx-5 mb-5 w-[85%] is-drawer-close:hidden font-normal"
+                className="btn btn-soft mx-5 mb-5 w-[85%] font-normal is-drawer-close:hidden "
                 icon={LogoutIcon}
                 type="submit"
               >
