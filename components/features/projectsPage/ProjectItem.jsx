@@ -7,8 +7,8 @@ import WebIcon from "@/components/icons/ui/WebIcon";
 
 function ProjectItem({ ...props }) {
   return (
-    <div className="flex flex-col md:flex-row w-fit rounded-sm shadow-md bg-base-300">
-      <div className="flex flex-col gap-3 shadow-sm p-6 md:p-8 rounded-l-sm md:min-w-70 lg:min-w-100">
+    <div className="flex flex-col md:flex-row w-fit rounded-sm bg-base-300 shadow-sm overflow-visible">
+      <div className="flex flex-col gap-3 p-6 md:p-8 rounded-l-sm md:min-w-70 lg:min-w-100">
         <div className="flex flex-col items-center gap-2">
           {/* title and badge */}
           <div className="flex items-center gap-3">
@@ -57,7 +57,7 @@ function ProjectItem({ ...props }) {
         </Button>
       </div>
 
-      <div className="relative w-[85dvw] h-[25dvh] sm:w-[480px] sm:h-[260px] overflow-hidden">
+      <div className="relative w-[85dvw] h-[25dvh] sm:w-[480px] sm:h-[260px] rounded-r-sm overflow-hidden">
         {props.image && (
           <Image
             src={props.image}

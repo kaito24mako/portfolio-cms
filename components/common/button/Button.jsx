@@ -42,7 +42,7 @@ function Button({
 
   return (
     <button
-      className={`gap-2 btn shadow-sm ${className}`}
+      className={`gap-2 btn ${className}`}
       aria-label={ariaLabel}
       {...props}
     >

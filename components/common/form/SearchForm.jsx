@@ -3,7 +3,7 @@
 function SearchForm({ search, onSearch }) {
   return (
     <label
-      className="input shadow-sm border-none"
+      className="input shadow-sm border-none focus-within:outline-none focus-within:ring-0"
       onSubmit={(e) => e.preventDefault()}
     >
       <svg
