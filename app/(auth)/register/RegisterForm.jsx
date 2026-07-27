@@ -1,11 +1,11 @@
 import { createUser } from "@/utils/users/userActions";
-import ClientForm from "./ClientForm";
+import LoaderButton from "@/components/common/button/LoaderButton.jsx";
 
 function RegisterForm() {
   return (
     <form
       action={createUser}
-      className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+      className="fieldset bg-base-200 border-base-300 rounded-box w-xs border shadow-sm p-4"
     >
       <legend className="fieldset-legend mx-auto text-base">
         Create account
@@ -71,7 +71,7 @@ function RegisterForm() {
         <br />• 1 special character
       </p>
 
-      <button className="btn btn-neutral mt-4">Create account</button>
+      <LoaderButton>Create account</LoaderButton>
     </form>
   );
 }
